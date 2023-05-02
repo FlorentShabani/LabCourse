@@ -44,9 +44,9 @@ body {
   margin-left: 50px;
   margin-right: 50px;
   font-size: 25px;
-  margin-bottom: 10px;
   transition: color 0.5s;
 }
+
 .home:hover{
 color: rgb(148, 153, 158);
 }
