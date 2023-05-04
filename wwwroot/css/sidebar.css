@@ -1,0 +1,21 @@
+body {
+  min-height: 100vh;
+}
+
+
+main {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 100vh;
+    width: 98%;
+}
+
+svg {
+    filter: invert(1);
+}
+
+.table {
+    margin: 3% 2% 1% 2%;
+}

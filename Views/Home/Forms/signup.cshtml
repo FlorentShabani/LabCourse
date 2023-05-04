@@ -1,0 +1,56 @@
+﻿@page
+@model TravistaASP.Views.Home.Forms.signupModel
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/sign-in.css" asp-append-version="true">
+</head>
+
+<body>
+    <main class="form-signin w-100">
+
+        <form>
+            <div class="text-center">
+                <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
+            </div>
+            <h1 class="h3 mb-3 fw-normal text-center">Please sign up</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control rounded-bottom my-2" id="floatingName" placeholder="Filan Fisteku">
+                <label for="floatingName">Name and Surname</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control rounded-bottom my-2" id="floatingUsername" placeholder="Username">
+                <label for="floatingPassword">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control rounded-bottom my-2" id="floatingEmail" placeholder="alex@gmail.com">
+                <label for="floatingEmail">Email</label>
+            </div>
+            <div class="form-floating">
+                <input type="date" class="form-control rounded-bottom my-2" id="floatingDate">
+                <label for="floatingDate">Birth Date</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control rounded-top my-2" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control rounded-top my-2" id="floatingPasswordR" placeholder="PasswordR">
+                <label for="floatingPasswordR">Confirm password</label>
+            </div>
+
+
+            <button class="w-100 btn btn-lg btn-primary" style="margin: 10px 0;" type="submit">Sign up</button>
+            <div class="text-center">
+                <p><a href="@Url.Action("login", "Home")" style="text-decoration: none;">Already have an account?</a></p>
+            </div>
+            <p class="mt-5 mb-3 text-center text-body-secondary">&copy; 2023 Travista, SHPK</p>
+        </form>
+    </main>
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+﻿@page
+@model TravistaASP.Views.Home.Forms.review_formModel
+@{
+}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/review_form.css" asp-append-version="true">
+</head>
+<body>
+    <main>
+        <form>
+
+            <div class="container">
+                <div class="container">
+                    <img src="../images/forms/reviews.png" class="img-fluid border rounded-3 shadow-lg mt-5 mb-3"
+                         alt="Example image" width="1260" height="500" loading="lazy">
+                </div>
+
+                <div class="form-dest">
+                    <h1 class="display-4 my-5 fw-bold">Add a review on $name</h1>
+                    <h1 class="display-6 mt-5 mb-10 fw-bold">Tell us about your review?</h1>
+                    <h1 class="h2 fw-normal">Rating & Comment</h1>
+                    <div class="form-small">
+                        <p>Select a rating:</p>
+                        <div class="stars">
+                            <input class="star star-5" id="star-5" type="radio" name="star" />
+                            <label class="star star-5" for="star-5"></label>
+                            <input class="star star-4" id="star-4" type="radio" name="star" />
+                            <label class="star star-4" for="star-4"></label>
+                            <input class="star star-3" id="star-3" type="radio" name="star" />
+                            <label class="star star-3" for="star-3"></label>
+                            <input class="star star-2" id="star-2" type="radio" name="star" />
+                            <label class="star star-2" for="star-2"></label>
+                            <input class="star star-1" id="star-1" type="radio" name="star" />
+                            <label class="star star-1" for="star-1"></label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingComm"
+                                      style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Comment</label>
+                        </div>
+                        <div class="input-group align-items-center my-2">
+                            <span class="input-group-text" style="height: 48px;">€</span>
+                            <span class="input-group-text" style="height: 48px;">0.00</span>
+                            <input type="text" class="form-control form-control-lg" placeholder="30.99"
+                                   id="floatingDesc">
+                        </div>
+                        <hr class="featurette-divider">
+                    </div>
+                    <h1 class="h2 fw-normal">Address</h1>
+                    <div class="form-small">
+                        <div class="form-floating my-2">
+                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingCity"
+                                   placeholder="Filan Fisteku">
+                            <label for="floatingInput">City</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingAddress"
+                                   placeholder="Filan Fisteku">
+                            <label for="floatingInput">Street Address</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingAdditonalAdd"
+                                   placeholder="Filan Fisteku">
+                            <label for="floatingInput">
+                                Additional address information <span class="text-body-secondary">(Optional)</span>
+                            </label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingPostalCode"
+                                   placeholder="Filan Fisteku">
+                            <label for="floatingInput">Postal Code</label>
+                        </div>
+                        <hr class="featurette-divider">
+                        <h1 class="h2 fw-normal">Contact Info</h1>
+                        <div class="form-floating my-2">
+                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingNumber"
+                                   placeholder="Filan Fisteku">
+                            <label for="floatingInput">Phone Number</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <input type="email" class="form-control rounded-bottom mt-3" id="floatingEmail"
+                                   placeholder="alex@gmail.com">
+                            <label for="floatingEmain">Email</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <button type="submit" class="btn btn-primary mt-3">Post it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
