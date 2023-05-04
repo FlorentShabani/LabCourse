@@ -1,0 +1,59 @@
+﻿@model Travista.Models.UpdateUserViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/sign-in.css" asp-append-version="true">
+</head>
+
+<html lang="en">
+<body>
+    <main class="form-signin w-100">
+
+        <form method="post" action="View">
+            <div class="text-center">
+                <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
+            </div>
+            <h1 class="h3 mb-3 fw-normal text-center">Edit a user</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control rounded-bottom my-2" asp-for="ID_Users" placeholder="User ID" readonly>
+                <label for="">ID</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control rounded-bottom my-2" asp-for="Fullname" placeholder="Fullname">
+                <label for="">Name and Surname</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control rounded-bottom my-2" asp-for="Username" placeholder="Username">
+                <label for="">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control rounded-bottom my-2" asp-for="Email" placeholder="alex@gmail.com">
+                <label for="">Email</label>
+            </div>
+            <div class="form-floating">
+                <input type="date" class="form-control rounded-bottom my-2" asp-for="Birthdate">
+                <label for="">Birth Date</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control rounded-top my-2" asp-for="Password" placeholder="Password">
+                <label for="">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control rounded-top my-2" asp-for="role" placeholder="Role">
+                <label for="">Role</label>
+            </div>
+
+
+
+            <button class="w-100 btn btn-lg btn-primary" style="margin: 10px 0;" type="submit">Update user</button>
+            <button class="w-100 btn btn-lg btn-danger" style="margin: 10px 0;" type="submit" formaction="@Url.Action("Delete", "Users")">Delete user</button>
+        </form>
+    </main>
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

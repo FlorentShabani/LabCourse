@@ -1,0 +1,44 @@
+﻿@page
+@model TravistaASP.Views.Home.Forms.loginModel
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/sign-in.css" asp-append-version="true">
+</head>
+
+<body>
+    <main class="form-signin w-100">
+
+        <form>
+            <div class="text-center">
+                <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
+            </div>
+            <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                <label for="floatingEmail">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3 text-center">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" style="margin: 10px 0;" type="submit">Sign in</button>
+            <div class="text-center">
+                <p><a href="@Url.Action("Signup", "Home")" style="text-decoration: none;">Don't have an account?</a></p>
+            </div>
+            <p class="mt-5 mb-3 text-center text-body-secondary">&copy; 2023 Travista, SHPK</p>
+        </form>
+    </main>
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

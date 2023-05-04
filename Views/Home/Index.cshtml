@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/carousel.css" asp-append-version="true">
+</head>
+
+<body>
+    <main>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="~/images/cities/prishtina.jpg" class="d-block w-100 img-fluid">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Prishtina</h1>
+                            <p>Prishtina, Kosovo's vibrant capital, is a hub of culture, art and entertainment.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Visit</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="~/images/cities/prizren.jpg" class="d-block w-100 img-fluid">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Prizren</h1>
+                            <p>Charming town with rich culture and stunning scenery.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Visit</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="~/images/cities/gjilan.jpg" class="d-block w-100 img-fluid">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Gjilan</h1>
+                            <p>Thriving city with lively bazaar, culture, and delicious cuisine in eastern Kosovo.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Visit</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+        <div class="picture-container">
+            <img src="~/images/search2.png" class="img-fluid border rounded-3 shadow-lg mt-5 mb-3" alt="Search Image" loading="lazy">
+            <div class="search-container">
+                <form role="search">
+                    <div class="input-group">
+                        <input class="form-control rounded-bottom" type="search" placeholder="Where to?" aria-label="Search">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container marketing">
+
+            <hr class="featurette-divider">
+
+            <div class="d-flex align-items-center justify-content-center">
+                <h1 class="text-center">Recommended from Travista.</h1>
+            </div>
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Brezovica. <span class="text-body-secondary">A serene
+                            ski destination amidst the majestic Balkan Mountains.</span></h2>
+                    <p class="lead">Brezovica is the largest ski center in Kosovo. It is located in the municipality of
+                        Štrpce in the south of the country, about 20 kilometers east of Prizren and five kilometers
+                        southwest of the main town of Štrpce.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="~/images/thumbnails/brezovica_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Prishtina Mall. <span class="text-body-secondary">A
+                            shopper's paradise with something for everyone.</span></h2>
+                    <p class="lead">Prishtina Mall is a premier shopping destination in the heart of the capital city of
+                        Kosovo. With its modern and spacious design, it offers a unique shopping experience that
+                        combines fashion, entertainment, and leisure. Visitors can browse through a wide selection of
+                        local and international brands, catch a movie at the cinema, or enjoy a meal at one of the many
+                        restaurants and cafes.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="~/images/thumbnails/prishtinamall_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Prizren. <span class="text-body-secondary">A historic
+                            landmark offering panoramic views of the old town.</span></h2>
+                    <p class="lead">The Prizren Castle is a well-preserved fortress atop a hill in Kosovo. Dating back
+                        to the 6th century, it offers visitors an impressive display of ancient walls, towers, and
+                        gates. The castle played a significant role in the region's history and provides stunning
+                        panoramic views of the town below. A must-visit for history and architecture enthusiasts.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="~/images/thumbnails/prizrencastle_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+            <!-- /END THE FEATURETTES -->
+
+        </div>
+    </main>
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
