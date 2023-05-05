@@ -32,7 +32,7 @@
 
         <main class="d-flex flex-nowrap">
 
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark position-sticky" style="width: 280px;">
                 <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none container">
                         <img src="~/images/travista-light.png" alt="Travista." width="150" height="60">
                 </a>
@@ -57,19 +57,25 @@
                     </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a class="nav-link text-white">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table" /></svg>
                             Destinations
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a class="nav-link text-white" asp-controller="TravelAgency" asp-action="Index">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table" /></svg>
                             Travel Agencys
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a class="nav-link text-white" asp-controller="TravelAgency" asp-action="AddTravelAgency">
+                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table" /></svg>
+                            Add Travel Agencys
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-white">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table" /></svg>
                             Travel Tips
                         </a>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m8qHSYozPe4NrYznM4XlnTpFy1B35N+KF+x9pBd8ZSU=",
+  "Hash": "Y/kXL07zsJ4WLBjAOWSI49r2Kzf5gk0S3RwkppNquhM=",
   "Source": "Travista",
   "BasePath": "_content/Travista",
   "Mode": "Default",
@@ -899,6 +899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\sign-up.css"
+    },
+    {
+      "Identity": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\css\\travelagency_addform.css",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "css/travelagency_addform.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\travelagency_addform.css"
     },
     {
       "Identity": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\favicon.ico",
@@ -8821,6 +8838,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\uploads\\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "uploads/12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png"
     }
   ]
 }
