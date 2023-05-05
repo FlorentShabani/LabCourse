@@ -2,3 +2,49 @@
 @model TravistaASP.Views.Home.Forms.traveltips_formModel
 @{
 }
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/destination_form.css" asp-append-version="true">
+</head>
+    <body>
+    <main>
+        <form>
+
+            <div class="container">
+                <div class="container">
+                    <img src="../images/forms/traveltips.png" class="img-fluid border rounded-3 shadow-lg mt-5 mb-3" alt="Example image" width="1260" height="500" loading="lazy">
+                </div>
+
+                <div class="form-dest">
+                    <h1 class="display-4 my-5 fw-bold">Add travel tips for a city</h1>
+                    <h1 class="display-6 mt-5 mb-10 fw-bold">What should people pay attention to?</h1>
+                    <h1 class="h2 fw-normal">Title & Description</h1>
+                    <div class="form-small">
+                        <div class="form-floating my-2">
+                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingTitle"
+                                   placeholder="Avoid North Mitrovica">
+                            <label for="floatingInput">Title</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingDesc"
+                                      style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Description</label>
+                        </div>
+                        <div class="input-group align-items-center my-2">
+                            <label class="input-group-text mt-2" for="floatingUpload"
+                                   style="height: 48px;">Transportation</label>
+                            <input type="file" class="form-control form-control-lg mt-2" id="floatingUpload">
+                        </div>
+                        <div class="form-floating my-2">
+                            <button type="submit" class="btn btn-primary mt-3">Post it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

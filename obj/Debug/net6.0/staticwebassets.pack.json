@@ -205,6 +205,10 @@
       "PackagePath": "staticwebassets\\css\\sign-up.css"
     },
     {
+      "Id": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\css\\travelagency_addform.css",
+      "PackagePath": "staticwebassets\\css\\travelagency_addform.css"
+    },
+    {
       "Id": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -2067,6 +2071,10 @@
     {
       "Id": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\wwwroot\\uploads\\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png",
+      "PackagePath": "staticwebassets\\uploads\\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Travista.Microsoft.AspNetCore.StaticWebAssets.props",
