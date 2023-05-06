@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+# gitignore
+.vs/
+Migrations/
+Properties/
+bin/*
+obj/
+Labkurs - Verknüpfung.lnk

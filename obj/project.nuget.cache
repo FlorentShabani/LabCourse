@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L7Dpu4mr0kGGP9zC33a8njsBtIYgqNZJBI0oA6BZV+kTnucbcuToirUp8meVfmt+t0kzh5yxEIEqgZ57cCV0Kw==",
+  "dgSpecHash": "ucgu+8QIRfjjvuURLlaQiTaUiRG508xNqp2KxqMENWOT8h7SkqYWTB/b5ZaT++oqX4Y2xwEVfzTl0yJKMDNMAg==",
   "success": true,
-  "projectFilePath": "D:\\Schule\\Semestri 4\\Labkurs\\TravistaASP\\Travista.csproj",
+  "projectFilePath": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\Travista.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\38344\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\38344\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
