@@ -55,36 +55,30 @@ namespace Travista.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ViewTravelAgency(TravelAgency model, IFormFile image)
+        public async Task<IActionResult> AddTravelAgency(TravelAgency addUserRequest, IFormFile image)
         {
-            var travelage = await _dBContext.TravelAgency.FindAsync(model.ID_TravelAgency);
-
             var imagePath = await SaveImage(image);
             if (imagePath == null)
             {
-                return View(model);
+                return View("AddTravelAgency");
             }
-
-            if (travelage != null)
+            var TravelAge = new TravelAgency()
             {
-                travelage.ID_TravelAgency = model.ID_TravelAgency;
-                travelage.emri = model.emri;
-                travelage.description = model.description;
-                travelage.price = model.price;
-                travelage.image = imagePath;
-                travelage.ID_Country = model.ID_Country;
-                travelage.ID_City = model.ID_City;
-                travelage.streetAddress = model.streetAddress;
-                travelage.additionalAddressInfo = model.additionalAddressInfo;
-                travelage.postalCode = model.postalCode;
-                travelage.phoneNumber = model.phoneNumber;
-                travelage.email = model.email;
-
-                await _dBContext.SaveChangesAsync();
-
-                return RedirectToAction("Index");
-            }
-
+                ID_TravelAgency = 0,
+                emri = addUserRequest.emri,
+                description = addUserRequest.description,
+                price = addUserRequest.price,
+                image = imagePath,
+                ID_Country = addUserRequest.ID_Country,
+                ID_City = addUserRequest.ID_City,
+                streetAddress = addUserRequest.streetAddress,
+                additionalAddressInfo = addUserRequest.additionalAddressInfo,
+                postalCode = addUserRequest.postalCode,
+                phoneNumber = addUserRequest.phoneNumber,
+                email = addUserRequest.email,
+            };
+            await _dBContext.TravelAgency.AddAsync(TravelAge);
+            await _dBContext.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

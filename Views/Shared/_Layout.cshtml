@@ -22,23 +22,27 @@
                     </a>
                     <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                         <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("DestinationForm", "Home")">Add a place</a>
+                        <a class="nav-link active" href="@Url.Action("DestinationForm", "Home")"><i class="fa-regular fa-map" style="margin-right: 5px;"></i>Add Place</a>
                         </li>
+                    <div class="vr" style="color: white;"></div>
                         <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("Review", "Home")">Add a review</a>
+                        <a class="nav-link active" href="@Url.Action("Review", "Home")"><i class="fa-regular fa-star-half-stroke" style="margin-right: 5px;"></i>Add Review</a>
                         </li>
+                    <div class="vr" style="color: white;"></div>
                         <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("TravelAgency", "Home")">Add a agency</a>
+                        <a class="nav-link active" href="@Url.Action("TravelAgency", "Home")"><i class="fa-solid fa-van-shuttle" style="margin-right: 5px;"></i>Add Agency</a>
                         </li>
+                    <div class="vr" style="color: white;"></div>
                         <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("TravelTips", "Home")">Add travel tips</a>
+                        <a class="nav-link active" href="@Url.Action("TravelTips", "Home")"><i class="fa-regular fa-compass" style="margin-right: 5px;"></i>Add travel tips</a>
                         </li>
+                    <div class="vr" style="color: white;"></div>
                         <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("TravelTips", "Home")">Contact us</a>
+                        <a class="nav-link active" href="@Url.Action("Index", "Admin")"><i class="fa-solid fa-gavel" style="margin-right: 5px;"></i>Dashboard</a>
                         </li>
                     </ul>
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <a href="~/Home/Login" class="btn btn-light">SIGN IN</a>
+                    <a href="~/Home/Login" class="btn btn-light">LOGIN<i class="fa-solid fa-right-to-bracket" style="margin-left: 5px;"></i></a>
                 </div>
                 </div>
             </div>
@@ -57,11 +61,11 @@
             </a>
 
             <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Test1</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Text2</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Text3</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Text4</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Text5</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary">F.A.Q.</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Terms of Use</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Site Map</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Help</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Contact us</a></li>
             </ul>
         </footer>
     </div>
@@ -69,6 +73,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
 </body>
 </html>

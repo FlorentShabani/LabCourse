@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9+zaQTwxRxNTLQzzCvcgqkI7Zllgqmm6qmOxOPcmzpw=",
+  "Hash": "wnCI2Ncx1ditdcA9XF30LxSefn7sghulAAZzgprSsT8=",
   "Source": "Travista",
   "BasePath": "_content/Travista",
   "Mode": "Default",
@@ -901,6 +901,23 @@
       "OriginalItemSpec": "wwwroot\\css\\sign-up.css"
     },
     {
+      "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\css\\table.css",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "css/table.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\table.css"
+    },
+    {
       "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\css\\travelagency_addform.css",
       "SourceId": "Travista",
       "SourceType": "Discovered",
@@ -1171,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\travista-light.png"
+    },
+    {
+      "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\images\\wip.jpg",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "images/wip.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\wip.jpg"
     },
     {
       "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\js\\sidebar.js",
@@ -8857,6 +8891,23 @@
       "OriginalItemSpec": "wwwroot\\uploads\\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png"
     },
     {
+      "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\422c24c1-a3f1-4d12-83a7-a9a69a8c8385.jpg",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "uploads/422c24c1-a3f1-4d12-83a7-a9a69a8c8385.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\422c24c1-a3f1-4d12-83a7-a9a69a8c8385.jpg"
+    },
+    {
       "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\9aa797da-9405-4895-bbbc-0195cb2d7c00.png",
       "SourceId": "Travista",
       "SourceType": "Discovered",
@@ -8872,6 +8923,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\9aa797da-9405-4895-bbbc-0195cb2d7c00.png"
+    },
+    {
+      "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\a42053e7-128e-4a69-91f8-d6e6e70692d0.png",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "uploads/a42053e7-128e-4a69-91f8-d6e6e70692d0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a42053e7-128e-4a69-91f8-d6e6e70692d0.png"
+    },
+    {
+      "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\af28864b-4b1f-43a4-bc59-f8258d6e52f5.jpg",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "uploads/af28864b-4b1f-43a4-bc59-f8258d6e52f5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\af28864b-4b1f-43a4-bc59-f8258d6e52f5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\afffd1c0-80e2-468f-863b-700ae07283f3.png",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "uploads/afffd1c0-80e2-468f-863b-700ae07283f3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\afffd1c0-80e2-468f-863b-700ae07283f3.png"
     }
   ]
 }

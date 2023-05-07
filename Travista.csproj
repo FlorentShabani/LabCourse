@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\forms\**" />
+    <Content Remove="Views\forms\**" />
+    <EmbeddedResource Remove="Views\forms\**" />
+    <None Remove="Views\forms\**" />
+    <TypeScriptCompile Remove="Views\forms\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\sign-in-admin.css" />
+    <Content Remove="wwwroot\css\sign-up-admin.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
@@ -24,7 +37,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Admin\Dashboard\" />
-    <Folder Include="Views\forms\" />
   </ItemGroup>
 
 </Project>

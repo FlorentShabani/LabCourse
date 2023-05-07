@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Views",
+    "\\Views\\Shared"
   ],
-  "SelectedNode": "\\Travista.sln",
+  "SelectedNode": "\\Views\\Shared\\_LayoutAdmin.cshtml",
   "PreviewInSolutionExplorer": false
 }

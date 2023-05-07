@@ -15,7 +15,7 @@ public class TravelAgency
 
     [Required]
     [Range(0, 999.99)]
-    public decimal price { get; set; }
+    public string price { get; set; }
 
     [StringLength(1000)]
     public string image { get; set; }
