@@ -37,6 +37,9 @@
 
   <ItemGroup>
     <Folder Include="Views\Admin\Dashboard\" />
+    <Folder Include="Views\NewFolder1\" />
+    <Folder Include="Views\NewFolder\" />
+    <Folder Include="Views\TravelTip\" />
   </ItemGroup>
 
 </Project>

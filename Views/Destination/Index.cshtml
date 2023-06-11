@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="container">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Name</th>
+
+                <th>Description</th>
+
+                <th>Address</th>
+
+                <th>Additional Address</th>
+
+                <th>Longitude</th>
+
+                <th>Latitude</th>
+
+                <th>Image</th>
+
+                <th>City #ID</th>
+
+                <th>User #ID</th>
+
+                <th>Action</th>
+            </tr>
+
+            @foreach (var dest in Model)
+            {
+                <tr>
+                    <th scope="row">@dest.ID_Destination</th>
+                    <td>@dest.Emri</td>
+                    <td>@dest.Description</td>
+                    <td>@dest.Address</td>
+                    <td>@dest.AdditionalAddress</td>
+                    <td>@dest.Longitude</td>
+                    <td>@dest.Latitude</td>
+                    <td>@dest.Foto</td>
+                    <td>@dest.ID_City</td>
+                    <td>@dest.ID_Users</td>
+                    <td>
+                        <a href="@Url.Action("ViewDestination", "Destination", new { ID_Destination = dest.ID_Destination })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

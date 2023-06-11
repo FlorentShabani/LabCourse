@@ -8320,12 +8320,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Travista.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\00d4fb4f-50b3-424d-815b-6644a73be306.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Travista</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Travista</BasePath>
-      <RelativePath>uploads/12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png</RelativePath>
+      <RelativePath>uploads/00d4fb4f-50b3-424d-815b-6644a73be306.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8334,14 +8334,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\12b96790-2c3a-4cb4-aaec-50ac29ab94a6.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\00d4fb4f-50b3-424d-815b-6644a73be306.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\422c24c1-a3f1-4d12-83a7-a9a69a8c8385.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\01a1a412-91f8-43bb-acbb-30ceac88c85a.png))">
       <SourceType>Package</SourceType>
       <SourceId>Travista</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Travista</BasePath>
-      <RelativePath>uploads/422c24c1-a3f1-4d12-83a7-a9a69a8c8385.jpg</RelativePath>
+      <RelativePath>uploads/01a1a412-91f8-43bb-acbb-30ceac88c85a.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8350,14 +8350,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\422c24c1-a3f1-4d12-83a7-a9a69a8c8385.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\01a1a412-91f8-43bb-acbb-30ceac88c85a.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\9aa797da-9405-4895-bbbc-0195cb2d7c00.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\0961b566-a2af-4ef2-ac11-bc21181acdd2.png))">
       <SourceType>Package</SourceType>
       <SourceId>Travista</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Travista</BasePath>
-      <RelativePath>uploads/9aa797da-9405-4895-bbbc-0195cb2d7c00.png</RelativePath>
+      <RelativePath>uploads/0961b566-a2af-4ef2-ac11-bc21181acdd2.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8366,14 +8366,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\9aa797da-9405-4895-bbbc-0195cb2d7c00.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\0961b566-a2af-4ef2-ac11-bc21181acdd2.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\a42053e7-128e-4a69-91f8-d6e6e70692d0.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\4310431f-edd6-4820-8c13-08586de88871.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Travista</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Travista</BasePath>
-      <RelativePath>uploads/a42053e7-128e-4a69-91f8-d6e6e70692d0.png</RelativePath>
+      <RelativePath>uploads/4310431f-edd6-4820-8c13-08586de88871.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8382,14 +8382,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\a42053e7-128e-4a69-91f8-d6e6e70692d0.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\4310431f-edd6-4820-8c13-08586de88871.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\af28864b-4b1f-43a4-bc59-f8258d6e52f5.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\71d18129-d0eb-42b4-b5fc-f49dcd329a17.png))">
       <SourceType>Package</SourceType>
       <SourceId>Travista</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Travista</BasePath>
-      <RelativePath>uploads/af28864b-4b1f-43a4-bc59-f8258d6e52f5.jpg</RelativePath>
+      <RelativePath>uploads/71d18129-d0eb-42b4-b5fc-f49dcd329a17.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8398,14 +8398,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\af28864b-4b1f-43a4-bc59-f8258d6e52f5.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\71d18129-d0eb-42b4-b5fc-f49dcd329a17.png))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\afffd1c0-80e2-468f-863b-700ae07283f3.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\adb34281-1a6c-4e02-a052-97181320804e.png))">
       <SourceType>Package</SourceType>
       <SourceId>Travista</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Travista</BasePath>
-      <RelativePath>uploads/afffd1c0-80e2-468f-863b-700ae07283f3.png</RelativePath>
+      <RelativePath>uploads/adb34281-1a6c-4e02-a052-97181320804e.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -8414,7 +8414,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\afffd1c0-80e2-468f-863b-700ae07283f3.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\adb34281-1a6c-4e02-a052-97181320804e.png))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

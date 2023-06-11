@@ -1,9 +1,11 @@
 ﻿namespace Travista.Models.Domain;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class TravelAgency
 {
+    [Key]
     public int ID_TravelAgency { get; set; }
 
     [Required]
@@ -25,6 +27,12 @@ public class TravelAgency
 
     [Required]
     public int ID_City { get; set; }
+
+    [ForeignKey("ID_Country")]
+    public virtual Country FK_Country { get; set; }
+
+    [ForeignKey("ID_City")]
+    public virtual City FK_City { get; set; }
 
     [Required]
     [StringLength(100)]
