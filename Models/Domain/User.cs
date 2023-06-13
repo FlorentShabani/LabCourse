@@ -17,4 +17,8 @@ public class User
     public string role { get; set; }
 
     public virtual ICollection<Destination> Destinations { get; set; }
+
+    public virtual ICollection<TravelTips> TravelTips { get; set; }
+
+    public virtual ICollection<Review> Reviews { get; set; }
 }

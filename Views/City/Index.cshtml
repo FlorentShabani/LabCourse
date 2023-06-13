@@ -1,0 +1,43 @@
+﻿@model List<Travista.Models.Domain.City>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="container">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Name</th>
+
+                <th>Country #ID</th>
+
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var city in Model)
+            {
+                <tr>
+                    <th scope="row">@city.ID_City</th>
+                    <td>@city.name</td>
+                    <td>@city.ID_Country</td>
+                    <td><a href="@Url.Action("ViewCity", "City", new { ID_City = city.ID_City })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

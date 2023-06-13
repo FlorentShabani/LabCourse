@@ -19,4 +19,6 @@ public class Country
 
     public virtual ICollection<TravelAgency> TravelAgencies { get; set; }
 
+    public virtual ICollection<TravelTips> TravelTip { get; set; }
+
 }

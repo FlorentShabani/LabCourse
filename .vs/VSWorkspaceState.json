@@ -1,13 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controllers",
     "\\Data",
     "\\Models",
     "\\Models\\Domain",
     "\\Views",
-    "\\wwwroot",
-    "\\wwwroot\\css"
+    "\\Views\\City"
   ],
-  "SelectedNode": "\\Data\\DBContext.cs",
+  "SelectedNode": "\\Controllers\\TravelTipController.cs",
   "PreviewInSolutionExplorer": false
 }

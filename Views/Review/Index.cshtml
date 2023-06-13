@@ -1,0 +1,54 @@
+﻿@model List<Travista.Models.Domain.Review>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="container">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Rating</th>
+
+                <th>Comment</th>
+
+                <th>Date</th>
+
+                <th>Destination #ID</th>
+
+                <th>User #ID</th>
+
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var review in Model)
+            {
+                <tr>
+                    <th scope="row">@review.ID_Reviews</th>
+                    <td>@review.Rating</td>
+                    <td>@review.Comment</td>
+                    <td>@review.Review_Date</td>
+                    <td>@review.ID_Destination</td>
+                    <td>@review.ID_Users</td>
+                    <td>
+                        <a href="@Url.Action("ViewReview", "Review", new { ID_Reviews = review.ID_Reviews })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

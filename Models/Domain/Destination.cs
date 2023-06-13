@@ -43,5 +43,7 @@ public class Destination
     [ForeignKey("ID_City")]
     public virtual City FK_City { get; set; }
 
+    public virtual ICollection<Review> Reviews { get; set; }
+
 }
 

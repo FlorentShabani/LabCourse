@@ -2093,16 +2093,36 @@
       "PackagePath": "staticwebassets\\uploads\\0961b566-a2af-4ef2-ac11-bc21181acdd2.png"
     },
     {
-      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\4310431f-edd6-4820-8c13-08586de88871.jpg",
-      "PackagePath": "staticwebassets\\uploads\\4310431f-edd6-4820-8c13-08586de88871.jpg"
+      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\2be57ee2-3913-4de8-964c-0a1323eaf7aa.png",
+      "PackagePath": "staticwebassets\\uploads\\2be57ee2-3913-4de8-964c-0a1323eaf7aa.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\5867814c-c9a4-4e5c-82a8-e9176919fd21.png",
+      "PackagePath": "staticwebassets\\uploads\\5867814c-c9a4-4e5c-82a8-e9176919fd21.png"
     },
     {
       "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\71d18129-d0eb-42b4-b5fc-f49dcd329a17.png",
       "PackagePath": "staticwebassets\\uploads\\71d18129-d0eb-42b4-b5fc-f49dcd329a17.png"
     },
     {
+      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\8b631e2a-41eb-4b29-bb9b-cc4e36247afb.png",
+      "PackagePath": "staticwebassets\\uploads\\8b631e2a-41eb-4b29-bb9b-cc4e36247afb.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\9a6585a8-e8a1-4e64-a056-f729b4a3e74a.png",
+      "PackagePath": "staticwebassets\\uploads\\9a6585a8-e8a1-4e64-a056-f729b4a3e74a.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\9ae33242-efa9-461e-9b86-4383632f8234.png",
+      "PackagePath": "staticwebassets\\uploads\\9ae33242-efa9-461e-9b86-4383632f8234.png"
+    },
+    {
       "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\adb34281-1a6c-4e02-a052-97181320804e.png",
       "PackagePath": "staticwebassets\\uploads\\adb34281-1a6c-4e02-a052-97181320804e.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\c2043208-53d7-4384-93db-d640592d8599.png",
+      "PackagePath": "staticwebassets\\uploads\\c2043208-53d7-4384-93db-d640592d8599.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Travista.Microsoft.AspNetCore.StaticWebAssets.props",

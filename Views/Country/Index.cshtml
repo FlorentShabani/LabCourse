@@ -1,0 +1,49 @@
+﻿@model List<Travista.Models.Domain.Country>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="container">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Name</th>
+
+                <th>Language</th>
+
+                <th>Action 1</th>
+
+                <th>Action 2</th>
+
+                <th>Action 3</th>
+            </tr>
+
+
+            @foreach (var country in Model)
+            {
+                <tr>
+                    <th scope="row">@country.ID_Country</th>
+                    <td>@country.name</td>
+                    <td>@country.language</td>
+                    <td><a href="@Url.Action("Index", "City", new { ID_Country = country.ID_Country })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View City</a></td>
+                    <td><a asp-controller="City" asp-action="AddCity" asp-route-ID_Country="@country.ID_Country"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>Add City</a></td>
+                    <td><a href="@Url.Action("ViewCountry", "Country", new { ID_Country = country.ID_Country })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

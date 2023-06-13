@@ -21,6 +21,10 @@ namespace Travista.Data
 
         public DbSet<Destination> Destination { get; set; }
 
+        public DbSet<TravelTips> TravelTips { get; set; }
+
+        public DbSet<Review> Review { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
@@ -37,15 +41,12 @@ namespace Travista.Data
 
             modelBuilder.Entity<Destination>()
                 .HasKey(u => u.ID_Destination);
-        }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("server=FLORENT;database=KosovaTrip;Trusted_connection=true;TrustServerCertificate=True;")
-                .LogTo(Console.WriteLine, LogLevel.Information);
+            modelBuilder.Entity<TravelTips>()
+                .HasKey(u => u.ID_TravelTips);
+
+            modelBuilder.Entity<Review>()
+                .HasKey(u => u.ID_Reviews);
         }
     }
-
-
-
 }

@@ -60,6 +60,7 @@
                         </a>
                         <div class='dashboard-nav-dropdown-menu'>
                         <a class="dashboard-nav-dropdown-item" asp-controller="Review" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Reviews</a>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Review" asp-action="AddReview"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Review</a>
                         </div>
                     </div>
                     <div class='dashboard-nav-dropdown'>
@@ -67,7 +68,8 @@
                         <i class="fa-regular fa-compass"></i>Countrys
                         </a>
                         <div class='dashboard-nav-dropdown-menu'>
-                            <a class="dashboard-nav-dropdown-item" asp-controller="Review" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Reviews</a>
+                            <a class="dashboard-nav-dropdown-item" asp-controller="Country" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Countrys</a>
+                            <a class="dashboard-nav-dropdown-item" asp-controller="Country" asp-action="AddCountry"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Country</a>
                         </div>
                     </div>
                     <div class='dashboard-nav-dropdown'>
@@ -75,7 +77,8 @@
                         <i class="fa-solid fa-route"></i>Travel Tips
                         </a>
                         <div class='dashboard-nav-dropdown-menu'>
-                            <a class="dashboard-nav-dropdown-item" asp-controller="Review" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Reviews</a>
+                            <a class="dashboard-nav-dropdown-item" asp-controller="TravelTip" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Travel Tips</a>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="TravelTip" asp-action="AddTravelTip"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Travel Tip</a>
                         </div>
                     </div>
                     <a class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Upload </a>
@@ -96,7 +99,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/lib/popper.js/dist/umd/popper.js"></script>
     <script src="~/js/sidebar.js" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
 </body>

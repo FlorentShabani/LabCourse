@@ -1,0 +1,54 @@
+﻿@model List<Travista.Models.Domain.TravelTips>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="container">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Title</th>
+
+                <th>Description</th>
+
+                <th>Date</th>
+
+                <th>User #ID</th>
+
+                <th>Country #ID</th>
+
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var traveltip in Model)
+            {
+                <tr>
+                    <th scope="row">@traveltip.ID_TravelTips</th>
+                    <td>@traveltip.Title</td>
+                    <td>@traveltip.Description</td>
+                    <td>@traveltip.TravelTips_Date</td>
+                    <td>@traveltip.ID_Users</td>
+                    <td>@traveltip.ID_Country</td>
+                    <td>
+                        <a href="@Url.Action("ViewTravelTip", "TravelTip", new { ID_TravelTips = traveltip.ID_TravelTips })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

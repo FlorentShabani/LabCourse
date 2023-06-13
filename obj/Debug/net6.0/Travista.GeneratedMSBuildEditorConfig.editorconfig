@@ -9,15 +9,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Travista
 build_property.RootNamespace = Travista
-build_property.ProjectDir = C:\Users\38344\Source\Repos\FlorentShabani\Travista\
+build_property.ProjectDir = C:\Users\38344\source\repos\FlorentShabani\Travista\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\38344\Source\Repos\FlorentShabani\Travista
+build_property.MSBuildProjectDirectory = C:\Users\38344\source\repos\FlorentShabani\Travista
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/City/AddCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxBZGRDaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/City/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/City/ViewCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxWaWV3Q2l0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Country/AddCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxBZGRDb3VudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Country/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Country/ViewCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxWaWV3Q291bnRyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Destination/AddDestination.cshtml]
@@ -60,6 +84,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Review/AddReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEFkZFJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Review/ViewReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFZpZXdSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,6 +118,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/TravelAgency/ViewTravelAgency.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsQWdlbmN5XFZpZXdUcmF2ZWxBZ2VuY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/TravelTip/AddTravelTip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsVGlwXEFkZFRyYXZlbFRpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/TravelTip/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsVGlwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/TravelTip/ViewTravelTip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsVGlwXFZpZXdUcmF2ZWxUaXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/38344/Source/Repos/FlorentShabani/Travista/Views/Users/Add.cshtml]

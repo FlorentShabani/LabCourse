@@ -8,10 +8,30 @@
 
   <ItemGroup>
     <Compile Remove="Views\forms\**" />
+    <Compile Remove="Views\NewFolder1\**" />
+    <Compile Remove="Views\NewFolder2\**" />
+    <Compile Remove="Views\NewFolder3\**" />
+    <Compile Remove="Views\NewFolder4\**" />
     <Content Remove="Views\forms\**" />
+    <Content Remove="Views\NewFolder1\**" />
+    <Content Remove="Views\NewFolder2\**" />
+    <Content Remove="Views\NewFolder3\**" />
+    <Content Remove="Views\NewFolder4\**" />
     <EmbeddedResource Remove="Views\forms\**" />
+    <EmbeddedResource Remove="Views\NewFolder1\**" />
+    <EmbeddedResource Remove="Views\NewFolder2\**" />
+    <EmbeddedResource Remove="Views\NewFolder3\**" />
+    <EmbeddedResource Remove="Views\NewFolder4\**" />
     <None Remove="Views\forms\**" />
+    <None Remove="Views\NewFolder1\**" />
+    <None Remove="Views\NewFolder2\**" />
+    <None Remove="Views\NewFolder3\**" />
+    <None Remove="Views\NewFolder4\**" />
     <TypeScriptCompile Remove="Views\forms\**" />
+    <TypeScriptCompile Remove="Views\NewFolder1\**" />
+    <TypeScriptCompile Remove="Views\NewFolder2\**" />
+    <TypeScriptCompile Remove="Views\NewFolder3\**" />
+    <TypeScriptCompile Remove="Views\NewFolder4\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,9 +57,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Admin\Dashboard\" />
-    <Folder Include="Views\NewFolder1\" />
-    <Folder Include="Views\NewFolder\" />
-    <Folder Include="Views\TravelTip\" />
   </ItemGroup>
 
 </Project>
