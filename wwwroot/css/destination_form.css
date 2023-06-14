@@ -1,6 +1,11 @@
 .form-dest {
     max-width: 800px;
     padding: 15px;
+    flex: 1;
+}
+
+.cont{
+    display: flex;
 }
 
 .form-small {
@@ -17,4 +22,19 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+
+.map {
+    flex: 1;
+    height: 889px;
+    margin-top: 139px;
+    position: relative;
+}
+
+.map-text {
+    position: absolute;
+    top: 60.5%;
+    left: 50.5%;
+    z-index: 1;
+    text-align: center;
 }

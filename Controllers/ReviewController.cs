@@ -7,9 +7,12 @@ using Travista.Models;
 using Travista.Models.Domain;
 using Microsoft.AspNetCore.Hosting;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Travista.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ReviewController : Controller
     {
 

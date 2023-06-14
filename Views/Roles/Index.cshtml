@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewData["Title"] = "View Roles";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+
+                <th>Name</th>
+
+                <th>#ID</th>
+                
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var roles in Model)
+            {
+                <tr>
+                    <th scope="row">@roles.Name</th>
+                    <td>@roles.Id</td>
+                    <td>
+                        <a href="@Url.Action("ViewTravelAgency", "TravelAgency", new { ID_TravelAgency = roles.Id })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

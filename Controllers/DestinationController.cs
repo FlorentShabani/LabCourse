@@ -8,9 +8,12 @@ using Travista.Models.Domain;
 using Microsoft.AspNetCore.Hosting;
 using static System.Net.Mime.MediaTypeNames;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Travista.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class DestinationController : Controller
     {
         private readonly DBContext _dBContext;

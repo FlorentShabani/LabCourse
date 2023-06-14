@@ -1,13 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\Data",
+    "\\Areas",
+    "\\Areas\\Identity",
+    "\\Areas\\Identity\\Data",
     "\\Models",
     "\\Models\\Domain",
     "\\Views",
     "\\Views\\City"
   ],
-  "SelectedNode": "\\Controllers\\TravelTipController.cs",
+  "SelectedNode": "\\Travista.sln",
   "PreviewInSolutionExplorer": false
 }

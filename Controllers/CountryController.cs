@@ -1,11 +1,14 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using Travista.Data;
 using Travista.Models.Domain;
 
 namespace Travista.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class CountryController : Controller
     {
         private readonly DBContext _dBContext;

@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using System.Data;
 using Travista.Data;
 using Travista.Models;
 using Travista.Models.Domain;
 
 namespace Travista.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class UsersController : Controller
     {
         private readonly DBContext MVCDBContext;
