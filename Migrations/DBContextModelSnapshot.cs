@@ -10,8 +10,8 @@ using Travista.Data;
 
 namespace Travista.Migrations
 {
-    [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(TravistaContext))]
+    partial class TravistaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

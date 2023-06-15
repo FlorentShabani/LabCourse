@@ -1,4 +1,4 @@
-﻿@model List<Travista.Models.Domain.User>
+﻿@model List<Travista.Areas.Identity.Data.TravistaUser>
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -15,17 +15,13 @@
 
             <tr>
 
-                <th>#</th>
+                <th>ID of User</th>
 
                 <th>Fullname</th>
 
                 <th>Username</th>
 
                 <th>Email</th>
-
-                <th>Birthdate</th>
-
-                <th>Role</th>
 
                 <th>Action</th>
 
@@ -35,13 +31,11 @@
             @foreach (var user in Model)
             {
                 <tr>
-                    <th scope="row">@user.ID_Users</th>
+                    <th scope="row">@user.Id</th>
                     <td>@user.Fullname</td>
-                    <td>@user.Username</td>
+                    <td>@user.UserName</td>
                     <td>@user.Email</td>
-                    <td>@user.Birthdate.ToString("dd-MM-yyyy")</td>
-                    <td>@user.role</td>
-                    <td><a href="@Url.Action("View", "Users", new { ID_Users = user.ID_Users })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                    <td><a href="@Url.Action("ViewUsers", "Users", new { Id = user.Id })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
                 </tr>
             }
 

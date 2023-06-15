@@ -11,7 +11,7 @@ using Travista.Data;
 
 namespace Travista.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(TravistaContext))]
     [Migration("20230504031503_Initial Migration")]
     partial class InitialMigration
     {

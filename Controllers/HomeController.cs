@@ -31,10 +31,9 @@ namespace TravistaASP.Controllers
             return View("~/Views/Home/Forms/signup.cshtml");
         }
 
-        public IActionResult DestinationForm()
+        public IActionResult Success()
         {
-            ViewData["Title"] = "Add a destination to Travista";
-            return View("~/Views/Home/Forms/destination_form.cshtml");
+            return View("~/Views/Home/Success.cshtml");
         }
 
         public IActionResult Review() 

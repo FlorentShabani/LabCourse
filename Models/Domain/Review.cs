@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using Travista.Areas.Identity.Data;
 
 namespace Travista.Models.Domain
 {
@@ -22,9 +23,10 @@ namespace Travista.Models.Domain
         [ForeignKey("ID_Destination")]
         public virtual Destination FK_Destination { get; set; }
 
-        public int ID_Users { get; set; }
+        [StringLength(450)]
+        public string ID_Users { get; set; }
 
         [ForeignKey("ID_Users")]
-        public virtual User FK_Users { get; set; }
+        public virtual TravistaUser FK_Users { get; set; }
     }
 }

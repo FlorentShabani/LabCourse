@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace TravistaASP.Views.Home.Forms
+namespace Travista.Views.TravelTip
 {
     public class traveltips_formModel : PageModel
     {

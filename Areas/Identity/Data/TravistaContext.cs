@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Configuration;
 using Travista.Areas.Identity.Data;
+using Travista.Models.Domain;
 
 namespace Travista.Data;
 
@@ -19,14 +20,50 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
         Configuration = configuration;
     }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    public DbSet<TravistaUser> TravistaUser { get; set; }
+
+    public DbSet<TravelAgency> TravelAgency { get; set; }
+
+    public DbSet<Country> Country { get; set; }
+
+    public DbSet<City> City { get; set; }
+
+    public DbSet<Destination> Destination { get; set; }
+
+    public DbSet<TravelTips> TravelTips { get; set; }
+
+    public DbSet<Review> Review { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(builder);
+
+        base.OnModelCreating(modelBuilder);
         // Customize the ASP.NET Identity model and override the defaults if needed.
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
 
-        builder.ApplyConfiguration(new TravistaUserEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new TravistaUserEntityConfiguration());
+
+        modelBuilder.Entity<TravistaUser>()
+            .HasKey(u => u.Id);
+
+        modelBuilder.Entity<TravelAgency>()
+            .HasKey(t => t.ID_TravelAgency);
+
+        modelBuilder.Entity<Country>()
+            .HasKey(u => u.ID_Country);
+
+        modelBuilder.Entity<City>()
+            .HasKey(u => u.ID_City);
+
+        modelBuilder.Entity<Destination>()
+            .HasKey(u => u.ID_Destination);
+
+        modelBuilder.Entity<TravelTips>()
+            .HasKey(u => u.ID_TravelTips);
+
+        modelBuilder.Entity<Review>()
+            .HasKey(u => u.ID_Reviews);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

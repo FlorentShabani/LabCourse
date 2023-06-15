@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Travista.Models.Domain;
 
 namespace Travista.Areas.Identity.Data;
 
@@ -10,5 +11,11 @@ namespace Travista.Areas.Identity.Data;
 public class TravistaUser : IdentityUser
 {
     public string Fullname { get; set; }
+
+    public virtual ICollection<Destination> Destinations { get; set; }
+
+    public virtual ICollection<TravelTips> TravelTips { get; set; }
+
+    public virtual ICollection<Review> Reviews { get; set; }
 }
 

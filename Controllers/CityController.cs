@@ -11,9 +11,9 @@ namespace Travista.Controllers
     [Authorize(Roles = "Administrator")]
     public class CityController : Controller
     {
-        private readonly DBContext _dBContext;
+        private readonly TravistaContext _dBContext;
 
-        public CityController(DBContext _dBContext)
+        public CityController(TravistaContext _dBContext)
         {
             this._dBContext = _dBContext;
         }

@@ -9,41 +9,48 @@ using Microsoft.AspNetCore.Hosting;
 using static System.Net.Mime.MediaTypeNames;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using Microsoft.AspNetCore.Identity;
+using Travista.Areas.Identity.Data;
 
 namespace Travista.Controllers
 {
-    [Authorize(Roles = "Administrator")]
     public class ReviewController : Controller
     {
 
-        private readonly DBContext _dBContext;
+        private readonly TravistaContext _dBContext;
+        private readonly UserManager<TravistaUser> _userManager;
 
-        public ReviewController(DBContext _dBContext)
+        public ReviewController(TravistaContext _dBContext, UserManager<TravistaUser> userManager)
         {
             this._dBContext = _dBContext;
+            _userManager = userManager;
         }
 
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index()
         {
             var review = await _dBContext.Review.ToListAsync();
             return View(review);
         }
 
+        [Authorize(Roles = "Administrator")]
         public IActionResult AddReview()
         {
             return View();
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<IActionResult> AddReview(Review addUserRequest)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
             var review = new Review()
             {
                 ID_Reviews = 0,
                 Rating = addUserRequest.Rating,
                 Comment = addUserRequest.Comment,
                 Review_Date = DateTime.Now,
-                ID_Users = addUserRequest.ID_Users,
+                ID_Users = currentUser.Id,
                 ID_Destination = addUserRequest.ID_Destination,
             };
             await _dBContext.Review.AddAsync(review);
@@ -51,6 +58,32 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
+        public IActionResult AddUserReview()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> AddUserReview(Review addUserRequest)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            var review = new Review()
+            {
+                ID_Reviews = 0,
+                Rating = addUserRequest.Rating,
+                Comment = addUserRequest.Comment,
+                Review_Date = DateTime.Now,
+                ID_Users = currentUser.Id,
+                ID_Destination = addUserRequest.ID_Destination,
+            };
+            await _dBContext.Review.AddAsync(review);
+            await _dBContext.SaveChangesAsync();
+            return RedirectToAction("Success", "Home");
+        }
+
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public async Task<IActionResult> ViewReview(int ID_Reviews)
         {
@@ -73,10 +106,13 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<IActionResult> ViewReviewPost(Review model)
         {
             var review = await _dBContext.Review.FindAsync(model.ID_Reviews);
+
+            var currentUser = await _userManager.GetUserAsync(User);
 
             if (review != null)
             {
@@ -84,7 +120,7 @@ namespace Travista.Controllers
                 review.Rating = model.Rating;
                 review.Comment = model.Comment;
                 review.Review_Date = model.Review_Date;
-                review.ID_Users = model.ID_Users;
+                review.ID_Users = currentUser.Id;
                 review.ID_Destination = model.ID_Destination;
 
                 await _dBContext.SaveChangesAsync();
@@ -95,6 +131,7 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteReview(Review model)
         {
             var review = await _dBContext.Review.FindAsync(model.ID_Reviews);

@@ -1,0 +1,63 @@
+﻿@model Travista.Areas.Identity.Data.TravistaUser;
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/css/travelagency_addform.css" asp-append-version="true">
+</head>
+
+<html lang="en">
+<body>
+    <main class="form-signin w-100">
+
+        <form method="post" asp-action="ViewUserPost" enctype="multipart/form-data">
+            <div class="text-center">
+                <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
+            </div>
+            <h1 class="h3 mb-3 fw-normal text-center">Update a Travel Tip</h1>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Id" placeholder="Prishtina" readonly>
+                        <label for="">ID of User</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Fullname" placeholder="Prishtina" readonly>
+                        <label for="">Fullname</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="UserName" placeholder="Prishtina">
+                        <label for="">Username</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-floating my-2">
+                        <input type="email" class="form-control rounded-bottom mt-2" asp-for="Email" placeholder="Prishtina" readonly>
+                        <label for="">Email</label>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <button class="w-100 btn btn-lg btn-primary" style="margin: 10px 0;" type="submit"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>Update User</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="w-100 btn btn-lg btn-danger" style="margin: 10px 0;" type="submit" formaction="@Url.Action("Delete", "Users")"><i class="fa-regular fa-trash-can" style="margin-right: 3px"></i>Delete User</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

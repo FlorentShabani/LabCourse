@@ -1,93 +1,69 @@
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
-using System.Data;
+using System.Threading.Tasks;
 using Travista.Data;
-using Travista.Models;
 using Travista.Models.Domain;
+using Travista.Areas.Identity.Data;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Travista.Controllers
 {
     [Authorize(Roles = "Administrator")]
     public class UsersController : Controller
     {
-        private readonly DBContext MVCDBContext;
+        private readonly UserManager<TravistaUser> _userManager;
+        private readonly TravistaContext _dbContext;
 
-        public UsersController(DBContext MVCDBContext)
+        public UsersController(UserManager<TravistaUser> userManager, TravistaContext dbContext)
         {
-            this.MVCDBContext = MVCDBContext;
+            _userManager = userManager;
+            _dbContext = dbContext;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var users = await MVCDBContext.Users.ToListAsync();
+            var users = await _userManager.Users.ToListAsync();
             return View(users);
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> ViewUsers(string Id)
         {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> Add(AddUserViewModel addUserRequest)
-        {
-            var User = new User()
+            var travistauser = await _userManager.FindByIdAsync(Id);
+
+            if (travistauser != null)
             {
-                ID_Users = 0,
-                Fullname = addUserRequest.Fullname,
-                Username = addUserRequest.Username,
-                Email = addUserRequest.Email,
-                Birthdate = addUserRequest.Birthdate,
-                Password = addUserRequest.Password,
-                role = addUserRequest.role
-            };
-
-            await MVCDBContext.Users.AddAsync(User);
-            await MVCDBContext.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> View(int ID_Users)
-        {
-            var user = await MVCDBContext.Users.FirstOrDefaultAsync(x => x.ID_Users == ID_Users);
-
-            if(user != null) 
-            {
-                var viewModel = new UpdateUserViewModel()
+                var viewModel = new TravistaUser()
                 {
-                    ID_Users = user.ID_Users,
-                    Fullname = user.Fullname,
-                    Username = user.Username,
-                    Email = user.Email,
-                    Birthdate = user.Birthdate,
-                    role = user.role
+                    Id = travistauser.Id,
+                    Fullname = travistauser.Fullname,
+                    UserName = travistauser.UserName,
+                    Email = travistauser.Email,
                 };
 
-                return View("View",viewModel);
+                return View("ViewUser", viewModel);
             }
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public async Task<IActionResult> View(UpdateUserViewModel model)
+        public async Task<IActionResult> ViewUserPost(TravistaUser model)
         {
-            var user = await MVCDBContext.Users.FindAsync(model.ID_Users);
+            var user = await _userManager.FindByIdAsync(model.Id);
 
-            if(user != null)
+            if (user != null)
             {
+                user.Id = model.Id;
                 user.Fullname = model.Fullname;
-                user.Username = model.Username;
+                user.UserName = model.UserName;
                 user.Email = model.Email;
-                user.Birthdate = model.Birthdate;
-                user.Password = model.Password;
-                user.role = model.role;
 
-                await MVCDBContext.SaveChangesAsync();
+                await _dbContext.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
@@ -96,19 +72,22 @@ namespace Travista.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(UpdateUserViewModel model)
+        public async Task<IActionResult> Delete(string id)
         {
-            var user = await MVCDBContext.Users.FindAsync(model.ID_Users);
-
-            if(user != null) 
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
             {
-                MVCDBContext.Users.Remove(user);
-                await MVCDBContext.SaveChangesAsync();
-
-                return RedirectToAction("Index");
+                // User not found, handle the error (e.g., display an error message)
+                return NotFound();
             }
 
+            var result = await _userManager.DeleteAsync(user);
+            if (result.Succeeded)
+            {
+                // User deleted successfully, redirect or display a success message
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
-        }
+    }
     }
 }

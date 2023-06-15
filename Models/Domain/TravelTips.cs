@@ -2,6 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using Travista.Areas.Identity.Data;
+
 namespace Travista.Models.Domain;
 
     public class TravelTips
@@ -18,10 +20,11 @@ namespace Travista.Models.Domain;
         [Required]
         public DateTime TravelTips_Date { get; set; }
 
-        public int ID_Users { get; set; }
+        [StringLength(450)]
+        public string ID_Users { get; set; }
 
         [ForeignKey("ID_Users")]
-        public virtual User FK_Users { get; set; }
+        public virtual TravistaUser FK_Users { get; set; }
 
         public int ID_Country { get; set; }
 

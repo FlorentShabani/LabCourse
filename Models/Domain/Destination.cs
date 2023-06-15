@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using Travista.Areas.Identity.Data;
 
 public class Destination
 {
@@ -34,11 +35,15 @@ public class Destination
     [Required]
     public int ID_City { get; set; }
 
-    [Required]
-    public int ID_Users { get; set; }
+    [StringLength(50)]
+    public string Tag { get; set; }
 
-        [ForeignKey("ID_Users")]
-    public virtual User FK_Users { get; set; }
+    [Required]
+    [StringLength(450)]
+    public string ID_Users { get; set; }
+
+    [ForeignKey("ID_Users")]
+    public virtual TravistaUser FK_Users { get; set; }
 
     [ForeignKey("ID_City")]
     public virtual City FK_City { get; set; }

@@ -1,7 +1,12 @@
-using Microsoft.EntityFrameworkCore;
-using Travista.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Travista.Data;
+using Travista.Models;
 using Travista.Areas.Identity.Data;
+using Travista.Controllers;
+using System.Drawing.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,13 +15,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // DB Connection
-builder.Services.AddDbContext<DBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBContextConnectionString")));
+builder.Services.AddDbContext<TravistaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TravistaContextConnectionString")));
+builder.Services.AddDbContext<TravistaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TravistaContextConnection")));
 
-builder.Services.AddDefaultIdentity<TravistaUser>().AddDefaultTokenProviders()
+builder.Services.AddDefaultIdentity<TravistaUser>()
+    .AddDefaultTokenProviders()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<TravistaContext>();
 
-builder.Services.AddDbContext<TravistaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TravistaContextConnection")));
+builder.Services.AddScoped<UserManager<TravistaUser>>();
 
 var app = builder.Build();
 
@@ -30,7 +37,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseAuthentication();;
+app.UseAuthentication();
 
 app.MapRazorPages();
 

@@ -1,5 +1,4 @@
-﻿@page
-@model TravistaASP.Views.Home.Forms.travelagency_formModel
+﻿@model Travista.Models.Domain.TravelAgency;
 @{
 }
 
@@ -10,84 +9,76 @@
 
 <body>
     <main>
-        <form>
 
             <div class="container">
                 <div class="container">
                     <img src="~/images/forms/travel_agency.png" class="img-fluid border rounded-3 shadow-lg mt-5 mb-3"
                          alt="Example image" width="1260" height="500" loading="lazy">
                 </div>
-
+            <form asp-action="AddUserTravelAgency" asp-asp-controller="TravelAgency" enctype="multipart/form-data">
                 <div class="form-dest">
                     <h1 class="display-4 my-5 fw-bold">Add a agency to Travista</h1>
                     <h1 class="display-6 mt-5 mb-10 fw-bold">Tell us about your travel agency?</h1>
                     <h1 class="h2 fw-normal">Name & Description</h1>
                     <div class="form-small">
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingName"
-                                   placeholder="Prishtina">
+                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="emri" placeholder="Prishtina" required>
                             <label for="floatingInput">Name</label>
                         </div>
                         <div class="form-floating my-2">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingDesc"
-                                      style="height: 100px"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" asp-for="description"
+                                      style="height: 100px" required></textarea>
                             <label for="floatingTextarea2">Description</label>
                         </div>
                         <div class="input-group align-items-center my-2">
                             <span class="input-group-text" style="height: 48px;">€</span>
                             <span class="input-group-text" style="height: 48px;">0.00</span>
-                            <input type="text" class="form-control form-control-lg" placeholder="30.99" id="floatingDesc">
+                            <input type="text" class="form-control form-control-lg" placeholder="30.99" asp-for="price" required>
                         </div>
                         <div class="input-group align-items-center my-2">
                             <label class="input-group-text mt-2" for="floatingUpload"
-                                   style="height: 48px;">Image</label>
-                            <input type="file" class="form-control form-control-lg mt-2" id="floatingUpload">
+                                   style="height: 48px; required">Image</label>
+                            <input type="file" class="form-control form-control-lg mt-2" asp-for="image" required>
                         </div>
                         <hr class="featurette-divider">
                     </div>
-                    <h1 class="h2 fw-normal">Address</h1>
+                    <h1 class="h2 fw-normal">Address & Contact Info</h1>
                     <div class="form-small">
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingCity"
+                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="ID_City" required
                                    placeholder="Filan Fisteku">
                             <label for="floatingInput">City</label>
                         </div>
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingAddress"
+                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="streetAddress" required
                                    placeholder="Filan Fisteku">
                             <label for="floatingInput">Street Address</label>
                         </div>
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingAdditonalAdd"
+                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="additionalAddressInfo" required
                                    placeholder="Filan Fisteku">
                             <label for="floatingInput">
                                 Additional address information <span class="text-body-secondary">(Optional)</span>
                             </label>
                         </div>
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingPostalCode"
+                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="postalCode" required
                                    placeholder="Filan Fisteku">
                             <label for="floatingInput">Postal Code</label>
                         </div>
-                        <hr class="featurette-divider">
-                        <h1 class="h2 fw-normal">Contact Info</h1>
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" id="floatingNumber"
+                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="phoneNumber" required
                                    placeholder="Filan Fisteku">
                             <label for="floatingInput">Phone Number</label>
                         </div>
-                        <div class="form-floating my-2">
-                            <input type="email" class="form-control rounded-bottom mt-3" id="floatingEmail"
-                                   placeholder="alex@gmail.com">
-                            <label for="floatingEmain">Email</label>
-                        </div>
+                        <hr class="featurette-divider">
                         <div class="form-floating my-2">
                             <button type="submit" class="btn btn-primary mt-3">Post it</button>
                         </div>
                     </div>
                 </div>
+            </form>
             </div>
-        </form>
     </main>
 
     <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>

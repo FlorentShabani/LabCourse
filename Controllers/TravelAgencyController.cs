@@ -9,32 +9,39 @@ using Microsoft.AspNetCore.Hosting;
 using static System.Net.Mime.MediaTypeNames;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using Microsoft.AspNetCore.Identity;
+using System.Drawing;
+using Travista.Areas.Identity.Data;
 
 namespace Travista.Controllers
 {
-    [Authorize(Roles = "Administrator")]
     public class TravelAgencyController : Controller
     {
-        private readonly DBContext _dBContext;
+        private readonly TravistaContext _dBContext;
         private readonly IWebHostEnvironment _env;
+        private readonly UserManager<TravistaUser> _userManager;
 
-        public TravelAgencyController(DBContext _dBContext, IWebHostEnvironment env)
+        public TravelAgencyController(TravistaContext _dBContext, IWebHostEnvironment env, UserManager<TravistaUser> userManager)
         {
             this._dBContext = _dBContext;
             this._env = env;
+            this._userManager = userManager;
         }
 
+        [Authorize(Roles = "Administrator")]
         public IActionResult AddTravelAgency()
         {
             return View();
         }
 
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index()
         {
             var travelage = await _dBContext.TravelAgency.ToListAsync();
             return View(travelage);
         }
 
+        [Authorize]
         private async Task<string> SaveImage(IFormFile image)
         {
             if (image != null)
@@ -57,6 +64,7 @@ namespace Travista.Controllers
             return "noimage";
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<IActionResult> AddTravelAgency(TravelAgency addUserRequest, IFormFile image)
         {
@@ -85,6 +93,45 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
+        public IActionResult AddUserTravelAgency()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> AddUserTravelAgency(TravelAgency addUserRequest, IFormFile image)
+        {
+            var imagePath = await SaveImage(image);
+            if (imagePath == null)
+            {
+                return View("AddUserTravelAgency");
+            }
+
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var TravelAge = new TravelAgency()
+            {
+                ID_TravelAgency = 0,
+                emri = addUserRequest.emri,
+                description = addUserRequest.description,
+                price = addUserRequest.price,
+                image = imagePath,
+                ID_Country = 6,
+                ID_City = addUserRequest.ID_City,
+                streetAddress = addUserRequest.streetAddress,
+                additionalAddressInfo = addUserRequest.additionalAddressInfo,
+                postalCode = addUserRequest.postalCode,
+                phoneNumber = addUserRequest.phoneNumber,
+                email = currentUser.Email,
+            };
+            await _dBContext.TravelAgency.AddAsync(TravelAge);
+            await _dBContext.SaveChangesAsync();
+            return RedirectToAction("Success", "Home");
+        }
+
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public async Task<IActionResult> ViewTravelAgency(int ID_TravelAgency)
         {
@@ -113,6 +160,8 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<IActionResult> ViewTravelAgencyPost(TravelAgency model, IFormFile image)
         {
@@ -147,6 +196,8 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteTravelAgency(TravelAgency model)
         {
             var travelage = await _dBContext.TravelAgency.FindAsync(model.ID_TravelAgency);

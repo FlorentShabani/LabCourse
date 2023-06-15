@@ -91,8 +91,8 @@ C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\appsettings
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\package-lock.json
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.staticwebassets.runtime.json
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.exe
-C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.deps.json
-C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.runtimeconfig.json
+C:\Users\38344\source\repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.deps.json
+C:\Users\38344\source\repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.runtimeconfig.json
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.dll
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Travista.pdb
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\bin\Debug\net6.0\Azure.Core.dll
@@ -385,9 +385,9 @@ C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\staticwebas
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\scopedcss\bundle\Travista.styles.css
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\scopedcss\projectbundle\Travista.bundle.scp.css
-C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\Travista.csproj.CopyComplete
+C:\Users\38344\source\repos\FlorentShabani\Travista\obj\Debug\net6.0\Travista.csproj.CopyComplete
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\Travista.dll
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\refint\Travista.dll
 C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\Travista.pdb
-C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\Travista.genruntimeconfig.cache
-C:\Users\38344\Source\Repos\FlorentShabani\Travista\obj\Debug\net6.0\ref\Travista.dll
+C:\Users\38344\source\repos\FlorentShabani\Travista\obj\Debug\net6.0\Travista.genruntimeconfig.cache
+C:\Users\38344\source\repos\FlorentShabani\Travista\obj\Debug\net6.0\ref\Travista.dll
