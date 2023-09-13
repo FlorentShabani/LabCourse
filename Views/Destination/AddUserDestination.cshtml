@@ -12,18 +12,18 @@
     <main>
             <div class="container">
                 <div class="container">
-                    <img src="../images/forms/dest.png" class="img-fluid border rounded-3 shadow-lg mt-5 mb-3" alt="Example image" width="1260" height="500" loading="lazy">
+                    <img src="../images/forms/dest.png" class="img-fluid rounded-3 shadow mt-5 mb-3" alt="Example image" width="1260" height="500" loading="lazy">
                 </div>
 
                 <div class = "cont">
                         <div class="form-dest">
-                            <h1 class="display-4 my-5 fw-bold">Add a destination to Travista</h1>
-                            <h1 class="display-6 mt-5 mb-10 fw-bold">How can people find this place?</h1>
-                            <h1 class="h2 fw-normal">Name & Description</h1>
+                            <h1 class="display-4 my-5 fw-bold">Add a <span class="txtcolor">destination</span> to Travista</h1>
+                            <h1 class="display-6 mt-5 mb-10 fw-bold">How can people <span class="txtcoloraccent">find</span> this place?</h1>
+                            <h1 class="h2 fw-normal sectext">Name & Description</h1>
                             <form method="post" asp-action="AddUserDestination" asp-controller="Destination" enctype="multipart/form-data">
                                 <div class="form-small">
                                     <div class="form-floating my-2">
-                                        <input type="text" class="form-control rounded-bottom mt-3" asp-for="Emri"
+                                        <input type="text" class="form-control border border-info rounded-bottom mt-3" asp-for="Emri"
                                                placeholder="Prishtina" required>
                                         <label for="floatingInput">Name</label>
                                     </div>
@@ -33,13 +33,14 @@
                                         <label for="floatingInput">Tag</label>
                                     </div>
                                     <div class="form-floating my-2">
-                                        <textarea class="form-control" placeholder="Leave a comment here" asp-for="Description"
+                                        <textarea class="form-control mt-3" placeholder="Leave a comment here" asp-for="Description"
                                                   style="height: 100px" required></textarea>
                                         <label for="floatingTextarea2">Description</label>
                                     </div>
                                     <hr class="featurette-divider">
+                                    <h1 class="h2 fw-normal sectext">Address & Contact Info</h1>
                                     <div class="form-floating my-2">
-                                        <input type="text" class="form-control rounded-bottom mt-3" asp-for="ID_City"
+                                        <input type="text" class="form-control border border-info rounded-bottom mt-3" asp-for="ID_City"
                                                placeholder="Filan Fisteku" required>
                                         <label for="floatingInput">City</label>
                                     </div>
@@ -71,13 +72,13 @@
                                         <input type="file" class="form-control form-control-lg mt-2" asp-for="Foto" id="floatingUpload" required>
                                     </div>
                                     <div class="form-floating my-2">
-                                        <button type="submit" class="btn btn-primary mt-3">Post it</button>
+                                        <button type="submit" class="w-100 btn btn-primary btncolor btntext btn-lg mt-2"><i class="fa-regular fa-paper-plane" style="margin-right: 5px;"></i>Post it!</button>
                                     </div>
                                 </div>
                             </form>
                     </div>
                     <div class="map-text">
-                        <h1 class="display-6 mt-5 mb-10 fw-bold">Where is your place located?</h1>
+                        <h1 class="display-6 mt-5 mb-10 fw-bold">Where is your <span class="txtcoloraccent">place</span> located?</h1>
                     </div>
                     <div id="map" class="map rounded">
                     </div>

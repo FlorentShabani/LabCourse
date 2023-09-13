@@ -1,0 +1,117 @@
+﻿:root {
+    --text: #F1FAFE;
+    --sectext: #afafaf;
+    --background: #020d13;
+    --primary: #e35716;
+    --secondary: #03141c;
+    --accent: #d55215;
+}
+
+body {
+    background-color: var(--background);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+h1, h2, h3{
+    color: var(--text);
+}
+p{
+    color: var(--sectext);
+}
+
+.featurette-divider{
+    color: var(--text);
+}
+
+.pushing{
+    margin: 0 0 6rem 0;
+}
+
+.nav-color {
+    background-color: var(--background);
+    border-bottom: 2px solid var(--accent);
+}
+
+.bfoot {
+    border-top: 2px solid var(--accent);
+}
+
+.btncolor {
+    background-color: var(--primary);
+}
+
+.btncolor i.fa {
+    background-color: var(--text);
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--primary);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-color: var(--secondary);
+    --bs-btn-hover-bg: var(--accent);
+    --bs-btn-hover-border-color: var(--accent);
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: var(--text);
+    --bs-btn-active-bg: var(--secondary);
+    --bs-btn-active-border-color: var(--accent);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--accent);
+    --bs-btn-disabled-bg: var(--accent);
+    --bs-btn-disabled-border-color: var(--accent);
+}
+
+.btntext {
+    color: var(--text);
+}
+
+.btn:hover {
+    background-color: var(--accent);
+}
+
+.txtcolor {
+    color: var(--primary);
+}
+
+.txtcoloraccent {
+    color: var(--accent);
+}
+
+.sectext {
+    color: var(--sectext);
+}
+
+.border {
+    border: 2px var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.border-info {
+    --bs-border-opacity: 1;
+    border-color: var(--primary) !important;
+}
+
+.form-signin h2 {
+    color: var(--secondary)
+}
+
+.siform {
+    background-color: var(--text)
+}
+
+.forgot a{
+    text-decoration: none;
+}
+
+.nav-seccolor {
+    background-color: var(--background);
+    border-bottom: 1px solid var(--accent);
+}
+
+.textsize {
+    font-size: 1.8rem;
+}

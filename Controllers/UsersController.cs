@@ -2,13 +2,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using Travista.Data;
-using Travista.Models.Domain;
 using Travista.Areas.Identity.Data;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Options;
+using System.Security.Claims;
+
 
 namespace Travista.Controllers
 {
@@ -30,6 +28,7 @@ namespace Travista.Controllers
             var users = await _userManager.Users.ToListAsync();
             return View(users);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> ViewUsers(string Id)

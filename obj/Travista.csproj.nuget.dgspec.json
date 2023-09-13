@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\Travista.csproj": {}
+    "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\Travista.csproj": {}
   },
   "projects": {
-    "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\Travista.csproj": {
+    "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\Travista.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\Travista.csproj",
+        "projectUniqueName": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\Travista.csproj",
         "projectName": "Travista",
-        "projectPath": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\Travista.csproj",
+        "projectPath": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\Travista.csproj",
         "packagesPath": "C:\\Users\\38344\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\38344\\Source\\Repos\\FlorentShabani\\Travista\\obj\\",
+        "outputPath": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -27,6 +27,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,11 +52,11 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.16, )"
+              "version": "[6.0.21, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.16, )"
+              "version": "[6.0.21, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -83,7 +84,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[6.0.16, )"
             },
             "Node.js": {
               "target": "Package",
@@ -121,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

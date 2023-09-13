@@ -93,6 +93,11 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult ShowDestination(int ID_City)
+        {
+            return View();
+        }
+
         [Authorize]
         public IActionResult AddUserDestination()
         {

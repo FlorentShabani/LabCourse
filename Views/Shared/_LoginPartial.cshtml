@@ -7,13 +7,13 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <a id="login" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-light">Hello @UserManager.GetUserName(User)!</a>
+    <a id="login" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-primary btncolor me-1" style="margin-left: 5px;" >Profile <i class="fa-solid fa-user"></i></a>
         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-        <button id="logout" type="submit" class="btn btn-light">Logout</button>
+        <button id="logout" type="submit" class="btn btn-primary btncolor">Logout<i class="fa-solid fa-right-from-bracket" style="margin-left: 5px;"></i></button>
         </form>
 }
 else
 {
-    <a id="register" asp-area="Identity" asp-page="/Account/Register" class="btn btn-light">Register<i class="fa-solid fa-right-to-bracket" style="margin-left: 5px;"></i></a>
-    <a id="login" asp-area="Identity" asp-page="/Account/Login" class="btn btn-light">Login<i class="fa-solid fa-right-to-bracket" style="margin-left: 5px;"></i></a>
+    <a id="register" asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary btncolor btntext me-1">Register<i class="fa-solid fa-user-plus" style="margin-left: 5px;"></i></a>
+    <a id="login" asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary btncolor btntext">Login<i class="fa-solid fa-right-to-bracket" style="margin-left: 5px;"></i></a>
 }

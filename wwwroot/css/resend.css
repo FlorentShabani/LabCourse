@@ -1,0 +1,15 @@
+body {
+  align-items: center;
+  padding-bottom: 40px;
+  height: auto;
+}
+
+.form-signin {
+    max-width: 450px;
+    padding: 30px;
+    margin: 12% auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}

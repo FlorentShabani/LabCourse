@@ -1,0 +1,111 @@
+﻿.slid {
+    background: #15151b;
+    display: grid;
+}
+
+body {
+    background: #15151b;
+}
+
+#slider-container {
+    height: 300px;
+    width: 85vw;
+    max-width: 980px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+    #slider-container .btn {
+        position: absolute;
+        top: calc(50% - 30px);
+        height: 30px;
+        width: 30px;
+        border-left: 8px solid #fee500;
+        border-top: 8px solid #fee500;
+    }
+
+        #slider-container .btn:hover {
+            transform: scale(1.2);
+        }
+
+        #slider-container .btn.inactive {
+            border-color: rgb(153, 121, 126)
+        }
+
+        #slider-container .btn:first-of-type {
+            transform: rotate(-45deg);
+            left: 10px
+        }
+
+        #slider-container .btn:last-of-type {
+            transform: rotate(135deg);
+            right: 10px;
+        }
+
+    #slider-container #slider {
+        display: flex;
+        width: 1000%;
+        height: 100%;
+        transition: all .5s;
+    }
+
+        #slider-container #slider .slide {
+            height: 90%;
+            margin: auto 10px;
+            display: grid;
+            place-items: center;
+        }
+
+            #slider-container #slider .slide span {
+                color: white;
+                font-size: 150px;
+            }
+
+@media only screen and (min-width: 1100px) {
+
+    #slider-container #slider .slide {
+        width: calc(2.% - 20px);
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+
+    #slider-container #slider .slide {
+        width: calc(3.3333333% - 20px);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    #slider-container #slider .slide {
+        width: calc(5% - 20px);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    #slider-container #slider .slide {
+        width: calc(10% - 20px);
+    }
+}
+
+
+.picture-card {
+    width: 200px; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.picture-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.picture-card__name {
+    margin-top: 10px;
+    font-weight: bold;
+}

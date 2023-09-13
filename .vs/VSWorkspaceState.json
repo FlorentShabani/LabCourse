@@ -4,11 +4,13 @@
     "\\Areas",
     "\\Areas\\Identity",
     "\\Areas\\Identity\\Data",
+    "\\Controllers",
     "\\Models",
     "\\Models\\Domain",
     "\\Views",
-    "\\Views\\City"
+    "\\Views\\City",
+    "\\Views\\Home"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\Travista.sln",
   "PreviewInSolutionExplorer": false
 }

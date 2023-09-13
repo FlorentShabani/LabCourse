@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using Travista.Data;
+using Travista.Models.Domain;
 using TravistaASP.Models;
 
 namespace TravistaASP.Controllers
@@ -7,10 +10,12 @@ namespace TravistaASP.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly TravistaContext _dBContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, TravistaContext _dBContext)
         {
             _logger = logger;
+            this._dBContext = _dBContext;
         }
 
         public IActionResult Index()
@@ -23,6 +28,33 @@ namespace TravistaASP.Controllers
             ViewData["Title"] = "Sign in";
             return View("~/Views/Home/Forms/login.cshtml");
 
+        }
+        public IActionResult GetSearchValue(string search)
+        {
+            List<City> allsearch = _dBContext.City
+                .Where(x => x.name.Contains(search))
+                .Select(x => new City
+                {
+                    ID_City = x.ID_City,
+                    name = x.name
+                })
+                .ToList();
+
+            return Json(allsearch);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetPostSearchValue(string search)
+        {
+            var city = await _dBContext.City.FirstOrDefaultAsync(x => x.name.ToLower() == search.ToLower());
+
+            if (city != null)
+            {
+                int ID_City = city.ID_City;
+            }
+
+            // Use the 'search' parameter in your logic
+            return RedirectToAction("ShowDestination", "Destination", new { Id = city.ID_City });
         }
 
         public IActionResult Signup()

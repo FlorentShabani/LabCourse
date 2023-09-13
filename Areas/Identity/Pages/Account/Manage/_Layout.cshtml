@@ -1,0 +1,41 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+@inject SignInManager<TravistaUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+
+<div class="container">
+    <h2 class="mt-5">Manage your <span class="txtcolor">account</span> and change your <span class="txtcolor">settings</span>.</h2>
+</div>
+<nav class="container navbar navbar-expand-lg navbar-dark nav-seccolor">
+        <div class="collapse navbar-collapse d-lg-flex">
+            <ul class="ms-1 navbar-nav col-lg-6 ">
+                <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">Profile</a></li>
+                <li class="nav-item"><a class="nav-link @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email">Email</a></li>
+                <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">Password</a></li>
+                @if (hasExternalLogins)
+                {
+                    <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">External logins</a></li>
+                }
+                <li class="nav-item"><a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" id="two-factor" asp-page="./TwoFactorAuthentication">Two-factor authentication</a></li>
+                <li class="nav-item"><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData">Personal data</a></li>
+            </ul>
+        </div>
+</nav>
+
+<main role="main">
+    @RenderBody()
+</main>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
