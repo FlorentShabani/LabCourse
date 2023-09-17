@@ -3,9 +3,6 @@
     display: grid;
 }
 
-body {
-    background: #15151b;
-}
 
 #slider-container {
     height: 300px;
@@ -43,21 +40,59 @@ body {
             right: 10px;
         }
 
-    #slider-container #slider {
+    #slider-container #slider1 {
         display: flex;
         width: 1000%;
         height: 100%;
         transition: all .5s;
     }
 
-        #slider-container #slider .slide {
+        #slider-container #slider1 .slide {
             height: 90%;
             margin: auto 10px;
             display: grid;
             place-items: center;
         }
 
-            #slider-container #slider .slide span {
+            #slider-container #slider1 .slide span {
+                color: white;
+                font-size: 150px;
+            }
+
+    #slider-container #slider2 {
+        display: flex;
+        width: 1000%;
+        height: 100%;
+        transition: all .5s;
+    }
+
+        #slider-container #slider2 .slide {
+            height: 90%;
+            margin: auto 10px;
+            display: grid;
+            place-items: center;
+        }
+
+            #slider-container #slider2 .slide span {
+                color: white;
+                font-size: 150px;
+            }
+
+    #slider-container #slider3 {
+        display: flex;
+        width: 1000%;
+        height: 100%;
+        transition: all .5s;
+    }
+
+        #slider-container #slider3 .slide {
+            height: 90%;
+            margin: auto 10px;
+            display: grid;
+            place-items: center;
+        }
+
+            #slider-container #slider3 .slide span {
                 color: white;
                 font-size: 150px;
             }
@@ -91,6 +126,12 @@ body {
 }
 
 
+.square-image img {
+    width: 200px; /* Set the width to your desired square size */
+    height: 181px; /* Set the height to match the width for a square */
+    overflow: hidden; /* Hide any content that exceeds the square size */
+}
+
 .picture-card {
     width: 200px; /* Adjust the width as needed */
     display: flex;
@@ -102,10 +143,15 @@ body {
 .picture-card__image {
     width: 100%;
     height: auto;
+    object-fit:cover;
     border-radius: 8px;
 }
 
 .picture-card__name {
     margin-top: 10px;
     font-weight: bold;
+}
+
+.text-container {
+    width: 300px;
 }

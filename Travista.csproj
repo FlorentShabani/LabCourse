@@ -65,6 +65,7 @@
     <Folder Include="Data\" />
     <Folder Include="Views\Admin\Dashboard\" />
     <Folder Include="Views\Home\Forms\" />
+    <Folder Include="wwwroot\images\slider\" />
   </ItemGroup>
 
 </Project>

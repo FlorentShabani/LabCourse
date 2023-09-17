@@ -28,8 +28,12 @@
                                         <label for="floatingInput">Name</label>
                                     </div>
                                     <div class="form-floating my-2">
-                                        <input type="text" class="form-control rounded-bottom mt-3" asp-for="Tag"
-                                               placeholder="Prishtina" required>
+                                        <select class="form-select rounded-bottom mt-3" required asp-for="Tag">
+                                            <option value="" disabled selected>Select an option</option>
+                                            <option value="Thing To Do">Thing To Do</option>
+                                            <option value="Food">Food</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                         <label for="floatingInput">Tag</label>
                                     </div>
                                     <div class="form-floating my-2">
@@ -40,13 +44,21 @@
                                     <hr class="featurette-divider">
                                     <h1 class="h2 fw-normal sectext">Address & Contact Info</h1>
                                     <div class="form-floating my-2">
-                                        <input type="text" class="form-control border border-info rounded-bottom mt-3" asp-for="ID_City"
-                                               placeholder="Filan Fisteku" required>
+                                        <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
+                                            <option value="" disabled selected>Select an option</option>
+                                            <option value="19">Ferizaj</option>
+                                            <option value="20">Gjakova</option>
+                                            <option value="12">Gjilan</option>
+                                            <option value="22">Mitrovica</option>
+                                            <option value="21">Peja</option>
+                                            <option value="13">Prishtina</option>
+                                            <option value="14">Prizren</option>
+                                        </select>
                                         <label for="floatingInput">City</label>
                                     </div>
                                     <div class="form-floating my-2">
                                         <input type="text" class="form-control rounded-bottom mt-3" asp-for="Address"
-                                               placeholder="Filan Fisteku" required readonly>
+                                               placeholder="Filan Fisteku" required>
                                         <label for="floatingInput">Street Address</label>
                                     </div>
                                     <div class="form-floating my-2">

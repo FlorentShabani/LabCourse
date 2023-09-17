@@ -1,7 +1,19 @@
-﻿* {
+﻿:root {
+    --text: #F1FAFE;
+    --sectext: #afafaf;
+    --background: #020d13;
+    --primary: #A43000;
+    --secondary: #03141c;
+    --accent: #A43000;
+}
+
+* {
     margin: 0;
     padding: 0;
     outline: 0;
+}
+body {
+    background-color: var(--background)
 }
 
 .filter {
@@ -19,7 +31,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     box-shadow: 0 2px 15px rgba(64,64,64,.7);
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px 12px 12px 12px;
     overflow: hidden;
 }
 
@@ -29,12 +41,17 @@ td, th {
 }
 
 th {
-    background-color: #363181;
+    background-color: var(--primary);
     color: #fafaf1;
     font-weight: 200;
     text-transform: uppercase;
-
 }
+    th:nth-child(even) {
+        background-color: var(--accent);
+    }
+    table tbody tr th:nth-child(1) {
+        background-color: var(--primary);
+    }
 
 tr {
     width: 60%;
@@ -46,7 +63,7 @@ tr {
     }
 
 td {
-    max-width: 150px; /* Change the value to adjust the maximum width */
+    max-width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

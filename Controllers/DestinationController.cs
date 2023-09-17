@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using Microsoft.AspNetCore.Identity;
 using Travista.Areas.Identity.Data;
+using System.Net.Http.Headers;
 
 namespace Travista.Controllers
 {
@@ -93,9 +94,47 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult ShowDestination(int ID_City)
+
+        public string GetCityNameById(int cityId)
         {
-            return View();
+            var city = _dBContext.City.FirstOrDefault(c => c.ID_City == cityId);
+
+            if (city != null)
+            {
+                return city.name;
+            }
+
+            return "City not found";
+        }
+
+        public async Task<IActionResult> ShowDestination(int desiredCity)
+        {
+            var dest = _dBContext.Destination
+                .Include(d => d.Reviews)
+                .Include(d => d.FK_City)
+                .Include(d => d.FK_Users)
+                .Where(d => d.ID_City == desiredCity)
+                .Take(10)
+                .ToList();
+
+            if (!dest.Any())
+            {
+                return View();
+            }
+
+
+            return View(dest);
+        }
+
+        public async Task<IActionResult> ShowDetails(int clickedDest)
+        {
+            var dest = await _dBContext.Destination
+                .Include(d => d.Reviews)
+                .Include(d => d.FK_City)
+                .Include(d => d.FK_Users)
+                .FirstOrDefaultAsync(d => d.ID_Destination == clickedDest);
+
+            return View(dest);
         }
 
         [Authorize]
@@ -147,6 +186,7 @@ namespace Travista.Controllers
                 {
                     ID_Destination = dest.ID_Destination,
                     Emri = dest.Emri,
+                    Tag = dest.Tag,
                     Description = dest.Description,
                     Address = dest.Address,
                     AdditionalAddress = dest.AdditionalAddress,
@@ -180,6 +220,7 @@ namespace Travista.Controllers
             {
                 dest.ID_Destination = model.ID_Destination;
                 dest.Emri = model.Emri;
+                dest.Tag = model.Tag;
                 dest.Description = model.Description;
                 dest.Address = model.Address;
                 dest.AdditionalAddress = model.AdditionalAddress;
@@ -187,7 +228,6 @@ namespace Travista.Controllers
                 dest.Longitude = model.Longitude;
                 dest.Latitude = model.Latitude;
                 dest.ID_City = model.ID_City;
-                dest.ID_Users = currentUser.Id;
 
                 await _dBContext.SaveChangesAsync();
 

@@ -1,0 +1,48 @@
+﻿@model Travista.Models.Domain.Destination
+@{
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/colorway.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/detailscarousel.css" asp-append-version="true">
+</head>
+
+<html>
+    <body>
+    <div class="slider">
+        <!-- Slides -->
+        <div class="slides">
+            <div class="slide active" id="slide-1">
+                <img src="@Url.Content(Model.Foto)" alt="image-1">
+            </div>
+            <div class="slide" id="slide-2">
+                <img src="~/images/slider/pht2.jpg" alt="image-2">
+            </div>
+            <div class="slide" id="slide-3">
+                <img src="~/images/slider/pht3.jpeg" alt="image-3">
+            </div>
+            <div class="slide" id="slide-4">
+                <img src="~/images/slider/pht4.jpg" alt="image-4">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls mt-5">
+            <button id="button-1" class="button">Image 1</button>
+            <button id="button-2" class="button">Image 2</button>
+            <button id="button-3" class="button">Image 3</button>
+            <button id="button-4" class="button">Image 4</button>
+        </div>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/js/car.js"></script>
+    <script src="~/js/search.js"></script>
+    <script src="~/js/slider.js"></script>
+
+    </body>
+</html>

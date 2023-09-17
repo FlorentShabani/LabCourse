@@ -1,3 +1,12 @@
+:root {
+    --text: #F1FAFE;
+    --sectext: #afafaf;
+    --background: #020d13;
+    --primary: #A43000;
+    --secondary: #03141c;
+    --accent: #A43000;
+}
+
 *, *::before, *::after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -19,9 +28,9 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #515151;
     text-align: left;
-    background-color: #e9edf4;
+    color: var(--background);
+    background-color: var(--background);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -132,7 +141,7 @@ h1, .h1 {
     top: 0;
     bottom: 0;
     overflow: auto;
-    background-color: #373193;
+    background-color: var(--accent);
 }
 
 .dashboard-compact .dashboard-nav {
@@ -170,7 +179,7 @@ h1, .h1 {
 }
 
 .dashboard-nav {
-    background-color: #363181;
+    background-color: var(--accent);
 }
 
 .dashboard-nav a {
@@ -190,6 +199,68 @@ h1, .h1 {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+}
+
+.siform {
+    background-color: var(--text)
+}
+
+.btncolor {
+    background-color: var(--primary);
+}
+
+    .btncolor i.fa {
+        background-color: var(--text);
+    }
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--primary);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-color: var(--secondary);
+    --bs-btn-hover-bg: var(--accent);
+    --bs-btn-hover-border-color: var(--accent);
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: var(--text);
+    --bs-btn-active-bg: var(--secondary);
+    --bs-btn-active-border-color: var(--accent);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--accent);
+    --bs-btn-disabled-bg: var(--accent);
+    --bs-btn-disabled-border-color: var(--accent);
+}
+
+.btntext {
+    color: var(--text);
+}
+
+.btn:hover {
+    background-color: var(--accent);
+}
+
+.txtcolor {
+    color: var(--primary);
+}
+
+.txtcoloraccent {
+    color: var(--accent);
+}
+
+.sectext {
+    color: var(--sectext);
+}
+
+.border {
+    border: 2px var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.border-info {
+    --bs-border-opacity: 1;
+    border-color: var(--primary) !important;
+}
+
+.form-signin h2 {
+    color: var(--secondary)
 }
 
 .brand-logo:focus, .brand-logo:active, .brand-logo:hover {
@@ -338,7 +409,7 @@ h1, .h1 {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    color: #443ea2;
+    color: var(--accent);
 }
 
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
@@ -352,7 +423,7 @@ h1, .h1 {
 
 .dashboard-toolbar {
     min-height: 84px;
-    background-color: #dfdfdf;
+    background-color: var(--secondary);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

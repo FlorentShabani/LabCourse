@@ -26,8 +26,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Tag" placeholder="Prishtina">
-                        <label for="">Tag</label>
+                        <select class="form-select rounded-bottom mt-2" required asp-for="Tag">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Thing To Do">Thing To Do</option>
+                            <option value="Food">Food</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="floatingInput">Tag</label>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -59,21 +64,22 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_City"
-                               placeholder="Filan Fisteku">
+                        <select class="form-select rounded-bottom mt-2" required asp-for="ID_City">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="19">Ferizaj</option>
+                            <option value="20">Gjakova</option>
+                            <option value="12">Gjilan</option>
+                            <option value="22">Mitrovica</option>
+                            <option value="21">Peja</option>
+                            <option value="13">Prishtina</option>
+                            <option value="14">Prizren</option>
+                        </select>
                         <label for="">City ID</label>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_Users"
-                               placeholder="Filan Fisteku">
-                        <label for="">User ID</label>
-                    </div>
-                </div>
 
                 <div class="col-md-12">
                     <div class="input-group align-items-center mb-2">

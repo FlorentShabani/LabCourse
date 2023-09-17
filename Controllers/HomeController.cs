@@ -23,12 +23,6 @@ namespace TravistaASP.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            ViewData["Title"] = "Sign in";
-            return View("~/Views/Home/Forms/login.cshtml");
-
-        }
         public IActionResult GetSearchValue(string search)
         {
             List<City> allsearch = _dBContext.City
@@ -48,13 +42,14 @@ namespace TravistaASP.Controllers
         {
             var city = await _dBContext.City.FirstOrDefaultAsync(x => x.name.ToLower() == search.ToLower());
 
+            int ID_City;
+
             if (city != null)
             {
-                int ID_City = city.ID_City;
+                ID_City = city.ID_City;
             }
 
-            // Use the 'search' parameter in your logic
-            return RedirectToAction("ShowDestination", "Destination", new { Id = city.ID_City });
+            return RedirectToAction("ShowDestination", "Destination", new { desiredCity = city.ID_City });
         }
 
         public IActionResult Signup()

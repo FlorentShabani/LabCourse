@@ -1,0 +1,47 @@
+﻿
+
+.slider {
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    border: 2px solid rgb(56, 56, 56);
+}
+
+.slide {
+    width: 100%;
+    height: 650px;
+}
+
+    .slide:not(.active) {
+        display: none;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.controls {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.button {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(56, 56, 56, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    .button:hover {
+        transition: all .4s;
+        transform: scale(1.05);
+        background: rgba(56, 56, 56);
+        /* outline: 1px solid white; */
+    }

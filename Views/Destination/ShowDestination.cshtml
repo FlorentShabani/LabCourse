@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Travista.Models.Domain.Destination>
 @{
 }
 <html lang="en">
@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="~/css/carousel.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/jquery.css">
     <link rel="stylesheet" href="~/css/product-details.css">
+    <link rel="stylesheet" href="~/css/colorway.css">
 </head>
 
 
@@ -13,66 +14,134 @@
     <main>
         <div class="container">
 
-            <div class="h1 text-white mt-5"><span class="txtcolor">Explore</span> Name
+            <div class="h1 text-white mt-5">
+                <span class="txtcolor">Explore</span> @{
+                    if (Model != null)
+                    {
+                        @Model[0].FK_City.name
+                    }
+                    else
+                    {
+                        <div>Travista</div>
+                    }
+                }
             </div>
             
-            <div id="container" class="d-flex justify-content-center">
-                <div class="fw-semibold text-white mt-5 h2">
+            <div id="container1" class="d-flex justify-content-center">
+                <div class="fw-semibold text-white mt-5 h2 text-container">
                     Things To Do<br>
 
                     <div class="mt-2 lead">Places to see, ways to wander, and signature experiences.</div>
                 </div>
                 <div id="slider-container">
                     <span onclick="slideRight()" class="btn"></span>
-                    <div id="slider">
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
+                    <div id="slider1">
+                        @{
+                            int countTTD = 0;
+                            foreach (var dest in Model)
+                            {
+                                if (dest.Tag.ToLower().Equals("thing to do"))
+                                {
+                                    countTTD++;
+                                    <div class="slide">
+                                        <div class="picture-card card-img-top square-image">
+                                            <a href="@Url.Action("ShowDetails", "Destination", new{ clickedDest = dest.ID_Destination })">
+                                                <img loading="lazy" decoding="async" src="@Url.Content(dest.Foto)" alt="Image" class="picture-card__image img-fluid">
+                                                <div class="fw-semibold lh-1 mt-3 text-white">@dest.Emri</div>
+                                            </a>
+                                            @if (dest.Reviews.Any())
+                                            {
+                                                <div class="fw-semibold lh-1 mt-3 text-white">Rating: @dest.Reviews.First().Rating</div>
+                                            }
+                                            else
+                                            {
+                                                <div class="fw-semibold lh-1 mt-3 text-white">@dest.Tag</div>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            if (countTTD <=  4)
+                            {
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    <div class="slide">
+                                        <div class="picture-card card-img-top square-image">
+                                            <img loading ="lazy" decoding="async" src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image img-fluid">
+                                            <div class="fw-semibold lh-1 mt-3 text-white">Placeholder</div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
                     </div>
                     <span onclick="slideLeft()" class="btn"></span>
                 </div>
             </div>
 
-            <div id="container" class="d-flex justify-content-center">
-                <div class="fw-semibold text-white mt-5 h2">
+            <div id="container2" class="d-flex justify-content-center">
+                <div class="fw-semibold text-white mt-5 h2 text-container">
                     Food<br>
 
-                    <div class="mt-2 lead">Places to see, ways to wander, and signature experiences.</div>
+                    <div class="mt-2 lead">Indulge in a culinary adventure, with these must-do food experiences.</div>
                 </div>
                 <div id="slider-container">
                     <span onclick="slideRight()" class="btn"></span>
-                    <div id="slider">
+                    <div id="slider2">
+                        @{  
+                            int countFood = 0;
+                            foreach (var dest in Model)
+                            {
+                                if (dest.Tag.Equals("Food"))
+                                {
+                                    countFood++;
+                                    <div class="slide">
+                                        <div class="picture-card card-img-top square-image">
+                                            <img loading="lazy" decoding="async" src="@Url.Content(dest.Foto)" alt="Image" class="picture-card__image img-fluid">
+                                            <div class="fw-semibold lh-1 mt-3 text-white">@dest.Emri</div>
+                                            @if (dest.Reviews.Any())
+                                            {
+                                                <div class="fw-semibold lh-1 mt-3 text-white">Rating: @dest.Reviews.First().Rating</div>
+                                            }
+                                            else
+                                            {
+                                                <div class="fw-semibold lh-1 mt-3 text-white">@dest.Tag</div>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            if (countFood <= 4)
+                            {
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    <div class="slide">
+                                        <div class="picture-card card-img-top square-image">
+                                            <img loading="lazy" decoding="async" src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image img-fluid">
+                                            <div class="fw-semibold lh-1 mt-3 text-white">Placeholder</div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                    <span onclick="slideLeft()" class="btn"></span>
+                </div>
+
+            </div>
+            <div id="container3" class="d-flex justify-content-center">
+                <div class="fw-semibold text-white mt-5 h2 text-container">
+                    Hotel<br>
+
+                    <div class="mt-2 lead">Discover the art of hospitality with these enticing hotel experiences.</div>
+                </div>
+                <div id="slider-container">
+                    <span onclick="slideRight()" class="btn"></span>
+                    <div id="slider3">
                         <div class="slide">
                             <div class="picture-card">
                                 <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
+                                <div class="fw-semibold lh-1 mt-3 text-white">Test</div>
                             </div>
                         </div>
                         <div class="slide">

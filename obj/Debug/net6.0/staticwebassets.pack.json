@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\css\\destination_form.css"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\css\\detailscarousel.css",
+      "PackagePath": "staticwebassets\\css\\detailscarousel.css"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\css\\dropdown.css",
       "PackagePath": "staticwebassets\\css\\dropdown.css"
     },
@@ -273,6 +277,22 @@
       "PackagePath": "staticwebassets\\images\\search2.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\slider\\pht1.jpg",
+      "PackagePath": "staticwebassets\\images\\slider\\pht1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\slider\\pht2.jpg",
+      "PackagePath": "staticwebassets\\images\\slider\\pht2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\slider\\pht3.jpeg",
+      "PackagePath": "staticwebassets\\images\\slider\\pht3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\slider\\pht4.jpg",
+      "PackagePath": "staticwebassets\\images\\slider\\pht4.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\thumbnails\\brezovica_thumb.jpg",
       "PackagePath": "staticwebassets\\images\\thumbnails\\brezovica_thumb.jpg"
     },
@@ -295,6 +315,10 @@
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\wip.jpg",
       "PackagePath": "staticwebassets\\images\\wip.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\js\\car.js",
+      "PackagePath": "staticwebassets\\js\\car.js"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\js\\googlemap.js",
@@ -2129,8 +2153,16 @@
       "PackagePath": "staticwebassets\\uploads\\0961b566-a2af-4ef2-ac11-bc21181acdd2.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\09bce307-22ef-4b12-839d-15800f3a470a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\09bce307-22ef-4b12-839d-15800f3a470a.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\0cb01891-a97b-4954-9f3b-148a53dca357.png",
       "PackagePath": "staticwebassets\\uploads\\0cb01891-a97b-4954-9f3b-148a53dca357.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\0daa4f31-f255-41cd-9b12-6e8f46e04f3c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0daa4f31-f255-41cd-9b12-6e8f46e04f3c.jpg"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\0ea0cef8-8d1d-4a8c-a291-cb67b41e399e.png",
@@ -2145,8 +2177,20 @@
       "PackagePath": "staticwebassets\\uploads\\148fc186-5b23-4fe4-af34-c1569ce473e6.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\15620498-ab55-4f0f-9c9c-fd03c2760657.png",
+      "PackagePath": "staticwebassets\\uploads\\15620498-ab55-4f0f-9c9c-fd03c2760657.png"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\18160f73-c3db-4ddf-a908-e6db30c3978a.png",
       "PackagePath": "staticwebassets\\uploads\\18160f73-c3db-4ddf-a908-e6db30c3978a.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\1b90a675-e008-46c2-a436-535ee39959fb.png",
+      "PackagePath": "staticwebassets\\uploads\\1b90a675-e008-46c2-a436-535ee39959fb.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\250f1327-6646-47a0-a3b2-28d12abd8552.png",
+      "PackagePath": "staticwebassets\\uploads\\250f1327-6646-47a0-a3b2-28d12abd8552.png"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\2be57ee2-3913-4de8-964c-0a1323eaf7aa.png",
@@ -2173,12 +2217,24 @@
       "PackagePath": "staticwebassets\\uploads\\4b7c9e0d-cbf1-4c03-a2af-f80cbcd96244.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\4f0c2a69-7f7a-4203-8602-ad531fada6a9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4f0c2a69-7f7a-4203-8602-ad531fada6a9.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\521702cf-4425-482c-83d5-1dcb6c122afa.png",
       "PackagePath": "staticwebassets\\uploads\\521702cf-4425-482c-83d5-1dcb6c122afa.png"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\5867814c-c9a4-4e5c-82a8-e9176919fd21.png",
       "PackagePath": "staticwebassets\\uploads\\5867814c-c9a4-4e5c-82a8-e9176919fd21.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\591bcb20-b973-4284-9722-d0b006943abf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\591bcb20-b973-4284-9722-d0b006943abf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\594083d8-595c-4e55-a495-f7a429212f3c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\594083d8-595c-4e55-a495-f7a429212f3c.jpg"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\664c5056-4e81-4991-b10a-44ad86d613c2.png",
@@ -2197,12 +2253,36 @@
       "PackagePath": "staticwebassets\\uploads\\71d18129-d0eb-42b4-b5fc-f49dcd329a17.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\78ab85f3-bfe5-4042-8361-48af7b550c05.jpg",
+      "PackagePath": "staticwebassets\\uploads\\78ab85f3-bfe5-4042-8361-48af7b550c05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\7cdae81c-ca33-4b44-9f96-0b00f81cb5c2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7cdae81c-ca33-4b44-9f96-0b00f81cb5c2.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\841b89d9-71d0-46d2-a3de-1cf56799b8bb.png",
       "PackagePath": "staticwebassets\\uploads\\841b89d9-71d0-46d2-a3de-1cf56799b8bb.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\8694e9f0-6ee8-4e83-a72c-7090c7f58120.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8694e9f0-6ee8-4e83-a72c-7090c7f58120.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\8991c1e9-13b8-4b0b-a17a-699d5c91e976.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8991c1e9-13b8-4b0b-a17a-699d5c91e976.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\8b631e2a-41eb-4b29-bb9b-cc4e36247afb.png",
       "PackagePath": "staticwebassets\\uploads\\8b631e2a-41eb-4b29-bb9b-cc4e36247afb.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\911a5a22-fabd-40c2-b223-107b56489db5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\911a5a22-fabd-40c2-b223-107b56489db5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\91d8b8e2-b64e-43a5-8e9a-4c30fc052e28.png",
+      "PackagePath": "staticwebassets\\uploads\\91d8b8e2-b64e-43a5-8e9a-4c30fc052e28.png"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\94303f08-68a2-413b-87ba-40adb39e9d10.png",
@@ -2217,8 +2297,20 @@
       "PackagePath": "staticwebassets\\uploads\\9ae33242-efa9-461e-9b86-4383632f8234.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\a910b7b9-e0d9-4806-93aa-94605ba2705a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a910b7b9-e0d9-4806-93aa-94605ba2705a.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\adb34281-1a6c-4e02-a052-97181320804e.png",
       "PackagePath": "staticwebassets\\uploads\\adb34281-1a6c-4e02-a052-97181320804e.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\bcdff91a-dc3c-4665-8e7d-ecd33a85f771.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bcdff91a-dc3c-4665-8e7d-ecd33a85f771.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\be0079b0-996f-4d19-8da5-81538778996c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\be0079b0-996f-4d19-8da5-81538778996c.jpg"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\c2043208-53d7-4384-93db-d640592d8599.png",
@@ -2227,6 +2319,14 @@
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\c206cfdf-14a0-4fd7-80af-109526796247.png",
       "PackagePath": "staticwebassets\\uploads\\c206cfdf-14a0-4fd7-80af-109526796247.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\c2e82302-0e43-49bd-bfb4-fbef6ca12d70.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c2e82302-0e43-49bd-bfb4-fbef6ca12d70.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\c754023c-e4da-4198-945f-cea4275a9e97.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c754023c-e4da-4198-945f-cea4275a9e97.jpg"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\c7cec25c-37bc-4815-b3b5-e622f0b71471.png",
@@ -2253,8 +2353,28 @@
       "PackagePath": "staticwebassets\\uploads\\e111b32d-5416-43dd-838f-dcef36a7494e.png"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\e4cd753c-81fa-495a-a527-dba621a79cd4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e4cd753c-81fa-495a-a527-dba621a79cd4.jpg"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\e753fc16-d0c1-4952-afde-a327767844d6.png",
       "PackagePath": "staticwebassets\\uploads\\e753fc16-d0c1-4952-afde-a327767844d6.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\e7db663c-3674-4a58-ac78-cf0a8081d3cb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e7db663c-3674-4a58-ac78-cf0a8081d3cb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\f19e7d8c-fd3b-4ca0-901e-5fa2ca3551a9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f19e7d8c-fd3b-4ca0-901e-5fa2ca3551a9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\f8004c0e-42c5-439d-9d32-cd9f41c13113.png",
+      "PackagePath": "staticwebassets\\uploads\\f8004c0e-42c5-439d-9d32-cd9f41c13113.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\uploads\\f8503efc-a592-489d-b193-2be0888293bb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f8503efc-a592-489d-b193-2be0888293bb.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Travista.Microsoft.AspNetCore.StaticWebAssets.props",
