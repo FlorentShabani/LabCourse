@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZIsgCvwF2HwbRobkgLUg2O0GFhCDjUpxKrnyMoUfVpw=",
+  "Hash": "UldIY3p4ZynRnQ59RvLPbGYdbOYREe67wZ/O3rZagb4=",
   "Source": "Travista",
   "BasePath": "_content/Travista",
   "Mode": "Default",
@@ -2057,6 +2057,23 @@
       "OriginalItemSpec": "wwwroot\\css\\travelagency_addform.css"
     },
     {
+      "Identity": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\css\\weather.css",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "css/weather.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\weather.css"
+    },
+    {
       "Identity": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\favicon.ico",
       "SourceId": "Travista",
       "SourceType": "Discovered",
@@ -2378,6 +2395,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\travista-light.png"
+    },
+    {
+      "Identity": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\weather.jpg",
+      "SourceId": "Travista",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\",
+      "BasePath": "_content/Travista",
+      "RelativePath": "images/weather.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\weather.jpg"
     },
     {
       "Identity": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\wip.jpg",

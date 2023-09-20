@@ -237,6 +237,10 @@
       "PackagePath": "staticwebassets\\css\\travelagency_addform.css"
     },
     {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\css\\weather.css",
+      "PackagePath": "staticwebassets\\css\\weather.css"
+    },
+    {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -311,6 +315,10 @@
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\travista-light.png",
       "PackagePath": "staticwebassets\\images\\travista-light.png"
+    },
+    {
+      "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\weather.jpg",
+      "PackagePath": "staticwebassets\\images\\weather.jpg"
     },
     {
       "Id": "C:\\Users\\38344\\source\\repos\\FlorentShabani\\Travista\\wwwroot\\images\\wip.jpg",

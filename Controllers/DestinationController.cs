@@ -1,18 +1,11 @@
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 using Travista.Data;
-using Travista.Models;
 using Travista.Models.Domain;
-using Microsoft.AspNetCore.Hosting;
-using static System.Net.Mime.MediaTypeNames;
-using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using Microsoft.AspNetCore.Identity;
 using Travista.Areas.Identity.Data;
-using System.Net.Http.Headers;
 
 namespace Travista.Controllers
 {
@@ -22,11 +15,11 @@ namespace Travista.Controllers
         private readonly IWebHostEnvironment _env;
         private readonly UserManager<TravistaUser> _userManager;
 
-        public DestinationController(TravistaContext _dBContext, IWebHostEnvironment env, UserManager<TravistaUser> userManager)
+        public DestinationController(TravistaContext _dBContext, IWebHostEnvironment _env, UserManager<TravistaUser> _userManager)
         {
             this._dBContext = _dBContext;
-            this._env = env;
-            _userManager = userManager;
+            this._env = _env;
+            this._userManager = _userManager;
         }
 
         [Authorize(Roles = "Administrator")]
@@ -119,12 +112,13 @@ namespace Travista.Controllers
 
             if (!dest.Any())
             {
-                return View();
+                return RedirectToAction("Index", "Home");
             }
 
 
             return View(dest);
         }
+
 
         public async Task<IActionResult> ShowDetails(int clickedDest)
         {
@@ -136,6 +130,37 @@ namespace Travista.Controllers
 
             return View(dest);
         }
+
+        
+
+        /*
+        public async Task<IActionResult> FetchWeather(Destination userSearch)
+        {
+            string cityName = userSearch.FK_City.name;
+
+            string weather = "API_KEY";
+            string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={weather}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string weatherData = await response.Content.ReadAsStringAsync();
+
+                    // Pass the weather data to your Razor view
+                    ViewBag.WeatherData = weatherData;
+                }
+                else
+                {
+                    return View("Index");
+                }
+            }
+
+            return View();
+        }
+        */
 
         [Authorize]
         public IActionResult AddUserDestination()

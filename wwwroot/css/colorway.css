@@ -115,3 +115,16 @@ p{
 .textsize {
     font-size: 1.8rem;
 }
+
+.txtmain {
+    color: var(--text);
+}
+
+.txtsec {
+    color: var(--sectext);
+}
+
+    .fa.fa-star.checked {
+        color: var(--primary);
+        fill: var(--primary)
+    }

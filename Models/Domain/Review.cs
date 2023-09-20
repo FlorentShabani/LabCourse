@@ -11,7 +11,7 @@ namespace Travista.Models.Domain
         [Key]
         public int ID_Reviews { get; set; }
 
-        public string Rating { get; set; }
+        public int Rating { get; set; }
 
         public string Comment { get; set; }
 

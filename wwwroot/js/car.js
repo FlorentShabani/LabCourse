@@ -1,7 +1,7 @@
 ﻿let currentActive = 1;
 
 const incrementActive = () => {
-    if (currentActive < 4) {
+    if (currentActive < 5) {
         currentActive++;
     } else {
         currentActive = 1;
