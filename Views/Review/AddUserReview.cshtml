@@ -2,45 +2,72 @@
 @{
 }
 <html lang="en">
-<head>
+<head>  
     <link rel="stylesheet" href="~/css/review_form.css" asp-append-version="true">
-    <script src="/js/star.js"></script>
+    <link rel="stylesheet" href="~/css/star.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/colorway.css" asp-append-version="true">
 </head>
 <body>
     <main>
 
             <div class="container">
                 <div class="container">
-                    <img src="../images/forms/reviews.png" class="img-fluid border rounded-3 shadow-lg mt-5 mb-3"
+                    <img src="../images/forms/reviews.png" class="img-fluid rounded-3 shadow mt-5 mb-3"
                          alt="Example image" width="1260" height="500" loading="lazy">
                 </div>
 
-                <form asp-action="AddUserReview" asp-controller="Review">
+                <form asp-action="AddUserReviewPost" asp-controller="Review">
                 <div class="form-dest">
                     <h1 class="display-4 my-5 fw-bold">Add a review on $name</h1>
                     <h1 class="display-6 mt-5 mb-10 fw-bold">Tell us about your review?</h1>
                     <h1 class="h2 fw-normal">Rating & Comment</h1>
                     <div class="form-small">
-                        <p>Select a rating:</p>
-                        <div class="form-floating my-2">
-                            <input type="number" min="1" max="5" class="form-control rounded-bottom mt-2" asp-for="Rating" placeholder="Prishtina">
-                            <label for="">Rating</label>
-                        </div>
-                        <div class="form-floating my-2">
-                            <textarea class="form-control" placeholder="Leave a comment here" asp-for="Comment" required
+                        <p class="mt-3">Select a rating:</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                <div class="stars">
+                                    <input class="star star-5" id="star-5" type="radio" asp-for="Rating" value="5" />
+                                    <label class="star star-5" for="star-5"></label>
+
+                                    <input class="star star-4" id="star-4" type="radio" asp-for="Rating" value="4" />
+                                    <label class="star star-4" for="star-4"></label>
+
+                                    <input class="star star-3" id="star-3" type="radio" asp-for="Rating" value="3" />
+                                    <label class="star star-3" for="star-3"></label>
+
+                                    <input class="star star-2" id="star-2" type="radio" asp-for="Rating" value="2" />
+                                    <label class="star star-2" for="star-2"></label>
+
+                                    <input class="star star-1" id="star-1" type="radio" asp-for="Rating" value="1" />
+                                    <label class="star star-1" for="star-1"></label>
+                                </div>
+                                </div>
+                            </div>
+                        <div class="form-floating mt-2">
+                            <textarea class="form-control" placeholder="Leave a comment here" maxlength="8000" asp-for="Comment" required
                                       style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">Comment</label>
-                        </div>
-                        <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-3" asp-for="ID_Destination" required
-                                   placeholder="Avoid North Mitrovica">
-                            <label for="floatingInput">Title</label>
+                            <label for="floatingTextarea2">How was your experience?</label>
                         </div>
 
-
+                        <row class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mt-2">
+                                    <input type="text" class="form-control rounded-bottom mt-3" asp-for="ID_Destination"
+                                           placeholder="Filan Fisteku" readonly required>
+                                    <label for="floatingInput">Destination ID</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mt-2">
+                                    <input type="text" class="form-control rounded-bottom mt-3" asp-for="ID_Users"
+                                           placeholder="Filan Fisteku" readonly required>
+                                    <label for="floatingInput">Your Name</label>
+                                </div>
+                            </div>
+                        </row>
 
                         <div class="form-floating my-2">
-                            <button type="submit" class="btn btn-primary mt-3">Post it</button>
+                            <button type="submit" class="w-100 btn btn-primary btncolor btntext btn-lg mt-2"><i class="fa-regular fa-paper-plane" style="margin-right: 5px;"></i>Post it!</button>
                         </div>
                     </div>
                 </div>

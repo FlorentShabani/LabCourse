@@ -23,6 +23,11 @@ namespace TravistaASP.Controllers
             return View();
         }
 
+        public IActionResult Oops()
+        {
+            return View("Oops");
+        }
+
         public IActionResult GetSearchValue(string search)
         {
             List<City> allsearch = _dBContext.City
@@ -40,6 +45,11 @@ namespace TravistaASP.Controllers
         [HttpPost]
         public async Task<IActionResult> GetPostSearchValue(string search)
         {
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                return RedirectToAction("Oops", "Home");
+            }
+
             var city = await _dBContext.City.FirstOrDefaultAsync(x => x.name.ToLower() == search.ToLower());
 
             int ID_City;
@@ -47,9 +57,10 @@ namespace TravistaASP.Controllers
             if (city != null)
             {
                 ID_City = city.ID_City;
+                return RedirectToAction("ShowDestination", "Destination", new { desiredCity = city.ID_City });
             }
 
-            return RedirectToAction("ShowDestination", "Destination", new { desiredCity = city.ID_City });
+            return RedirectToAction("Oops", "Home");
         }
 
         public IActionResult Signup()

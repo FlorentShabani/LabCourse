@@ -54,4 +54,6 @@ public class TravelAgency
     [StringLength(50)]
     [EmailAddress]
     public string email { get; set; }
+
+    public virtual ICollection<Images> Images { get; set; }
 }

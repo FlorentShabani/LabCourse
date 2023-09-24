@@ -84,13 +84,13 @@
                 <div class="col-md-12">
                     <div class="input-group align-items-center mb-2">
                         <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
-                        <input type="file" class="form-control form-control-lg mt-2" asp-for="Foto">
+                        <input type="file" class="form-control form-control-lg mt-2" multiple name="img">
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <textarea class="form-control" placeholder="Leave a comment here" asp-for="Description" style="height: 100px"></textarea>
+                        <textarea class="form-control" maxlength="8000" placeholder="Leave a comment here" asp-for="Description" style="height: 100px"></textarea>
                         <label for="">Description</label>
                     </div>
                 </div>

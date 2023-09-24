@@ -30,7 +30,6 @@ public class Destination
 
     [Required]
     public string Latitude { get; set; }
-    public string Foto { get; set; }
 
     [Required]
     public int ID_City { get; set; }
@@ -49,6 +48,8 @@ public class Destination
     public virtual City FK_City { get; set; }
 
     public virtual ICollection<Review> Reviews { get; set; }
+
+    public virtual ICollection<Images> Images { get; set; }
 
 }
 

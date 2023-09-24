@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Travista.Controllers;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Travista
 {
@@ -7,6 +10,9 @@ namespace Travista
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
+            services.AddTransient<ImageController>();
+            services.AddTransient<DestinationController>();
+
         }
 
         public void Configure(IApplicationBuilder app)

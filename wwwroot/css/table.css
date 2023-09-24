@@ -12,8 +12,20 @@
     padding: 0;
     outline: 0;
 }
+
 body {
-    background-color: var(--background)
+    background-color: var(--background);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+.mx-custom {
+    margin-right: 10rem!important;
+    margin-left: 8rem!important;
 }
 
 .filter {
@@ -63,8 +75,15 @@ tr {
     }
 
 td {
-    max-width: 150px;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+img {
+    max-width: 50%;
+    max-height: 30%;
+    object-fit: cover;
+    overflow: hidden;
 }

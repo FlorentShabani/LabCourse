@@ -37,7 +37,7 @@
                                         <label for="floatingInput">Tag</label>
                                     </div>
                                     <div class="form-floating my-2">
-                                        <textarea class="form-control mt-3" placeholder="Leave a comment here" asp-for="Description"
+                                        <textarea class="form-control mt-3" maxlength="8000" placeholder="Leave a comment here" asp-for="Description"
                                                   style="height: 100px" required></textarea>
                                         <label for="floatingTextarea2">Description</label>
                                     </div>
@@ -81,7 +81,7 @@
                                     <div class="input-group align-items-center my-2">
                                         <label class="input-group-text mt-2" for="floatingUpload"
                                                style="height: 48px;">Upload</label>
-                                        <input type="file" class="form-control form-control-lg mt-2" asp-for="Foto" id="floatingUpload" required>
+                                        <input type="file" class="form-control form-control-lg mt-2" name="img" multiple id="floatingUpload" required>
                                     </div>
                                     <div class="form-floating my-2">
                                         <button type="submit" class="w-100 btn btn-primary btncolor btntext btn-lg mt-2"><i class="fa-regular fa-paper-plane" style="margin-right: 5px;"></i>Post it!</button>

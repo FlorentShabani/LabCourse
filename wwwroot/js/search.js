@@ -1,4 +1,5 @@
 ﻿$("#searchInput").autocomplete({
+    delay: 100,
     source: function (request, response) {
         $.ajax({
             url: '/Home/GetSearchValue',
@@ -17,27 +18,30 @@
     select: function (event, ui) {
         $("#searchInput").val(ui.item.label);
         $("#ID_City").val(ui.item.value);
-        $("#searchValue").val($("#searchInput").val()); // Set the value of the 'searchValue' input field
+        $("#searchValue").val($("#searchInput").val());
         return false;
     }
 });
 
 function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
 
     var input = document.getElementById("searchInput");
     var cityId = input.value;
 
-    if (cityId) {
+    if (cityId != null) {
         var form = event.target;
         form.action = form.action + "?ID_City=" + encodeURIComponent(cityId);
         form.submit();
     }
 }
 
-// Submit the form when Enter key is pressed
 document.getElementById("searchInput").addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) { // Enter key code
-        submitForm(event);
+    if (event.keyCode === 13) {
+        if ($("#searchInput").autocomplete("instance").menu.active) {
+            event.preventDefault();
+        } else {
+            submitForm(event);
+        }
     }
 });

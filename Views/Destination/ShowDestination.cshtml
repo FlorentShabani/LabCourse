@@ -46,17 +46,37 @@
                                     <div class="slide">
                                         <div class="picture-card card-img-top square-image">
                                             <a href="@Url.Action("ShowDetails", "Destination", new{ clickedDest = dest.ID_Destination })">
-                                                <img loading="lazy" decoding="async" src="@Url.Content(dest.Foto)" alt="Image" class="picture-card__image img-fluid">
-                                                <div class="fw-semibold lh-1 mt-3 text-white">@dest.Emri</div>
+                                                @if (dest.Images !=null && dest.Images.Any())
+                                                {
+                                                    var random = new Random();
+                                                    var randomIndex = random.Next(0, dest.Images.Count);
+                                                    var randomImage = dest.Images.ElementAt(randomIndex);
+
+                                                    <img loading="lazy" decoding="async" src="@Url.Content(randomImage.ImagePath)" alt="Image" class="picture-card__image img-fluid">
+                                                }
+                                                else
+                                                {
+                                                    <img loading="lazy" decoding="async" src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image img-fluid">
+                                                }
+                                                <div class="fw-semibold fs-5 lh-1 mt-3 text-white text-center">@dest.Emri</div>
+
+                                                @if (dest.Reviews.Any())
+                                                {
+                                                    double averageRating = dest.Reviews.Average(review => review.Rating);
+                                                    int countRating = dest.Reviews.Count();
+
+                                                    <div class="fw-semibold lh-1 mt-2 text-center txtcolor">
+                                                        Rating: @averageRating
+                                                        <strong class="txtcoloraccent">
+                                                            (@countRating)
+                                                        </strong>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="fw-semibold lh-1 mt-2 txtcolor text-center">No Reviews :(</div>
+                                                }
                                             </a>
-                                            @if (dest.Reviews.Any())
-                                            {
-                                                <div class="fw-semibold lh-1 mt-3 text-white">Rating: @dest.Reviews.First().Rating</div>
-                                            }
-                                            else
-                                            {
-                                                <div class="fw-semibold lh-1 mt-3 text-white">@dest.Tag</div>
-                                            }
                                         </div>
                                     </div>
                                 }
@@ -97,16 +117,38 @@
                                     countFood++;
                                     <div class="slide">
                                         <div class="picture-card card-img-top square-image">
-                                            <img loading="lazy" decoding="async" src="@Url.Content(dest.Foto)" alt="Image" class="picture-card__image img-fluid">
-                                            <div class="fw-semibold lh-1 mt-3 text-white">@dest.Emri</div>
-                                            @if (dest.Reviews.Any())
-                                            {
-                                                <div class="fw-semibold lh-1 mt-3 text-white">Rating: @dest.Reviews.First().Rating</div>
-                                            }
-                                            else
-                                            {
-                                                <div class="fw-semibold lh-1 mt-3 text-white">@dest.Tag</div>
-                                            }
+                                            <a href="@Url.Action("ShowDetails", "Destination", new{ clickedDest = dest.ID_Destination })">
+                                                @if (dest.Images != null && dest.Images.Any())
+                                                {
+                                                    var random = new Random();
+                                                    var randomIndex = random.Next(0, dest.Images.Count);
+                                                    var randomImage = dest.Images.ElementAt(randomIndex);
+
+                                                    <img loading="lazy" decoding="async" src="@Url.Content(randomImage.ImagePath)" alt="Image" class="picture-card__image img-fluid">
+                                                }
+                                                else
+                                                {
+                                                    <img loading="lazy" decoding="async" src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image img-fluid">
+                                                }
+                                                <div class="fw-semibold fs-5 lh-1 mt-3 text-white text-center">@dest.Emri</div>
+
+                                                @if (dest.Reviews.Any())
+                                                {
+                                                    double averageRating = dest.Reviews.Average(review => review.Rating);
+                                                    int countRating = dest.Reviews.Count();
+
+                                                    <div class="fw-semibold lh-1 mt-2 text-center txtcolor">
+                                                        Rating: @averageRating
+                                                        <strong class="txtcoloraccent">
+                                                            (@countRating)
+                                                        </strong>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="fw-semibold lh-1 mt-2 txtcolor text-center">No Reviews :(</div>
+                                                }
+                                            </a>
                                         </div>
                                     </div>
                                 }
@@ -131,43 +173,72 @@
             </div>
             <div id="container3" class="d-flex justify-content-center">
                 <div class="fw-semibold text-white mt-5 h2 text-container">
-                    Hotel<br>
+                    Other<br>
 
                     <div class="mt-2 lead">Discover the art of hospitality with these enticing hotel experiences.</div>
                 </div>
                 <div id="slider-container">
                     <span onclick="slideRight()" class="btn"></span>
                     <div id="slider3">
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Test</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="picture-card">
-                                <img src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image">
-                                <div class="fw-semibold lh-1 mt-3 text-white">Name</div>
-                            </div>
-                        </div>
+                        @{
+                            int countOther = 0;
+                            foreach (var dest in Model)
+                            {
+                                if (dest.Tag.Equals("Other"))
+                                {
+                                    countFood++;
+                                    <div class="slide">
+                                        <div class="picture-card card-img-top square-image">
+                                            <a href="@dest.Description">
+
+                                                @if (dest.Images != null && dest.Images.Any())
+                                                {
+                                                    var random = new Random();
+                                                    var randomIndex = random.Next(0, dest.Images.Count);
+                                                    var randomImage = dest.Images.ElementAt(randomIndex);
+
+                                                    <img loading="lazy" decoding="async" src="@Url.Content(randomImage.ImagePath)" alt="Image" class="picture-card__image img-fluid">
+                                                }
+                                                else
+                                                {
+                                                    <img loading="lazy" decoding="async" src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image img-fluid">
+                                                }
+                                                <div class="fw-semibold fs-5 lh-1 mt-3 text-white text-center">@dest.Emri</div>
+
+                                                @if (dest.Reviews.Any())
+                                                {
+                                                    double averageRating = dest.Reviews.Average(review => review.Rating);
+                                                    int countRating = dest.Reviews.Count();
+
+                                                    <div class="fw-semibold lh-1 mt-2 text-center txtcolor">
+                                                        Rating: @averageRating
+                                                        <strong class="txtcoloraccent">
+                                                            (@countRating)
+                                                        </strong>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="fw-semibold lh-1 mt-2 txtcolor text-center"><i class="fa-solid fa-up-right-from-square" style="margin-right: 5px;"></i>Visit</div>
+                                                }
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            if (countOther <= 4)
+                            {
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    <div class="slide">
+                                        <div class="picture-card card-img-top square-image">
+                                            <img loading="lazy" decoding="async" src="~/images/thumbnails/brezovica_thumb.jpg" alt="Image" class="picture-card__image img-fluid">
+                                            <div class="fw-semibold lh-1 mt-3 text-white">Placeholder</div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
                     </div>
                     <span onclick="slideLeft()" class="btn"></span>
                 </div>

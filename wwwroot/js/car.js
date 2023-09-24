@@ -1,11 +1,12 @@
 ﻿let currentActive = 1;
 
 const incrementActive = () => {
-    if (currentActive < 5) {
+    if (currentActive < 4) {
         currentActive++;
     } else {
         currentActive = 1;
     }
+    showActiveSlide();
 }
 
 const showActiveSlide = () => {

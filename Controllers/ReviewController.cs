@@ -65,8 +65,21 @@ namespace Travista.Controllers
         }
 
         [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> AddUserReview(int clickedDest)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            var review = new Review()
+            {
+                ID_Users = currentUser.Fullname,
+                ID_Destination = clickedDest
+            };
+            return View(review);
+        }
+
+        [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddUserReview(Review addUserRequest)
+        public async Task<IActionResult> AddUserReviewPost(Review addUserRequest)
         {
             var currentUser = await _userManager.GetUserAsync(User);
             var review = new Review()

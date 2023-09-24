@@ -12,14 +12,14 @@ namespace Travista.Controllers
     public class DestinationController : Controller
     {
         private readonly TravistaContext _dBContext;
-        private readonly IWebHostEnvironment _env;
         private readonly UserManager<TravistaUser> _userManager;
+        private readonly IWebHostEnvironment _env;
 
-        public DestinationController(TravistaContext _dBContext, IWebHostEnvironment _env, UserManager<TravistaUser> _userManager)
+        public DestinationController(TravistaContext _dBContext, UserManager<TravistaUser> _userManager, IWebHostEnvironment _env)
         {
             this._dBContext = _dBContext;
-            this._env = _env;
             this._userManager = _userManager;
+            this._env = _env;
         }
 
         [Authorize(Roles = "Administrator")]
@@ -34,6 +34,7 @@ namespace Travista.Controllers
         {
             return View();
         }
+
         [Authorize]
         private async Task<string> SaveImage(IFormFile image)
         {
@@ -43,7 +44,6 @@ namespace Travista.Controllers
                 var extension = Path.GetExtension(image.FileName).ToLowerInvariant();
                 if (!allowedExtensions.Contains(extension))
                 {
-                    ModelState.AddModelError("image", "Invalid file type. Only JPG and PNG files are allowed.");
                     return "noimage";
                 }
                 var fileName = Guid.NewGuid().ToString() + extension;
@@ -57,33 +57,48 @@ namespace Travista.Controllers
             return "noimage";
         }
 
+
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<IActionResult> AddDestination(Destination addUserRequest, IFormFile Foto)
+        public async Task<IActionResult> AddDestination(Destination addUserRequest, List<IFormFile> img)
         {
-            var imagePath = await SaveImage(Foto);
-            if (imagePath == null)
-            {
-                return View("AddDestination");
-            }
-
             var currentUser = await _userManager.GetUserAsync(User);
 
             var Dest = new Destination()
             {
                 ID_Destination = 0,
                 Emri = addUserRequest.Emri,
+                Tag = addUserRequest.Tag,
                 Description = addUserRequest.Description,
                 Address = addUserRequest.Address,
                 AdditionalAddress = addUserRequest.AdditionalAddress,
                 Longitude = addUserRequest.Longitude,
                 Latitude = addUserRequest.Latitude,
-                Foto = imagePath,
                 ID_City = addUserRequest.ID_City,
                 ID_Users = currentUser.Id,
             };
             await _dBContext.Destination.AddAsync(Dest);
             await _dBContext.SaveChangesAsync();
+
+            foreach (var tempimg in img)
+            {
+                var imagePath = await SaveImage(tempimg);
+                if (imagePath.Equals("noimage"))
+                {
+                    continue;
+                }
+
+                var permimg = new Images()
+                {
+                    ID_Destination = Dest.ID_Destination,
+                    ImagePath = imagePath
+                };
+
+                await _dBContext.Images.AddAsync(permimg);
+                await _dBContext.SaveChangesAsync();
+            }
+
+
             return RedirectToAction("Index");
         }
 
@@ -106,6 +121,7 @@ namespace Travista.Controllers
                 .Include(d => d.Reviews)
                 .Include(d => d.FK_City)
                 .Include(d => d.FK_Users)
+                .Include(d => d.Images)
                 .Where(d => d.ID_City == desiredCity)
                 .Take(10)
                 .ToList();
@@ -126,6 +142,7 @@ namespace Travista.Controllers
                 .Include(d => d.Reviews)
                 .Include(d => d.FK_City)
                 .Include(d => d.FK_Users)
+                .Include(d => d.Images)
                 .FirstOrDefaultAsync(d => d.ID_Destination == clickedDest);
 
             return View(dest);
@@ -148,8 +165,6 @@ namespace Travista.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     string weatherData = await response.Content.ReadAsStringAsync();
-
-                    // Pass the weather data to your Razor view
                     ViewBag.WeatherData = weatherData;
                 }
                 else
@@ -170,32 +185,44 @@ namespace Travista.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddUserDestination(Destination addUserRequest, IFormFile Foto)
+        public async Task<IActionResult> AddUserDestination(Destination addUserRequest, List<IFormFile> img)
         {
-            var imagePath = await SaveImage(Foto);
-            if (imagePath == null)
-            {
-                return View("AddUserDestination");
-            }
-
             var currentUser = await _userManager.GetUserAsync(User);
 
             var Dest = new Destination()
             {
                 ID_Destination = 0,
                 Emri = addUserRequest.Emri,
+                Tag = addUserRequest.Tag,
                 Description = addUserRequest.Description,
                 Address = addUserRequest.Address,
                 AdditionalAddress = addUserRequest.AdditionalAddress,
                 Longitude = addUserRequest.Longitude,
                 Latitude = addUserRequest.Latitude,
-                Foto = imagePath,
                 ID_City = addUserRequest.ID_City,
-                Tag = addUserRequest.Tag,
                 ID_Users = currentUser.Id,
             };
             await _dBContext.Destination.AddAsync(Dest);
             await _dBContext.SaveChangesAsync();
+
+            foreach (var tempimg in img)
+            {
+                var imagePath = await SaveImage(tempimg);
+                if (imagePath.Equals("noimage"))  
+                {
+                    continue;
+                }
+
+                var permimg = new Images()
+                {
+                    ID_Destination = Dest.ID_Destination,
+                    ImagePath = imagePath
+                };
+
+                await _dBContext.Images.AddAsync(permimg);
+                await _dBContext.SaveChangesAsync();
+            }
+
             return RedirectToAction("Success", "Home");
         }
 
@@ -215,7 +242,6 @@ namespace Travista.Controllers
                     Description = dest.Description,
                     Address = dest.Address,
                     AdditionalAddress = dest.AdditionalAddress,
-                    Foto = dest.Foto,
                     Longitude = dest.Longitude,
                     Latitude = dest.Latitude,
                     ID_City = dest.ID_City,
@@ -229,17 +255,11 @@ namespace Travista.Controllers
 
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<IActionResult> ViewDestinationPost(Destination model, IFormFile Foto)
+        public async Task<IActionResult> ViewDestinationPost(Destination model)
         {
             var dest = await _dBContext.Destination.FindAsync(model.ID_Destination);
 
             var currentUser = await _userManager.GetUserAsync(User);
-
-            var imagePath = await SaveImage(Foto);
-            if (imagePath == null)
-            {
-                return View(model);
-            }
 
             if (dest != null)
             {
@@ -249,10 +269,10 @@ namespace Travista.Controllers
                 dest.Description = model.Description;
                 dest.Address = model.Address;
                 dest.AdditionalAddress = model.AdditionalAddress;
-                dest.Foto = imagePath;
                 dest.Longitude = model.Longitude;
                 dest.Latitude = model.Latitude;
                 dest.ID_City = model.ID_City;
+                dest.ID_Users = currentUser.Id;
 
                 await _dBContext.SaveChangesAsync();
 

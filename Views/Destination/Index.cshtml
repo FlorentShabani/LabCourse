@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
 </head>
 <body>
-    <div class="container">
+    <div class="mx-custom">
         <table>
 
 
@@ -34,8 +34,6 @@
 
                 <th>City #ID</th>
 
-                <th>User #ID</th>
-
                 <th>Action</th>
             </tr>
 
@@ -50,11 +48,14 @@
                     <td>@dest.AdditionalAddress</td>
                     <td>@dest.Longitude</td>
                     <td>@dest.Latitude</td>
-                    <td>@dest.Foto</td>
-                    <td>@dest.ID_City</td>
-                    <td>@dest.ID_Users</td>
                     <td>
-                        <a href="@Url.Action("ViewDestination", "Destination", new { ID_Destination = dest.ID_Destination })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a>
+                        <a href="@Url.Action("IndexDestination", "Image", new { clickedDest = dest.ID_Destination })"><i class="fas fa-eye" style="margin-right: 3px;"></i>View</a>
+                        <strong>|</strong>
+                        <a asp-controller="Image" asp-action="AddDestinationImages" asp-route-ID_Destination="@dest.ID_Destination"><i class="fas fa-plus" style="margin-right: 3px;"></i>Add</a>
+                    </td>
+                    <td>@dest.ID_City</td>
+                    <td>
+                        <a href="@Url.Action("ViewDestination", "Destination", new { ID_Destination = dest.ID_Destination })"><i class="fas fa-eye" style="margin-right: 3px;"></i>View</a>
 
                     </td>
                 </tr>

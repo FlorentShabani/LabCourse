@@ -128,3 +128,46 @@ p{
         color: var(--primary);
         fill: var(--primary)
     }
+
+a {
+    text-decoration: none;
+}
+
+.ui-menu-item {
+    padding: 5px 0;
+}
+    .ui-menu-item:hover {
+        background-color: transparent;
+        color: #000;
+    }
+
+.ui-autocomplete {
+    border-radius: 5px;
+
+}
+
+/* The autocomplete dropdown */
+.ui-autocomplete {
+    margin-top: -10px;
+    max-height: 150px;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/* Style for autocomplete items */
+.ui-menu-item {
+    padding: 8px;
+    margin-top: -10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style for the highlighted part of the text */
+.ui-state-highlight {
+    font-weight: bold;
+    color: #333;
+}
+
+
