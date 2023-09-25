@@ -1,4 +1,4 @@
-namespace TravistaASP.Models
+﻿namespace Travista.Models
 {
     public class ErrorViewModel
     {

@@ -1,0 +1,65 @@
+﻿@model Travista.Models.Domain.Promo
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/css/travelagency_addform.css" asp-append-version="true">
+</head>
+
+<html lang="en">
+<body>
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
+
+        <form method="post" asp-action="AddPromo" enctype="multipart/form-data">
+            <div class="text-center">
+                <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
+            </div>
+            <h1 class="h3 mb-3 fw-normal text-center">Add a Promo</h1>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Title" placeholder="Prishtina" required>
+                        <label for="">Title</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Subtitle" placeholder="Prishtina" required>
+                        <label for="">Subtitle</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="DestLink" placeholder="Prishtina" required>
+                        <label for="">Destination Link</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-floating my-2">
+                        <textarea class="form-control" maxlength="8000" placeholder="Leave a comment here" asp-for="Description" style="height: 200px" required></textarea>
+                        <label for="">Description</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="input-group align-items-center mb-2">
+                        <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
+                        <input type="file" class="form-control form-control-lg mt-2" name="Foto">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button class="w-100 btn btn-lg btn-primary mt-3" style="margin: 10px 0;" type="submit">Create Promo</button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

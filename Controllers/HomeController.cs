@@ -3,19 +3,23 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using Travista.Data;
 using Travista.Models.Domain;
-using TravistaASP.Models;
+using Travista.Models;
+using Microsoft.AspNetCore.Identity;
+using Travista.Areas.Identity.Data;
 
-namespace TravistaASP.Controllers
+namespace Travista.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly TravistaContext _dBContext;
+        private readonly UserManager<TravistaUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger, TravistaContext _dBContext)
+        public HomeController(ILogger<HomeController> _logger, TravistaContext _dBContext, UserManager<TravistaUser> _userManager)
         {
-            _logger = logger;
+            this._logger = _logger;
             this._dBContext = _dBContext;
+            this._userManager = _userManager;
         }
 
         public IActionResult Index()
@@ -61,6 +65,33 @@ namespace TravistaASP.Controllers
             }
 
             return RedirectToAction("Oops", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddContactUs(IFormCollection form)
+        {
+
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            var name = form["Name"];
+            var subject = form["Subject"];
+            var message = form["Message"];
+            var email = form["Email"];
+
+            var contactus = new ContactUs()
+            {
+                ID_ContactUs = 0,
+                Name = name,
+                Subject = subject,
+                Message = message,
+                Email = email,
+                ID_Users = currentUser.Id
+            };
+
+            await _dBContext.ContactUs.AddAsync(contactus);
+            await _dBContext.SaveChangesAsync();
+
+            return RedirectToAction("Success");
         }
 
         public IActionResult Signup()

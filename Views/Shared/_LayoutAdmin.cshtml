@@ -36,6 +36,15 @@
                 </div>
                 <div class='dashboard-nav-dropdown'>
                     <a class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fa-solid fa-feather"></i>Promo
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Promo" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Promo</a>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Promo" asp-action="AddPromo"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Promo</a>
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-map-location-dot"></i> Destinations
                     </a>
                     <div class='dashboard-nav-dropdown-menu'>
@@ -80,8 +89,22 @@
                         <a class="dashboard-nav-dropdown-item" asp-controller="TravelTip" asp-action="AddTravelTip"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Travel Tip</a>
                         </div>
                     </div>
+
+                <div class='dashboard-nav-dropdown'>
+                    <a class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fa-solid fa-address-book"></i>Contact Us
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="ContactUs" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Contact Us</a>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="ContactUs" asp-action="AddContactUs"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Contact Us</a>
+                    </div>
+                </div>
+
                     <div class="nav-item-divider"></div>
-                    <a class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                        <button type="submit" class="nav-link btn btn-link text-dark"><a class="dashboard-nav-item"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i> Logout</a></button>
+                    </form>
+               
                 </nav>
             </div>
             <div class='dashboard-app'>

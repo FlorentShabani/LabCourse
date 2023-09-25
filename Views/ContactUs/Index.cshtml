@@ -1,0 +1,52 @@
+﻿@model List<Travista.Models.Domain.ContactUs>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="mx-custom">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Name</th>
+
+                <th>Subject</th>
+
+                <th>Message</th>
+
+                <th>Email</th>
+
+                <th>User #</th>
+
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var contactus in Model)
+            {
+                <tr>
+                    <th scope="row">@contactus.ID_ContactUs</th>
+                    <td>@contactus.Name</td>
+                    <td>@contactus.Subject</td>
+                    <td>@contactus.Message</td>
+                    <td>@contactus.Email</td>
+                    <td>@contactus.ID_Users</td>
+                    <td><a href="@Url.Action("ViewContactUs", "ContactUs", new { ID_ContactUs = contactus.ID_ContactUs })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

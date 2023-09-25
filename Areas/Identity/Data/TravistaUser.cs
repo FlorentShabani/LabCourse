@@ -17,5 +17,9 @@ public class TravistaUser : IdentityUser
     public virtual ICollection<TravelTips> TravelTips { get; set; }
 
     public virtual ICollection<Review> Reviews { get; set; }
+
+    public virtual ICollection<Promo> Promos { get; set; }
+
+    public virtual ICollection<ContactUs> ContactUss { get; set; }
 }
 

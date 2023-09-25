@@ -36,6 +36,10 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
 
     public DbSet<Images> Images { get; set; }
 
+    public DbSet<Promo> Promo { get; set; }
+
+    public DbSet<ContactUs> ContactUs { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
@@ -69,6 +73,12 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
 
         modelBuilder.Entity<Images>()
             .HasKey(u => u.ID_Image);
+
+        modelBuilder.Entity<Promo>()
+            .HasKey(u => u.ID_Promo);
+
+        modelBuilder.Entity<ContactUs>()
+            .HasKey(u => u.ID_ContactUs);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

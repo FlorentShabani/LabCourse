@@ -1,0 +1,55 @@
+﻿@model List<Travista.Models.Domain.Promo>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="mx-custom">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Title</th>
+
+                <th>Subtitle</th>
+
+                <th>Description</th>
+
+                <th>Picture</th>
+
+                <th>DestLink</th>
+
+                <th>User #</th>
+
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var promo in Model)
+            {
+                <tr>
+                    <th scope="row">@promo.ID_Promo</th>
+                    <td>@promo.Title</td>
+                    <td>@promo.Subtitle</td>
+                    <td>@promo.Description</td>
+                    <td>@promo.Picture</td>
+                    <td>@promo.DestLink</td>
+                    <td>@promo.ID_Users</td>
+                    <td><a href="@Url.Action("ViewPromo", "Promo", new { ID_Promo = promo.ID_Promo })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

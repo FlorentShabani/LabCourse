@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Travista.Models.HomePageModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -21,6 +22,42 @@
                     </div>
                     <input type="hidden" name="search" value="" id="searchValue">
                 </form>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btncolor mt-2 trigger-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-paper-plane" style="margin-right: 5px;"></i>Contact Us</button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="mt-2" style="color: black;"><i class="fa-solid fa-paper-plane txtcolor" style="margin-right: 5px;"></i>Leave us a message!</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-action="AddContactUs" method="post">
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control rounded-bottom mt-2" name="Name" placeholder="Prishtina" required>
+                                <label for="">Name</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control rounded-bottom mt-2" name="Subject" placeholder="Prishtina" required>
+                                <label for="">Subject</label>
+                            </div>
+
+                            <div class="form-floating my-2">
+                                <textarea class="form-control" maxlength="8000" placeholder="Leave a comment here" name="Message" style="height: 200px" required></textarea>
+                                <label for="">Description</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="email" class="form-control rounded-bottom mt-2" name="Email" placeholder="Prishtina" required>
+                                <label for="">Email</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btncolor mt-2"><i class="fa-solid fa-paper-plane" style="margin-left: 5px;"></i> Contact Us</button>
+                            <input type="button" class="btn btn-link mt-2" data-bs-dismiss="modal" value="Cancel" aria-label="Close">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
