@@ -1,5 +1,5 @@
 ﻿$("#searchInput").autocomplete({
-    delay: 100,
+    delay: 20,
     source: function (request, response) {
         $.ajax({
             url: '/Home/GetSearchValue',

@@ -66,30 +66,44 @@ namespace Travista.Controllers
 
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<IActionResult> AddTravelAgency(TravelAgency addUserRequest, IFormFile image)
+        public async Task<IActionResult> AddTravelAgency(TravelAgency addUserRequest, List<IFormFile> img)
         {
-            var imagePath = await SaveImage(image);
-            if (imagePath == null)
-            {
-                return View("AddTravelAgency");
-            }
+            var currentUser = await _userManager.GetUserAsync(User);
+
             var TravelAge = new TravelAgency()
             {
                 ID_TravelAgency = 0,
                 emri = addUserRequest.emri,
                 description = addUserRequest.description,
                 price = addUserRequest.price,
-                image = imagePath,
                 ID_Country = addUserRequest.ID_Country,
                 ID_City = addUserRequest.ID_City,
                 streetAddress = addUserRequest.streetAddress,
                 additionalAddressInfo = addUserRequest.additionalAddressInfo,
                 postalCode = addUserRequest.postalCode,
                 phoneNumber = addUserRequest.phoneNumber,
-                email = addUserRequest.email,
+                email = currentUser.Email,
             };
             await _dBContext.TravelAgency.AddAsync(TravelAge);
             await _dBContext.SaveChangesAsync();
+
+            foreach (var tempimg in img)
+            {
+                var imagePath = await SaveImage(tempimg);
+                if (imagePath.Equals("noimage") | imagePath == null)
+                {
+                    continue;
+                }
+
+                var permimg = new Images()
+                {
+                    ID_TravelAgency = TravelAge.ID_TravelAgency,
+                    ImagePath = imagePath
+                };
+
+                await _dBContext.Images.AddAsync(permimg);
+                await _dBContext.SaveChangesAsync();
+            }
             return RedirectToAction("Index");
         }
 
@@ -101,14 +115,8 @@ namespace Travista.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddUserTravelAgency(TravelAgency addUserRequest, IFormFile image)
+        public async Task<IActionResult> AddUserTravelAgency(TravelAgency addUserRequest, List<IFormFile> img)
         {
-            var imagePath = await SaveImage(image);
-            if (imagePath == null)
-            {
-                return View("AddUserTravelAgency");
-            }
-
             var currentUser = await _userManager.GetUserAsync(User);
 
             var TravelAge = new TravelAgency()
@@ -117,8 +125,7 @@ namespace Travista.Controllers
                 emri = addUserRequest.emri,
                 description = addUserRequest.description,
                 price = addUserRequest.price,
-                image = imagePath,
-                ID_Country = 6,
+                ID_Country = addUserRequest.ID_Country,
                 ID_City = addUserRequest.ID_City,
                 streetAddress = addUserRequest.streetAddress,
                 additionalAddressInfo = addUserRequest.additionalAddressInfo,
@@ -128,6 +135,25 @@ namespace Travista.Controllers
             };
             await _dBContext.TravelAgency.AddAsync(TravelAge);
             await _dBContext.SaveChangesAsync();
+
+            foreach (var tempimg in img)
+            {
+                var imagePath = await SaveImage(tempimg);
+                if (imagePath.Equals("noimage") | imagePath == null)
+                {
+                    continue;
+                }
+
+                var permimg = new Images()
+                {
+                    ID_TravelAgency = TravelAge.ID_TravelAgency,
+                    ImagePath = imagePath
+                };
+
+                await _dBContext.Images.AddAsync(permimg);
+                await _dBContext.SaveChangesAsync();
+            }
+
             return RedirectToAction("Success", "Home");
         }
 
@@ -145,7 +171,6 @@ namespace Travista.Controllers
                     emri = travelage.emri,
                     description = travelage.description,
                     price = travelage.price,
-                    image = travelage.image,
                     ID_Country = travelage.ID_Country,
                     ID_City = travelage.ID_City,
                     streetAddress = travelage.streetAddress,
@@ -179,7 +204,6 @@ namespace Travista.Controllers
                 travelage.emri = model.emri;
                 travelage.description = model.description;
                 travelage.price = model.price;
-                travelage.image = imagePath;
                 travelage.ID_Country = model.ID_Country;
                 travelage.ID_City = model.ID_City;
                 travelage.streetAddress = model.streetAddress;
@@ -204,6 +228,15 @@ namespace Travista.Controllers
 
             if (travelage != null)
             {
+                var relatedImages = await _dBContext.Images
+                .Where(img => img.ID_TravelAgency == model.ID_TravelAgency)
+                .ToListAsync();
+
+                foreach (var image in relatedImages)
+                {
+                    _dBContext.Images.Remove(image);
+                }
+
                 _dBContext.TravelAgency.Remove(travelage);
                 await _dBContext.SaveChangesAsync();
 

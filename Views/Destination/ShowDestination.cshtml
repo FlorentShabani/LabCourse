@@ -14,17 +14,46 @@
     <main>
         <div class="container">
 
-            <div class="h1 text-white mt-5">
-                <span class="txtcolor">Explore</span> @{
-                    if (Model != null)
-                    {
-                        @Model[0].FK_City.name
-                    }
-                    else
-                    {
-                        <div>Travista</div>
-                    }
-                }
+            <div class="row d-flex justify-content-between">
+                <div class="col-md-6">
+                    <div class="h1 text-white mt-5">
+                        <span class="txtcolor">Explore</span> @{
+                            if (Model != null)
+                            {
+                                @Model[0].FK_City.name
+                            }
+                            else
+                            {
+                                <div>Travista</div>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-3 mt-5">
+                    <button type="button" class="btn btn-primary btn-lg w-100 mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fas fa-eye" style="margin-right: 5px;"></i>Show Travel Tips
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="card-img" src="~/images/thumbnails/prizrencastle_thumb.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="txtcolor" />
+
+            <div class="mt-5">
+                <img src="~/images/thumbnails/things-to-do.png" class="d-block w-100 img-fluid rounded-4 shadow">
             </div>
             
             <div id="container1" class="d-flex justify-content-center">
@@ -99,6 +128,12 @@
                 </div>
             </div>
 
+            <hr class="txtmain" />
+
+            <div class="mt-5">
+                <img src="~/images/thumbnails/food.png" class="d-block w-100 img-fluid rounded-4 shadow">
+            </div>
+
             <div id="container2" class="d-flex justify-content-center">
                 <div class="fw-semibold text-white mt-5 h2 text-container">
                     Food<br>
@@ -171,6 +206,13 @@
                 </div>
 
             </div>
+
+            <hr class="txtmain"/>
+
+            <div class="mt-5">
+                <img src="~/images/thumbnails/other.png" class="d-block w-100 img-fluid rounded-4 shadow">
+            </div>
+
             <div id="container3" class="d-flex justify-content-center">
                 <div class="fw-semibold text-white mt-5 h2 text-container">
                     Other<br>

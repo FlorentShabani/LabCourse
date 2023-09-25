@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
 </head>
 <body>
-    <div class="container">
+    <div class="mx-custom">
         <table>
 
 
@@ -18,7 +18,7 @@
 
                 <th>Image Path</th>
 
-                <th>Destination #ID</th>
+                <th>Travel Agency #ID</th>
 
                 <th>Action</th>
             </tr>
@@ -29,8 +29,8 @@
                 <tr>
                     <th scope="row">@image.ID_Image</th>
                     <td>@image.ImagePath</td>
-                    <td>@image.ID_Destination</td>
-                    <td><a href="@Url.Action("ViewDestinationImages", "Images", new { ID_Image = image.ID_Image })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                    <td>@image.ID_TravelAgency</td>
+                    <td><a href="@Url.Action("ViewTravelAgencyImages", "Image", new { clickedTravel = image.ID_Image })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
                 </tr>
             }
 

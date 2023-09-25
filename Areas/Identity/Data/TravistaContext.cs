@@ -34,6 +34,8 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
 
     public DbSet<Review> Review { get; set; }
 
+    public DbSet<Images> Images { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
@@ -64,6 +66,9 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
 
         modelBuilder.Entity<Review>()
             .HasKey(u => u.ID_Reviews);
+
+        modelBuilder.Entity<Images>()
+            .HasKey(u => u.ID_Image);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

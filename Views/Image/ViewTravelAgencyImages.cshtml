@@ -10,7 +10,7 @@
 <body>
     <main class="form-signin w-100">
 
-        <form method="post" action="ViewCityPost" enctype="multipart/form-data">
+        <form method="post" action="ViewTravelAgencyImagesPost" enctype="multipart/form-data">
             <div class="text-center">
                 <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
             </div>
@@ -21,20 +21,45 @@
                 <div class="col-md-6">
                     <div class="form-floating my-2">
                         <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Image" placeholder="Prishtina" readonly>
-                        <label for="">City ID</label>
+                        <label for="">Image ID</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ImagePath" placeholder="Prishtina">
-                        <label for="">City Name</label>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ImagePath" placeholder="Prishtina" readonly>
+                        <label for="">Image Path</label>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Destination" readonly
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_TravelAgency" readonly
                                placeholder="alex@gmail.com">
-                        <label>ID of country</label>
+                        <label>Travel Agency ID</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="input-group align-items-center mb-2">
+                        <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
+                        <input type="file" class="form-control form-control-lg mt-2" name="img" asp-for="ImagePath">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-primary btn-lg w-100 mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fas fa-eye" style="margin-right: 5px;"></i>Show Picture
+                    </button>
+                </div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img class="card-img" src="@Url.Content(Model.ImagePath)" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -42,7 +67,7 @@
                     <button class="w-100 btn btn-lg btn-primary" style="margin: 10px 0;" type="submit"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>Update Image</button>
                 </div>
                 <div class="col-md-6">
-                    <button class="w-100 btn btn-lg btn-danger" style="margin: 10px 0;" type="submit" formaction="@Url.Action("DeleteImagesDest", "Images")"><i class="fa-regular fa-trash-can" style="margin-right: 3px"></i>Delete Image</button>
+                    <button class="w-100 btn btn-lg btn-danger" style="margin: 10px 0;" type="submit" formaction="@Url.Action("DeleteImagesTravel", "Image")"><i class="fa-regular fa-trash-can" style="margin-right: 3px"></i>Delete Image</button>
                 </div>
 
             </div>

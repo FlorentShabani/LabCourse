@@ -4,25 +4,38 @@
 }
 <head>
     <link rel="stylesheet" href="~/css/travelagency_addform.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/star.css" asp-append-version="true">
 </head>
 
 <html lang="en">
 <body>
     <main class="form-signin w-100">
 
-        <form method="post" action="AddReview" enctype="multipart/form-data">
+        <form method="post" asp-action="AddReview" enctype="multipart/form-data">
             <div class="text-center">
                 <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
             </div>
             <h1 class="h3 mb-3 fw-normal text-center">Add a Review</h1>
 
+            <h4 class="txtmain">Rate it:</h4>
             <div class="row">
-
                 <div class="col-md-6">
-                    <div class="form-floating my-2">
-                        <input type="number" min="1" max="5" class="form-control rounded-bottom mt-2" asp-for="Rating" placeholder="Prishtina">
-                        <label for="">Rating</label>
-                    </div>
+                        <div class="stars">
+                            <input class="star star-5" id="star-5" type="radio" asp-for="Rating" value="5" />
+                            <label class="star star-5" for="star-5"></label>
+
+                            <input class="star star-4" id="star-4" type="radio" asp-for="Rating" value="4" />
+                            <label class="star star-4" for="star-4"></label>
+
+                            <input class="star star-3" id="star-3" type="radio" asp-for="Rating" value="3" />
+                            <label class="star star-3" for="star-3"></label>
+
+                            <input class="star star-2" id="star-2" type="radio" asp-for="Rating" value="2" />
+                            <label class="star star-2" for="star-2"></label>
+
+                            <input class="star star-1" id="star-1" type="radio" asp-for="Rating" value="1" />
+                            <label class="star star-1" for="star-1"></label>
+                        </div>
                 </div>
 
                 <div class="col-md-6">

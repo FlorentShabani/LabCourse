@@ -1,4 +1,4 @@
-﻿namespace Travista.Models.Domain;
+﻿ namespace Travista.Models.Domain;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,9 +18,6 @@ public class TravelAgency
     [Required]
     [Range(0, 999.99)]
     public string price { get; set; }
-
-    [StringLength(1000)]
-    public string image { get; set; }
 
     [Required]
     public int ID_Country { get; set; }

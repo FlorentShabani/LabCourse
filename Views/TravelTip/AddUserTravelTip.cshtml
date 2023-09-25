@@ -25,6 +25,13 @@
                             <label for="floatingInput">Title</label>
                         </div>
                         <div class="form-floating my-2">
+                            <select class="form-select rounded-bottom mt-3" required asp-for="ID_Country">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="6">Kosovo</option>
+                            </select>
+                            <label for="floatingInput">Country</label>
+                        </div>
+                        <div class="form-floating my-2">
                             <textarea class="form-control mt-3" placeholder="Leave a comment here" asp-for="Description" required
                                       style="height: 100px"></textarea>
                             <label for="floatingTextarea2">Description</label>

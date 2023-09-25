@@ -10,25 +10,24 @@
 <body>
     <main class="form-signin w-100">
 
-        <form method="post" action="AddCityPost" enctype="multipart/form-data">
+        <form method="post" action="AddTravelAgencyImagesPost" enctype="multipart/form-data">
             <div class="text-center">
                 <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
             </div>
-            <h1 class="h3 mb-3 fw-normal text-center">Add a City</h1>
+            <h1 class="h3 mb-3 fw-normal text-center">Add Images for a Travel Agency</h1>
 
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Image" placeholder="Prishtina">
-                        <label for="">Name of the city</label>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_TravelAgency" placeholder="Prishtina" readonly>
+                        <label for="">Travel Agency ID</label>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ImagePath" readonly
-                               placeholder="alex@gmail.com">
-                        <label>Country ID</label>
+                <div class="col-md-12">
+                    <div class="input-group align-items-center mb-2">
+                        <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
+                        <input type="file" class="form-control form-control-lg mt-2" name="img" asp-for="ImagePath" multiple>
                     </div>
                 </div>
                 <div class="col-md-12">

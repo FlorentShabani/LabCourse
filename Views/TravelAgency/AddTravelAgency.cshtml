@@ -18,7 +18,7 @@
 
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-floating my-2">
                         <input type="text" class="form-control rounded-bottom mt-2" asp-for="emri" placeholder="Prishtina">
                         <label for="">Name</label>
@@ -26,23 +26,26 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="email" class="form-control rounded-bottom mt-2" asp-for="email"
-                               placeholder="alex@gmail.com">
-                        <label>Email</label>
+                        <select class="form-select rounded-bottom mt-2" required asp-for="ID_Country">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="6">Kosovo</option>
+                        </select>
+                        <label for="floatingInput">Country</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_Country"
-                               placeholder="Filan Fisteku">
-                        <label for="">Country</label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_City"
-                               placeholder="Filan Fisteku">
-                        <label for="">City</label>
+                        <select class="form-select rounded-bottom mt-2" required asp-for="ID_City">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="19">Ferizaj</option>
+                            <option value="20">Gjakova</option>
+                            <option value="12">Gjilan</option>
+                            <option value="22">Mitrovica</option>
+                            <option value="21">Peja</option>
+                            <option value="13">Prishtina</option>
+                            <option value="14">Prizren</option>
+                        </select>
+                        <label for="floatingInput">City</label>
                     </div>
                 </div>
 
@@ -77,23 +80,24 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="input-group align-items-center my-2">
                             <span class="input-group-text" style="height: 48px;">€</span>
                             <span class="input-group-text" style="height: 48px;">0.00</span>
                             <input type="number" step="0.01" min="0" class="form-control form-control-lg" asp-for="price" placeholder="30.99">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="input-group align-items-center mb-2">
-                            <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
-                            <input type="file" class="form-control form-control-lg mt-2" asp-for="image">
+                    <div class="col-md-12">
+                        <div class="input-group align-items-center my-2">
+                            <label class="input-group-text mt-2" for="floatingUpload"
+                                   style="height: 48px;">Upload</label>
+                            <input type="file" class="form-control form-control-lg mt-2" name="img" multiple id="floatingUpload" required>
                         </div>
                     </div>
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <textarea class="form-control" placeholder="Leave a comment here" asp-for="description" style="height: 100px"></textarea>
+                        <textarea class="form-control" maxlength="8000" placeholder=" Leave a comment here" asp-for="description" style="height: 100px"></textarea>
                         <label for="">Description</label>
                     </div>
                 </div>

@@ -83,7 +83,7 @@ namespace Travista.Controllers
             foreach (var tempimg in img)
             {
                 var imagePath = await SaveImage(tempimg);
-                if (imagePath.Equals("noimage"))
+                if (imagePath.Equals("noimage") | imagePath == null)
                 {
                     continue;
                 }
@@ -128,7 +128,7 @@ namespace Travista.Controllers
 
             if (!dest.Any())
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Oops", "Home");
             }
 
 
@@ -208,7 +208,7 @@ namespace Travista.Controllers
             foreach (var tempimg in img)
             {
                 var imagePath = await SaveImage(tempimg);
-                if (imagePath.Equals("noimage"))  
+                if (imagePath.Equals("noimage") | imagePath == null)  
                 {
                     continue;
                 }

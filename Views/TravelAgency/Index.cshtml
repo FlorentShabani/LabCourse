@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
 </head>
 <body>
-    <div class="container">
+    <div class="mx-custom">
         <table>
 
 
@@ -49,7 +49,11 @@
                     <td>@travelage.description</td>
                     <td>@travelage.email</td>
                     <td>@travelage.price €</td>
-                    <td>@travelage.image</td>
+                    <td>
+                        <a href="@Url.Action("IndexTravelAgency", "Image", new { clickedTravel = travelage.ID_TravelAgency })"><i class="fas fa-eye" style="margin-right: 3px;"></i>View</a>
+                        <strong>|</strong>
+                        <a asp-controller="Image" asp-action="AddTravelAgencyImages" asp-route-ID_TravelAgency="@travelage.ID_TravelAgency"><i class="fas fa-plus" style="margin-right: 3px;"></i>Add</a>
+                    </td>
                     <td>@travelage.ID_City</td>
                     <td>@travelage.streetAddress</td>
                     <td>@travelage.additionalAddressInfo</td>

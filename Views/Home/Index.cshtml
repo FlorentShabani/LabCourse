@@ -1,5 +1,4 @@
-﻿@model Travista.Models.Domain.City
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -14,7 +13,7 @@
 <body>
     <main>
         <div class="picture-container">
-            <img src="~/images/search2.png" class="img-fluid rounded-3 shadow mt-5 mb-3" alt="Search Image" loading="lazy">
+            <img src="~/images/search2.png" class="img-fluid rounded-5 shadow mt-5 mb-3 img-glow" alt="Search Image" loading="lazy">
             <div class="search-container">
                 <form asp-action="GetPostSearchValue" asp-controller="Home" role="search" method="post" onsubmit="submitForm(event)">
                     <div class="input-group">
@@ -44,7 +43,7 @@
                         southwest of the main town of Štrpce.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="~/images/thumbnails/brezovica_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow">
+                    <img src="~/images/thumbnails/brezovica_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow img-glow">
                 </div>
             </div>
 
@@ -61,7 +60,7 @@
                         restaurants and cafes.</p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                    <img src="~/images/thumbnails/prishtinamall_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow">
+                    <img src="~/images/thumbnails/prishtinamall_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow img-glow">
                 </div>
             </div>
 
@@ -77,7 +76,7 @@
                         panoramic views of the town below. A must-visit for history and architecture enthusiasts.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="~/images/thumbnails/prizrencastle_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow">
+                    <img src="~/images/thumbnails/prizrencastle_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow img-glow">
                 </div>
             </div>
         </div>

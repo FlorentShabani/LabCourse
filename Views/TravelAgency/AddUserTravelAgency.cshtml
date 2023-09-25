@@ -26,7 +26,7 @@
                             <label for="floatingInput">Name</label>
                         </div>
                         <div class="form-floating my-2">
-                            <textarea class="form-control mt-3" placeholder="Leave a comment here" asp-for="description"
+                            <textarea class="form-control mt-3" maxlength="8000" placeholder=" Leave a comment here" asp-for="description"
                                       style="height: 100px" required></textarea>
                             <label for="floatingTextarea2">Description</label>
                         </div>
@@ -37,16 +37,31 @@
                         </div>
                         <div class="input-group align-items-center my-2">
                             <label class="input-group-text mt-2" for="floatingUpload"
-                                   style="height: 48px; required">Image</label>
-                            <input type="file" class="form-control form-control-lg mt-2" asp-for="image" required>
+                                   style="height: 48px;">Upload</label>
+                            <input type="file" class="form-control form-control-lg mt-2" name="img" multiple id="floatingUpload" required>
                         </div>
                         <hr class="featurette-divider">
                     </div>
                     <h1 class="h2 fw-normal sectext">Address & Contact Info</h1>
                     <div class="form-small">
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control border border-info rounded-bottom mt-3" asp-for="ID_City" required
-                                   placeholder="Filan Fisteku">
+                            <select class="form-select rounded-bottom mt-3" required asp-for="ID_Country">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="6">Kosovo</option>
+                            </select>
+                            <label for="floatingInput">Country</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="19">Ferizaj</option>
+                                <option value="20">Gjakova</option>
+                                <option value="12">Gjilan</option>
+                                <option value="22">Mitrovica</option>
+                                <option value="21">Peja</option>
+                                <option value="13">Prishtina</option>
+                                <option value="14">Prizren</option>
+                            </select>
                             <label for="floatingInput">City</label>
                         </div>
                         <div class="form-floating my-2">

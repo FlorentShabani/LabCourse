@@ -51,7 +51,7 @@ namespace Travista.Controllers
                 Description = addUserRequest.Description,
                 TravelTips_Date = DateTime.Now,
                 ID_Users = currentUser.Id,
-                ID_Country = 6
+                ID_Country = addUserRequest.ID_Country
             };
             await _dBContext.TravelTips.AddAsync(traveltip);
             await _dBContext.SaveChangesAsync();
@@ -77,7 +77,7 @@ namespace Travista.Controllers
                 Description = addUserRequest.Description,
                 TravelTips_Date = DateTime.Now,
                 ID_Users = currentUser.Id,
-                ID_Country = 6
+                ID_Country = addUserRequest.ID_Country
             };
             await _dBContext.TravelTips.AddAsync(traveltip);
             await _dBContext.SaveChangesAsync();

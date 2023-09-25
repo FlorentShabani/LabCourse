@@ -8,6 +8,10 @@ body {
   padding-bottom: 40px;
 }
 
+.txtmain {
+    color: var(--text);
+}
+
 .form-signin {
     max-width: 1000px;
     padding: 15px;

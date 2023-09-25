@@ -46,10 +46,13 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Country" placeholder="Prishtina" readonly>
-                        <label for="">ID of country</label>
+                        <select class="form-select rounded-bottom mt-2" required asp-for="ID_Country">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="6">Kosovo</option>
+                        </select>
+                        <label for="floatingInput">Country</label>
                     </div>
                 </div>
 

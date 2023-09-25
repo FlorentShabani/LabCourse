@@ -7,7 +7,7 @@ using Travista.Models.Domain;
 
 namespace Travista.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize]
     public class ImageController : Controller
     {
         private readonly TravistaContext _dBContext;
@@ -42,7 +42,7 @@ namespace Travista.Controllers
             return "noimage";
         }
 
-
+        [Authorize]
         public async Task<IActionResult> IndexDestination(int clickedDest)
         {
             var images = await _dBContext.Images.Where(c => c.ID_Destination == clickedDest).ToListAsync();
@@ -50,23 +50,27 @@ namespace Travista.Controllers
             return View(images);
         }
 
-        public async Task<IActionResult> IndexTravelAgency(int travelImages)
+        [Authorize]
+        public async Task<IActionResult> IndexTravelAgency(int clickedTravel)
         {
-            var images = _dBContext.Images.Where(c => c.ID_TravelAgency == travelImages).ToListAsync();
+            var images = await _dBContext.Images.Where(c => c.ID_TravelAgency == clickedTravel).ToListAsync();
 
             return View(images);
         }
 
+        [Authorize]
         public IActionResult AddDestinationImages()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult AddTravelAgencyImages()
         {
             return View();
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> AddDestinationImages(int ID_Destination)
         {
@@ -78,24 +82,26 @@ namespace Travista.Controllers
             return View(viewModel);
         }
 
+        [Authorize]
         [HttpGet]
-        public async Task<IActionResult> AddTravelAgencyImages(int clickedTravel)
+        public async Task<IActionResult> AddTravelAgencyImages(int ID_TravelAgency)
         {
             var viewModel = new Images
             {
-                ID_TravelAgency = clickedTravel
+                ID_TravelAgency = ID_TravelAgency
             };
 
             return View(viewModel);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddDestinationImagesPost(int ID_Destination, List<IFormFile> img)
         {
             foreach (var tempimg in img)
             {
                 var imagePath = await SaveImage(tempimg);
-                if (imagePath.Equals("noimage"))
+                if (imagePath.Equals("noimage") | imagePath == null)
                 {
                     continue;
                 }
@@ -113,20 +119,33 @@ namespace Travista.Controllers
             return RedirectToAction("IndexDestination", "Image", new { clickedDest = ID_Destination });
         }
 
+        [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddTravelAgencyImagesPost(Images addUserRequest)
+        public async Task<IActionResult> AddTravelAgencyImagesPost(int ID_TravelAgency, List<IFormFile> img)
         {
 
-            var images = new Images()
+            foreach (var tempimg in img)
             {
-                ID_Image = 0,
-                ID_TravelAgency = addUserRequest.ID_TravelAgency,
-            };
-            await _dBContext.Images.AddAsync(images);
-            await _dBContext.SaveChangesAsync();
-            return Redirect(Url.Action("IndexTravelAgency", "Images", new { ID_Images = addUserRequest.ID_Image }));
+                var imagePath = await SaveImage(tempimg);
+                if (imagePath.Equals("noimage") | imagePath == null)
+                {
+                    continue;
+                }
+
+                var permimg = new Images()
+                {
+                    ID_TravelAgency = ID_TravelAgency,
+                    ImagePath = imagePath
+                };
+
+                await _dBContext.Images.AddAsync(permimg);
+                await _dBContext.SaveChangesAsync();
+            }
+
+            return RedirectToAction("IndexTravelAgency", "Image", new { clickedTravel = ID_TravelAgency });
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> ViewDestinationImages(int clickedDest)
         {
@@ -146,10 +165,11 @@ namespace Travista.Controllers
             return RedirectToAction("IndexDestination");
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> ViewTravelAgencyImages(int clickedTravel)
         {
-            var images = await _dBContext.Images.FirstOrDefaultAsync(x => x.ID_TravelAgency == clickedTravel);
+            var images = await _dBContext.Images.FirstOrDefaultAsync(x => x.ID_Image == clickedTravel);
 
             if (images != null)
             {
@@ -165,19 +185,16 @@ namespace Travista.Controllers
             return RedirectToAction("IndexTravelAgency");
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> ViewDestinationImagesPost(Images model, IFormFile img)
         {
             var imgModel = await _dBContext.Images.FindAsync(model.ID_Image);
 
             var tempimg = await SaveImage(img);
-            if (tempimg == null)
+            if (tempimg == null | tempimg.Equals("noimage"))
             {
-                return RedirectToAction("IndexDestination", "Image", new { clickedDest = model.ID_Destination });
-            }
-            else if (tempimg.Equals("noimage"))
-            {
-                return RedirectToAction("IndexDestination", "Image", new { clickedDest = model.ID_Destination });
+                return RedirectToAction("IndexTravelAgency", "Image", new { clickedDest = model.ID_Destination });
             }
 
             if(imgModel != null)
@@ -187,31 +204,36 @@ namespace Travista.Controllers
                 imgModel.ImagePath = tempimg;
 
                 await _dBContext.SaveChangesAsync();
-                return RedirectToAction("IndexDestination", "Image", new { clickedDest = model.ID_Destination });
             }
 
             return RedirectToAction("IndexDestination", "Image", new { clickedDest = model.ID_Destination });
         }
 
+        [Authorize]
         [HttpPost]
-        public async Task<IActionResult> ViewTravelAgencyImagesPost(Images model)
+        public async Task<IActionResult> ViewTravelAgencyImagesPost(Images model, IFormFile img)
         {
-            var images = await _dBContext.Images.FindAsync(model.ID_Image);
+            var imgModel = await _dBContext.Images.FindAsync(model.ID_Image);
 
-
-            if (images != null)
+            var tempimg = await SaveImage(img);
+            if (tempimg == null | tempimg.Equals("noimage"))
             {
-                images.ImagePath = model.ImagePath;
-                images.ID_TravelAgency = model.ID_TravelAgency;
-
-                await _dBContext.SaveChangesAsync();
-
-                return RedirectToAction("ViewTravelAgencyImages");
+                return RedirectToAction("IndexTravelAgency", "Image", new { clickedTravel = model.ID_TravelAgency });
             }
 
-            return RedirectToAction("IndexTravelAgency");
+            if (imgModel != null)
+            {
+                imgModel.ID_Image = model.ID_Image;
+                imgModel.ID_TravelAgency = model.ID_TravelAgency;
+                imgModel.ImagePath = tempimg;
+
+                await _dBContext.SaveChangesAsync();
+            }
+
+            return RedirectToAction("IndexTravelAgency", "Image", new { clickedTravel = model.ID_TravelAgency });
         }
 
+        [Authorize]
         public async Task<IActionResult> DeleteImagesDest(Images model)
         {
             var images = await _dBContext.Images.FindAsync(model.ID_Image);
@@ -220,14 +242,14 @@ namespace Travista.Controllers
             {
                 _dBContext.Images.Remove(images);
                 await _dBContext.SaveChangesAsync();
-
-                return Redirect(Url.Action("IndexDestination", "Image", new { clickedDest = model.ID_Destination }));
             }
 
-            return RedirectToAction("IndexDestination");
+            return Redirect(Url.Action("IndexDestination", "Image", new { clickedDest = images.ID_Destination }));
+
             //return Redirect(Url.Action("IndexDestination", "Image", new { ID_Destination = model.ID_Destination }));
         }
 
+        [Authorize]
         public async Task<IActionResult> DeleteImagesTravel(Images model)
         {
             var images = await _dBContext.Images.FindAsync(model.ID_Image);
@@ -236,11 +258,9 @@ namespace Travista.Controllers
             {
                 _dBContext.Images.Remove(images);
                 await _dBContext.SaveChangesAsync();
-
-                return Redirect(Url.Action("IndexDestination", "Images", new { ID_TravelAgency = model.ID_TravelAgency }));
             }
 
-            return Redirect(Url.Action("IndexDestination", "Images", new { ID_TravelAgency = model.ID_TravelAgency }));
+            return Redirect(Url.Action("IndexTravelAgency", "Image", new { clickedTravel = images.ID_TravelAgency }));
         }
     }
 }
