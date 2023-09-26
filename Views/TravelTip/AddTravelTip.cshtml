@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" action="AddTravelTip" enctype="multipart/form-data">
             <div class="text-center">
@@ -20,7 +20,7 @@
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Title" placeholder="Prishtina">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Title" placeholder="Prishtina" required>
                         <label for="">Title</label>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <textarea class="form-control" placeholder="Description" asp-for="Description" style="height: 100px"></textarea>
+                        <textarea class="form-control" placeholder="Description" asp-for="Description" style="height: 100px" required></textarea>
                         <label>Description</label>
                     </div>
                 </div>

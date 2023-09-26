@@ -1,15 +1,68 @@
-﻿:root {
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
     --text: #F1FAFE;
     --sectext: #afafaf;
     --background: #020d13;
     --primary: #e35716;
     --secondary: #03141c;
+    --brightersecondary: #03141c;
     --accent: #d55215;
     --accordion-bg: #161818;
     --accordion-text: #FAFAFA;
     --accordion-primary: #414947;
     --accordion-secondary: #222625;
     --accordion-accent: #83918D;
+}
+
+.mt-6{
+    margin-top: 5%;
+}
+
+.container-fluid {
+    padding: 4% 0;
+    background-color: var(--brightersecondary);
+    box-shadow: inset 0 -10px 40px -10px rgba(0, 0, 0, 1), inset 0 10px 40px -10px rgba(0, 0, 0, 1);
+}
+
+.container-fluid img {
+    border-radius: 15px;
+}
+
+.container-fluid img:hover {
+        transition: all .4s;
+        transform: scale(1.05);
+}
+
+#slider-container img:hover {
+    transition: all .4s;
+    transform: scale(1.05);
+}
+
+
+.ipicture-card {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ipicture-card__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.ipicture-card__name {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.isquare-image img {
+    width: 235px;
+    height: 300px;
+    overflow: hidden;
 }
 
 body {
@@ -91,13 +144,34 @@ p{
     color: var(--sectext);
 }
 
+.marketing img:hover {
+    transition: all .4s;
+    transform: scale(1.05);
+}
+
 .border {
-    border: 2px var(--bs-border-style) var(--bs-border-color) !important;
+    border: 2px var(--bs-border-style) var(--primary) !important;
+}
+
+.border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--primary) !important;
 }
 
 .border-info {
     --bs-border-opacity: 1;
     border-color: var(--primary) !important;
+}
+
+.border-info2 {
+    --bs-border-opacity: 1;
+    border-color: var(--background) !important;
+}
+
+.text-overflow {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .form-signin h2 {

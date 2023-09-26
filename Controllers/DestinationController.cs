@@ -117,14 +117,15 @@ namespace Travista.Controllers
 
         public async Task<IActionResult> ShowDestination(int desiredCity)
         {
-            var dest = _dBContext.Destination
+            var dest = await _dBContext.Destination
                 .Include(d => d.Reviews)
                 .Include(d => d.FK_City)
                 .Include(d => d.FK_Users)
                 .Include(d => d.Images)
                 .Where(d => d.ID_City == desiredCity)
-                .Take(10)
-                .ToList();
+                .OrderBy(d => Guid.NewGuid())
+                .Take(100)
+                .ToListAsync();
 
             if (!dest.Any())
             {
@@ -289,6 +290,16 @@ namespace Travista.Controllers
 
             if (dest != null)
             {
+                var relatedReview = await _dBContext.Review
+                .Where(rev => rev.ID_Destination == model.ID_Destination)
+                .ToListAsync();
+
+                foreach (var rev in relatedReview)
+                {
+                    _dBContext.Review.Remove(rev);
+                }
+
+
                 _dBContext.Destination.Remove(dest);
                 await _dBContext.SaveChangesAsync();
 

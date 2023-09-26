@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" action="AddTravelAgency" enctype="multipart/form-data">
             <div class="text-center">
@@ -20,13 +20,13 @@
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="emri" placeholder="Prishtina">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="emri" placeholder="Prishtina" required>
                         <label for="">Name</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <select class="form-select rounded-bottom mt-2" required asp-for="ID_Country">
+                        <select class="form-select rounded-bottom mt-2" required asp-for="ID_Country" >
                             <option value="" disabled selected>Select an option</option>
                             <option value="6">Kosovo</option>
                         </select>
@@ -51,30 +51,30 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="streetAddress"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="streetAddress" required
                                placeholder="Filan Fisteku">
                         <label for="">Street Address</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="additionalAddressInfo"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="additionalAddressInfo" required
                                placeholder="Filan Fisteku">
                         <label for="">
-                            Additional address information <span class="text-body-secondary">(Optional)</span>
+                            Additional address information
                         </label>
                     </div>
                 </div>
                     <div class="col-md-6">
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-2" asp-for="postalCode"
+                            <input type="text" class="form-control rounded-bottom mt-2" asp-for="postalCode" required
                                    placeholder="Filan Fisteku">
                             <label for="">Postal Code</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating my-2">
-                            <input type="text" class="form-control rounded-bottom mt-2" asp-for="phoneNumber"
+                            <input type="text" class="form-control rounded-bottom mt-2" asp-for="phoneNumber" required
                                    placeholder="Filan Fisteku">
                             <label for="">Phone Number</label>
                         </div>
@@ -84,7 +84,7 @@
                         <div class="input-group align-items-center my-2">
                             <span class="input-group-text" style="height: 48px;">€</span>
                             <span class="input-group-text" style="height: 48px;">0.00</span>
-                            <input type="number" step="0.01" min="0" class="form-control form-control-lg" asp-for="price" placeholder="30.99">
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg" asp-for="price" placeholder="30.99" required>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -97,7 +97,7 @@
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <textarea class="form-control" maxlength="8000" placeholder=" Leave a comment here" asp-for="description" style="height: 100px"></textarea>
+                        <textarea class="form-control" maxlength="8000" placeholder=" Leave a comment here" asp-for="description" style="height: 100px" required></textarea>
                         <label for="">Description</label>
                     </div>
                 </div>

@@ -5,59 +5,47 @@
 }
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/colorway.css" />
     <script>
         setTimeout(function () {
             window.location.href = "@Url.Action("Index", "Home")";
-        }, 5000);
+        }, 4000);
     </script>
 </head>
 <style>
     body {
         text-align: center;
-        background: #EBF0F5;
-    }
-
-    .cardh1 {
-        color: #88B04B;
-        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-        font-weight: 900;
-        font-size: 40px;
-        margin-bottom: 10px;
     }
 
     .cardp {
-        color: #404F5E;
-        font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
         font-size: 20px;
         margin: 0;
     }
 
     .checkmark {
-        color: #9ABC66;
         font-size: 100px;
         line-height: 200px;
         margin-left: -15px;
     }
 
     .card {
-        background: white;
+        background-color: #03141c;
         padding: 60px;
         border-radius: 4px;
-        box-shadow: 0 2px 3px #C8D0D8;
+        box-shadow: 0 0px 8px #e35716;
         display: inline-block;
         margin: 7% auto;
     }
 </style>
 <body>
-    <div class="card">
+    <div class="card border-info">
         <div style="border-radius:200px; height:200px; width:200px; margin:0 auto;">
-            <i class="checkmark">✓</i>
+            <i class="checkmark txtcolor">✓</i>
         </div>
-        <h1 class="cardh1">Success</h1>
-        <p class="cardp">We received your post request;<br /> You'll be redirected to Index shortly!</p>
-        <div class="spinner-border my-2" role="status">
-            <span class="sr-only">Loading...</span>
+        <h1 class="txtcolor">Success</h1>
+        <p class="cardp txtmain">We received your request<br /> You'll be redirected to Home shortly!</p>
+        <div class="spinner-border my-2" style="color: white;" role="status">
+            <span class="sr-only"></span>
         </div>
     </div>
 </body>

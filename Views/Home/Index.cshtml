@@ -5,16 +5,16 @@
 
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="~/css/colorway.css" />
     <link rel="stylesheet" href="~/css/carousel.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/jquery.css">
-    <link rel="stylesheet" href="~/css/colorway.css" />
 </head>
 
 
 <body>
     <main>
         <div class="picture-container">
-            <img src="~/images/search2.png" class="img-fluid rounded-5 shadow mt-5 mb-3 img-glow" alt="Search Image" loading="lazy">
+            <img src="~/images/search2.png" class="img-fluid rounded-5 img-glow border shadow mt-5 mb-3" alt="Search Image" loading="lazy">
             <div class="search-container">
                 <form asp-action="GetPostSearchValue" asp-controller="Home" role="search" method="post" onsubmit="submitForm(event)">
                     <div class="input-group">
@@ -25,7 +25,93 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary btncolor mt-2 trigger-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-paper-plane" style="margin-right: 5px;"></i>Contact Us</button>
+        <div class="container-fluid mt-6">
+            <h2 class="container mb-4"><i class="fa-solid fa-hand-holding-heart txtcolor" style="margin-right: 8px;"></i>Handpicked by Travista</h2>
+            <div class="container d-flex justify-content-between">
+                @{
+                    int countCards = 0;
+                    foreach(var dest in Model.DestinationData)
+                    {
+                        countCards++;
+                        if (countCards <= 5)
+                        {
+                            <a href="@Url.Action("ShowDetails", "Destination", new{ clickedDest = dest.ID_Destination })">
+                                <div class="ipicture-card card-img-top isquare-image" style="width: 235px; height: 100%;">
+                                    @if (dest.Images != null && dest.Images.Any())
+                                    {
+                                        var random = new Random();
+                                        var randomIndex = random.Next(0, dest.Images.Count);
+                                        var randomImage = dest.Images.ElementAt(randomIndex);
+
+                                        <img src="@Url.Content(randomImage.ImagePath)" loading="lazy" decoding="async" class="ipicture-card__image img-fluid" alt="...">
+                                    }
+                                    <div class="card-body">
+                                        <h3 class="card-title txtmain mt-3 text-center text-overflow">@dest.Emri</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">Unlock a World of <span class="txtcolor img-glow">Adventures.</span></h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Embark on a journey of discovery and adventure with us as you become part of our vibrant Community. We invite you to step into a world of endless possibilities, where unforgettable experiences await around every corner. Our mission is simple: to be your gateway to expert guidance, tailored adventures, and the creation of lifelong memories.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                    <a id="register" asp-area="Identity" asp-page="/Account/Register" class="btn w-30 btn-primary btncolor px-4 me-sm-3 trigger-btn"><i class="fa-solid fa-user-plus" style="margin-right: 5px;"></i>Register Now!</a>
+                    <button type="button" class="btn w-20 btn-primary btncolor px-4 me-sm-3 trigger-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-paper-plane" style="margin-right: 5px;"></i>Contact Us!</button>
+                </div>
+            </div>
+            <div class="overflow-hidden" style="max-height: 45vh;">
+                <div class="container px-5">
+                    <img src="~/images/travel.jpg" class="img-fluid border img-glow rounded-3 shadow mb-4" alt="Example image" width="700" height="500" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mt-6">
+            <h2 class="container mb-4"><i class="fa-solid fa-van-shuttle txtcolor" style="margin-right: 8px;"></i>Top Picks: Your Next Adventure Awaits!</h2>
+            <div class="container d-flex justify-content-between">
+                @{
+                    int countTA = 0;
+                    foreach (var ta in Model.TravelAgencyData)
+                    {
+                        countTA++;
+                        if (countTA <= 5)
+                        {
+                            <a href="@Url.Action("ShowTravelAgency", "TravelAgency", new{ clickedTA = ta.ID_TravelAgency })">
+                                <div class="ipicture-card card-img-top isquare-image" style="width: 235px; height: 100%;">
+                                    @if (ta.Images != null && ta.Images.Any())
+                                    {
+                                        var random = new Random();
+                                        var randomIndex = random.Next(0, ta.Images.Count);
+                                        var randomImage = ta.Images.ElementAt(randomIndex);
+
+                                        <img src="@Url.Content(randomImage.ImagePath)" loading="lazy" decoding="async" class="ipicture-card__image img-fluid" alt="...">
+                                    }
+                                    <div class="card-body">
+                                        <h3 class="card-title txtmain mt-3 text-center text-overflow">@ta.emri</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -63,59 +149,52 @@
 
 
 
+        <hr class="featurette-divider border img-glow">
+
         <div class="container marketing">
 
-            <hr class="featurette-divider">
-
-            <div class="d-flex align-items-center justify-content-center mb-10">
+            <div class="d-flex align-items-center justify-content-center mb-10 mt-6">
                 <h1 class="text-center pushing">Recommended from Travista.</h1>
             </div>
 
-            <div class="row featurette">
-                <div class="col-md-7 mt-15">
-                    <h2 class="featurette-heading fw-semibold lh-1">Brezovica. <span class="fw-light">A serene
-                            ski destination amidst the majestic Balkan Mountains.</span></h2>
-                    <p class="lead">Brezovica is the largest ski center in Kosovo. It is located in the municipality of
-                        Štrpce in the south of the country, about 20 kilometers east of Prizren and five kilometers
-                        southwest of the main town of Štrpce.</p>
-                </div>
-                <div class="col-md-5">
-                    <img src="~/images/thumbnails/brezovica_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow img-glow">
-                </div>
-            </div>
+            @{
+                int countPromo = 0;
+                foreach(var promo in Model.PromoData)
+                {
+                    countPromo++;
+                    if (countPromo <= 3)
+                    {
+                        <a href="@promo.DestLink">
+                            <div class="row featurette">
+                                <div class="col-md-7 @((countPromo == 1 || countPromo == 3) ? "mt-15" : "order-md-2")">
+                                    <h2 class="featurette-heading fw-semibold lh-1">
+                                        @promo.Title <span class="fw-light">
+                                            @promo.Subtitle
+                                        </span>
+                                    </h2>
+                                    <p class="lead">
+                                        @promo.Description
+                                    </p>
+                                </div>
+                                <div class="col-md-5">
+                                    <img src="@Url.Content(@promo.Picture)" class="d-block w-100 img-fluid rounded-4 shadow border img-glow">
+                                </div>
+                            </div>
+                        </a>
 
-            <hr class="featurette-divider">
+                        if(countPromo <= 2)
+                        {
+                            <hr class="featurette-divider">
+                        }
 
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading fw-semibold lh-1">Prishtina Mall. <span class="fw-light">A
-                            shopper's paradise with something for everyone.</span></h2>
-                    <p class="lead">Prishtina Mall is a premier shopping destination in the heart of the capital city of
-                        Kosovo. With its modern and spacious design, it offers a unique shopping experience that
-                        combines fashion, entertainment, and leisure. Visitors can browse through a wide selection of
-                        local and international brands, catch a movie at the cinema, or enjoy a meal at one of the many
-                        restaurants and cafes.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <img src="~/images/thumbnails/prishtinamall_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow img-glow">
-                </div>
-            </div>
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
 
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-semibold lh-1">Prizren. <span class="fw-light">A historic
-                            landmark offering panoramic views of the old town.</span></h2>
-                    <p class="lead">The Prizren Castle is a well-preserved fortress atop a hill in Kosovo. Dating back
-                        to the 6th century, it offers visitors an impressive display of ancient walls, towers, and
-                        gates. The castle played a significant role in the region's history and provides stunning
-                        panoramic views of the town below. A must-visit for history and architecture enthusiasts.</p>
-                </div>
-                <div class="col-md-5">
-                    <img src="~/images/thumbnails/prizrencastle_thumb.jpg" class="d-block w-100 img-fluid rounded-4 shadow img-glow">
-                </div>
-            </div>
+            }
         </div>
     </main>
 

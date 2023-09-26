@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" action="AddCountry" enctype="multipart/form-data">
             <div class="text-center">
@@ -20,13 +20,13 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="name" placeholder="Prishtina">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="name" placeholder="Prishtina" required>
                         <label for="">Name of the country</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="language"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="language" required
                                placeholder="alex@gmail.com">
                         <label>Language of the country</label>
                     </div>

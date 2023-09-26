@@ -107,6 +107,17 @@ namespace Travista.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> ShowTravelAgency(int clickedTA)
+        {
+            var ta = await _dBContext.TravelAgency
+                .Include(d => d.FK_Country)
+                .Include(d => d.FK_City)
+                .Include(d => d.Images)
+                .FirstOrDefaultAsync(d => d.ID_TravelAgency == clickedTA);
+
+            return View(ta);
+        }
+
         [Authorize]
         public IActionResult AddUserTravelAgency()
         {

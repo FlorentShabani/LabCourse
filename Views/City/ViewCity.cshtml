@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" action="ViewCityPost" enctype="multipart/form-data">
             <div class="text-center">
@@ -20,19 +20,19 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_City" placeholder="Prishtina" readonly>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_City" placeholder="Prishtina" readonly required>
                         <label for="">City ID</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="name" placeholder="Prishtina">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="name" placeholder="Prishtina" required>
                         <label for="">City Name</label>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Country" readonly
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Country" readonly required
                                placeholder="alex@gmail.com">
                         <label>ID of country</label>
                     </div>

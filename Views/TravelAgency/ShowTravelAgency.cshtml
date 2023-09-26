@@ -1,0 +1,224 @@
+﻿@model Travista.Models.Domain.TravelAgency;
+@using Travista.Controllers;
+@using Travista.Models.Domain;
+<head>
+    <link rel="stylesheet" href="~/css/colorway.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/detailscarousel.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/weather.css" asp-append-version="true">
+</head>
+
+<html>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="slider col">
+                <div class="slides">
+                    @{
+
+                        List<Images> images = Model.Images.ToList();
+                        Random random = new Random();
+                        var randomlyOrderedImages = images.OrderBy(image => random.Next());
+                        List<Images> top4RandomImages = randomlyOrderedImages.Take(4).ToList();
+
+                        int countSlides = 0;
+
+                        foreach (var tempimg in top4RandomImages)
+                        {
+                            countSlides++;
+                            <div class="slide @((countSlides == 1 ? "active" : ""))" id="slide-@countSlides">
+                                <img src="@Url.Content(tempimg.ImagePath)" loading="lazy" decoding="async" class="rounded-3" alt="image-@countSlides">
+                            </div>
+                            if (countSlides > 4)
+                            {
+                                break;
+                            }
+                        }
+                        if (countSlides != 3)
+                        {
+                            for (int i = 0; i < 3; i++)
+                            {
+                                <div class="slide" id="slide-@countSlides">
+                                    <img src="https://picsum.photos/1000" loading="lazy" decoding="async" class="rounded-3" alt="image-@countSlides">
+                                </div>
+                            }
+                        }
+
+                    }
+                </div>
+
+                <div class="controls mt-3">
+
+                    @{
+                        int countControl = 0;
+
+                        foreach (var tempimg in top4RandomImages)
+                        {
+                            countControl++;
+                            <button id="button-1" class="button rounded-3 me-2">
+                                <div class="picture-card card-img-top square-image">
+                                    <img src="@Url.Content(tempimg.ImagePath)" class="img-fluid picture-card__image" />
+                                </div>
+                            </button>
+                            if (countControl > 3)
+                            {
+                                break;
+                            }
+                        }
+                        if (countControl != 4)
+                        {
+                            for (int i = 0; i < 3; i++)
+                            {
+                                <button id="button-1" class="button rounded-3 me-2">
+                                    <div class="picture-card card-img-top square-image">
+                                        <img src="https://picsum.photos/1000" loading="lazy" decoding="async" class="img-fluid picture-card__image" />
+                                    </div>
+                                </button>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="col" style="margin: 2rem 0px;">
+                <h1 class="txtcolor">@Model.emri</h1>
+                <h4 class="txtsec mt-2">@Model.price €</h4>
+                <div class="txtmain mt-2">
+                    <h6 class="mt-2 txtsec">Created by - @Model.emri</h6>
+                    <hr />
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="address txtmain">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="txtsec mt-3">City Name:</div>
+                                    <h5>@Model.FK_City.name</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="txtsec mt-3">Address:</div>
+                                    <h5>@Model.streetAddress</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="txtsec mt-3">Additional Address Info:</div>
+                                    <h5>@Model.additionalAddressInfo</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="address txtmain">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="txtsec mt-3">Postal Code:</div>
+                                    <h5>@Model.postalCode</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="txtsec mt-3">Phone Number:</div>
+                                    <h5>@Model.phoneNumber</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="txtsec mt-3">Email:</div>
+                                    <h5>@Model.email</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="txtmain mt-4">Weather in - <span class="txtcolor">@Model.FK_City.name</span></h5>
+                <div class="weather-wrapper txtmain">
+                    <div class="weather-card shadow">
+                        <div class="weather-icon" id="icon"></div>
+                        <h1 class="mb-5 txtmain fw-bold" id="temp">26º</h1>
+                        <p class="fw-bold txtmain">@Model.FK_City.name</p>
+                    </div>
+                </div>
+
+                @{
+                    string cityName = Model.FK_City.name;
+                }
+
+                <script>
+
+                    var cityFromASP = "@cityName";
+
+                    function fetchWeather(cityName, cardId) {
+                        const weather = '9751983c29e2c903a3b00a44308386a4';
+                        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${weather}&units=metric`;
+
+                        fetch(apiUrl)
+                            .then(response => response.json())
+                            .then(data => {
+                                const weatherIconElement = document.querySelector('.weather-card .weather-icon');
+                                const temperatureElement = document.getElementById('temp');
+
+                                const weatherMain = data.weather[0].main;
+                                const temperature = `${Math.round(data.main.temp)}°`;
+
+                                if (weatherMain === 'Clear') {
+                                    weatherIconElement.classList.add('sun');
+                                } else {
+                                    weatherIconElement.classList.add('cloud');
+                                    weatherIconElement.innerHTML = '<i class="fa-solid fa-cloud biggericon"></i>';
+                                }
+
+                                temperatureElement.textContent = temperature;
+                            })
+                            .catch(error => console.error('Error fetching weather data:', error));
+                    }
+
+                    fetchWeather(cityFromASP);
+                </script>
+            </div>
+        </div>
+
+        <hr class="txtmain" />
+
+        <h1 class="mt-4">Exploring <span class="txtcolor">@Model.emri's</span> Offers:</h1>
+
+        <nav class="container navbar navbar-expand-lg navbar-dark nav-seccolor">
+            <div class="collapse navbar-collapse d-lg-flex">
+                <ul class=" navbar-nav col-lg-6 ">
+                    <li class="nav-item"><a class="nav-link"><button class="primary btn txtmain" id="scrollToD">Description</button></a></li>
+                    <li class="nav-item"><a class="nav-link"><button class="primary btn txtmain" id="scrollToR">Placeholder for future module</button></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="scrollToDesc">
+            <h2 class="mt-4">Journeying Through <span class="txtcolor">@Model.emri's</span> Description:</h2>
+            <div style="white-space: pre-line;" class="txtmain">
+                @Model.description
+            </div>
+        </section>
+
+        <hr class="txtmain" />
+
+        <section id="scrollToRev" class="mt-4">
+            <h2 class="txtmain mb-4">Placeholder for future <span class="txtcolor">module.</span></h2>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </section>
+
+
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/js/car.js"></script>
+    <script src="~/js/scroll.js"></script>
+
+</body>
+</html>

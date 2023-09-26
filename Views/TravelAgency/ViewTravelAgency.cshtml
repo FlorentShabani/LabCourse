@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" action="ViewTravelAgencyPost" enctype="multipart/form-data">
             <div class="text-center">
@@ -19,20 +19,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_TravelAgency" placeholder="Travel Agency ID" readonly>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_TravelAgency" placeholder="Travel Agency ID" readonly required>
                         <label for="">ID</label>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="emri" placeholder="Prishtina">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="emri" placeholder="Prishtina" required>
                         <label for="">Name</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="email" class="form-control rounded-bottom mt-2" asp-for="email"
+                        <input type="email" class="form-control rounded-bottom mt-2" asp-for="email" required
                                placeholder="alex@gmail.com">
                         <label>Email</label>
                     </div>
@@ -40,7 +40,7 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="price"
+                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="price" required
                                placeholder="30.99">
                         <label>Price</label>
                     </div>
@@ -48,14 +48,14 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_Country"
+                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_Country" required readonly
                                placeholder="Filan Fisteku">
                         <label for="">Country</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_City"
+                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="ID_City" required readonly
                                placeholder="Filan Fisteku">
                         <label for="">City</label>
                     </div>
@@ -63,31 +63,31 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="streetAddress"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="streetAddress" required
                                placeholder="Filan Fisteku">
                         <label for="">Street Address</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="additionalAddressInfo"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="additionalAddressInfo" required
                                placeholder="Filan Fisteku">
                         <label for="">
-                            Additional address information <span class="text-body-secondary">(Optional)</span>
+                            Additional address information
                         </label>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="postalCode"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="postalCode" required
                                placeholder="Filan Fisteku">
                         <label for="">Postal Code</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="phoneNumber"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="phoneNumber" required
                                placeholder="Filan Fisteku">
                         <label for="">Phone Number</label>
                     </div>

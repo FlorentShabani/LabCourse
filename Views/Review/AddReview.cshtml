@@ -9,7 +9,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" asp-action="AddReview" enctype="multipart/form-data">
             <div class="text-center">
@@ -17,11 +17,11 @@
             </div>
             <h1 class="h3 mb-3 fw-normal text-center">Add a Review</h1>
 
-            <h4 class="txtmain">Rate it:</h4>
+            <h4 class="txtcolor">Rate it:</h4>
             <div class="row">
                 <div class="col-md-6">
                         <div class="stars">
-                            <input class="star star-5" id="star-5" type="radio" asp-for="Rating" value="5" />
+                            <input class="star star-5" id="star-5" type="radio" asp-for="Rating" value="5" required/>
                             <label class="star star-5" for="star-5"></label>
 
                             <input class="star star-4" id="star-4" type="radio" asp-for="Rating" value="4" />

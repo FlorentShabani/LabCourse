@@ -9,7 +9,7 @@ namespace Travista.Models
 
         public List<Destination>? DestinationData { get; set; }
 
-        public List<TravelAgency>? TravelAgency { get; set;}
+        public List<TravelAgency>? TravelAgencyData { get; set;}
 
         public List<Promo>? PromoData { get; set; }
 

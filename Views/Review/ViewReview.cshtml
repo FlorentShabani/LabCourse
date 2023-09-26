@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" asp-action="ViewReviewPost" enctype="multipart/form-data">
             <div class="text-center">
@@ -20,34 +20,34 @@
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Reviews" placeholder="Prishtina" readonly>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Reviews" placeholder="Prishtina" readonly required>
                         <label for="">ID of review</label>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="Rating" placeholder="Prishtina">
+                        <input type="number" class="form-control rounded-bottom mt-2" asp-for="Rating" placeholder="Prishtina" required>
                         <label for="">Rating</label>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="datetime" class="form-control rounded-bottom mt-2" asp-for="Review_Date" placeholder="Prishtina" readonly>
+                        <input type="datetime" class="form-control rounded-bottom mt-2" asp-for="Review_Date" placeholder="Prishtina" readonly required>
                         <label for="">Date</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Users" placeholder="Prishtina" readonly>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Users" placeholder="Prishtina" readonly required>
                         <label for="">ID of user</label>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Destination" placeholder="Prishtina" readonly>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_Destination" placeholder="Prishtina" readonly required>
                         <label for="">ID of destination</label>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <textarea class="form-control" placeholder="Comment" maxlength="8000" asp-for="Comment" style="height: 150px"></textarea>
+                        <textarea class="form-control" placeholder="Comment" maxlength="8000" asp-for="Comment" style="height: 150px" required></textarea>
                         <label>Comment</label>
                     </div>
                 </div>

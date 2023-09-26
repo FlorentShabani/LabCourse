@@ -22,9 +22,30 @@ namespace Travista.Controllers
             this._userManager = _userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = new HomePageModel
+            {
+                DestinationData = await _dBContext.Destination.FromSqlRaw("EXEC GetRandomDest").ToListAsync(),
+                TravelAgencyData = await _dBContext.TravelAgency.FromSqlRaw("EXEC GetRandomTravelAgencies").ToListAsync(),
+                PromoData = await _dBContext.Promo.FromSqlRaw("EXEC GetTop3PromoItems").ToListAsync(),
+            };
+
+            foreach (var destination in model.DestinationData)
+            {
+                destination.Images = await _dBContext.Images
+                    .Where(img => img.ID_Destination == destination.ID_Destination)
+                    .ToListAsync();
+            }
+
+            foreach (var travelagency in model.TravelAgencyData)
+            {
+                travelagency.Images = await _dBContext.Images
+                    .Where(img => img.ID_TravelAgency == travelagency.ID_TravelAgency)
+                    .ToListAsync();
+            }
+
+            return View(model);
         }
 
         public IActionResult Oops()

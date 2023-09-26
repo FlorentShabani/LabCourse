@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" asp-action="ViewUserPost" enctype="multipart/form-data">
             <div class="text-center">
@@ -27,7 +27,7 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Fullname" placeholder="Prishtina" readonly>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Fullname" placeholder="Prishtina">
                         <label for="">Fullname</label>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="email" class="form-control rounded-bottom mt-2" asp-for="Email" placeholder="Prishtina" readonly>
+                        <input type="email" class="form-control rounded-bottom mt-2" asp-for="Email" placeholder="Prishtina">
                         <label for="">Email</label>
                     </div>
                 </div>

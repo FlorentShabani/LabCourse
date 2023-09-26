@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Travista.Areas.Identity.Data
+
+@inject SignInManager<TravistaUser> SignInManager
+@inject UserManager<TravistaUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,7 +14,6 @@
     <link rel="stylesheet" href="~/css/dropdown.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/colorway.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/sign-in.css" asp-append-version="true">
-    @RenderSection("Scripts", required: false)
 </head>
 <body>
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark nav-color shadow">
@@ -21,25 +26,28 @@
                     </a>
 
                     <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                            <li class="nav-item">
-                            <a class="nav-link active" href="@Url.Action("AddUserTravelTip", "TravelTip")"><i class="fa-regular fa-compass" style="margin-right: 5px;"></i>Add travel tips</a>
-                            </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="@Url.Action("AddUserDestination", "Destination")"><i class="fa-regular fa-map" style="margin-right: 5px;"></i>Add a Place</a>
+                    </li>
+                    <div class="vr" style="color: white;"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="@Url.Action("AddUserTravelAgency", "TravelAgency")"><i class="fa-solid fa-van-shuttle" style="margin-right: 5px;"></i>Add an Agency</a>
+                    </li>
+                    <div class="vr" style="color: white;"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="@Url.Action("AddUserTravelTip", "TravelTip")"><i class="fa-regular fa-compass" style="margin-right: 5px;"></i>Add travel tips</a>
+                    </li>
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
                         <div class="vr" style="color: white;"></div>
                             <li class="nav-item">
-                            <a class="nav-link active" href="@Url.Action("Index", "Admin")"><i class="fa-solid fa-gavel" style="margin-right: 5px;"></i>Dashboard</a>
+                                <a class="nav-link active" href="@Url.Action("Index", "Admin")"><i class="fa-solid fa-gavel" style="margin-right: 5px;"></i>Dashboard</a>
                             </li>
-                        <div class="vr" style="color: white;"></div>
-                            <li class="nav-item">
-                            <div class="dropdown">
-                                <a class="nav-link active">Dropdown</a>
-                                <div class="dropdown-content">
-                                    <a class="nav-link active" href="@Url.Action("AddUserDestination", "Destination")"><i class="fa-regular fa-map" style="margin-right: 5px;"></i>Add Place</a>
-                                    <a class="nav-link active" href="@Url.Action("AddUserReview", "Review")"><i class="fa-regular fa-star-half-stroke" style="margin-right: 5px;"></i>Add Review</a>
-                                    <a class="nav-link active" href="@Url.Action("AddUserTravelAgency", "TravelAgency")"><i class="fa-solid fa-van-shuttle" style="margin-right: 5px;"></i>Add Agency</a>
-                                </div>
-                            </div>
-                            </li>
-                         <div class="vr" style="color: white;"></div>
+                        }
                     </ul>
 
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end">
@@ -66,7 +74,6 @@
                 <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Terms of Use</a></li>
                 <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Site Map</a></li>
                 <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Help</a></li>
-                <li class="nav-item"><a class="nav-link px-2 text-body-secondary">Contact us</a></li>
             </ul>
         </footer>
     </div>
@@ -75,6 +82,6 @@
     <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
-    @RenderSection("Scripts", required: false)>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 <html lang="en">
 <body>
-    <main class="form-signin w-100">
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
         <form method="post" action="AddDestination" enctype="multipart/form-data">
             <div class="text-center">
@@ -20,7 +20,7 @@
 
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Emri" placeholder="Prishtina">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Emri" placeholder="Prishtina"> required
                         <label for="">Name</label>
                     </div>
                 </div>
@@ -37,28 +37,28 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Address"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Address" required
                                placeholder="alex@gmail.com">
                         <label>Address</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="AdditionalAddress"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="AdditionalAddress" required
                                placeholder="alex@gmail.com">
                         <label>Additional Address</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Longitude"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Longitude" required
                                placeholder="Filan Fisteku">
                         <label for="">Longitude</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Latitude"
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Latitude" required
                                placeholder="Filan Fisteku">
                         <label for="">Latitude</label>
                     </div>
@@ -84,13 +84,13 @@
                 <div class="col-md-12">
                     <div class="input-group align-items-center mb-2">
                         <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
-                        <input type="file" class="form-control form-control-lg mt-2" multiple name="img">
+                        <input type="file" class="form-control form-control-lg mt-2" multiple name="img" required>
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <textarea class="form-control" maxlength="8000" placeholder="Leave a comment here" asp-for="Description" style="height: 100px"></textarea>
+                        <textarea class="form-control" maxlength="8000" placeholder="Leave a comment here" asp-for="Description" style="height: 100px" required></textarea>
                         <label for="">Description</label>
                     </div>
                 </div>
