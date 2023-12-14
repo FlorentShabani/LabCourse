@@ -181,6 +181,8 @@ namespace Travista.Controllers
         [Authorize]
         public IActionResult AddUserDestination()
         {
+            List<City> cityList = _dBContext.City.ToList();
+            ViewBag.Citys = cityList;
             return View();
         }
 

@@ -1,6 +1,7 @@
 ﻿@model List<Travista.Models.Domain.TravelAgency>
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Travel Agencys";
 }
 
 <html lang="en">
@@ -21,8 +22,6 @@
 
                 <th>Description</th>
 
-                <th>Email</th>
-
                 <th>Price</th>
 
                 <th>Image</th>
@@ -32,8 +31,6 @@
                 <th>Street Address</th>
 
                 <th>Additional Info</th>
-
-                <th>Postal Code</th>
 
                 <th>Phone Number</th>
 
@@ -47,7 +44,6 @@
                     <th scope="row">@travelage.ID_TravelAgency</th>
                     <td>@travelage.emri</td>
                     <td>@travelage.description</td>
-                    <td>@travelage.email</td>
                     <td>@travelage.price €</td>
                     <td>
                         <a href="@Url.Action("IndexTravelAgency", "Image", new { clickedTravel = travelage.ID_TravelAgency })"><i class="fas fa-eye" style="margin-right: 3px;"></i>View</a>
@@ -57,7 +53,6 @@
                     <td>@travelage.ID_City</td>
                     <td>@travelage.streetAddress</td>
                     <td>@travelage.additionalAddressInfo</td>
-                    <td>@travelage.postalCode</td>
                     <td>@travelage.phoneNumber</td>
                     <td><a href="@Url.Action("ViewTravelAgency", "TravelAgency", new { ID_TravelAgency = travelage.ID_TravelAgency })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a>
 

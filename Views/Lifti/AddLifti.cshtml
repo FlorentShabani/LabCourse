@@ -1,0 +1,57 @@
+﻿@model Travista.Models.Domain.Lifti
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Add Lifti";
+}
+@using Travista.Models.Domain;
+
+<head>
+    <link rel="stylesheet" href="~/css/travelagency_addform.css" asp-append-version="true">
+</head>
+
+<html lang="en">
+<body>
+    <main class="form-signin w-100 siform border border-info shadow rounded-3">
+
+        <form method="post" action="AddLiftiPost" enctype="multipart/form-data">
+            <div class="text-center">
+                <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
+            </div>
+            <h1 class="h3 mb-3 fw-normal text-center">Add a City</h1>
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="form-floating my-2">
+                        <select class="form-select rounded-bottom mt-3" required asp-for="ID_Ndertesa">
+                            <option value="" disabled selected>Select an option</option>
+                            @{
+                                List<Ndertesa> ndList = ViewBag.Buildings;
+                                if(ndList != null)
+                                {
+                                    foreach (var nd in ndList)
+                                    {
+                                        <option value="@nd.ID_Ndertesa">@nd.Emertimi</option>
+                                    }
+                                }
+                            }
+                        </select>
+
+                <div class="col-md-12">
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Emertimi" required placeholder="Prishtina">
+                        <label for="">Name of the Lifti</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button class="w-100 btn btn-lg btn-primary mt-3" style="margin: 10px 0;" type="submit">Create Ndertesa</button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

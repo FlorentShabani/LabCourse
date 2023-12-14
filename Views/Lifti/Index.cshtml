@@ -1,0 +1,44 @@
+﻿@model List<Travista.Models.Domain.Lifti>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Ndertesat";
+}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true">
+</head>
+<body>
+    <div class="mx-custom">
+        <table>
+
+
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Emertimi</th>
+                
+                <th>Ndertimi ID</th>
+
+                <th>Action</th>
+            </tr>
+
+
+            @foreach (var promo in Model)
+            {
+                <tr>
+                    <th scope="row">@promo.ID_Lifti</th>
+                    <td>@promo.Emertimi</td>
+                    <td>@promo.ID_Ndertesa</td>
+                    <td><a href="@Url.Action("ViewLifti", "Lifti", new { ID_Lifti = promo.ID_Lifti })"><i class="fas fa-pen-to-square" style="margin-right: 3px;"></i>View</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <script src="https://kit.fontawesome.com/5a5b6880b0.js" crossorigin="anonymous"></script>
+</body>
+</html>

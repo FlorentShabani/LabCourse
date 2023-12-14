@@ -100,6 +100,26 @@
                     </div>
                 </div>
 
+                <div class='dashboard-nav-dropdown'>
+                    <a class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fa-solid fa-address-book"></i>Ndertesa
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Ndertesa" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Ndertesa</a>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Ndertesa" asp-action="AddNdertesa"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Ndertesa</a>
+                    </div>
+                </div>
+
+                <div class='dashboard-nav-dropdown'>
+                    <a class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fa-solid fa-address-book"></i>Lifti
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Lifti" asp-action="Index"><i class="fas fa-list-ol" style="margin-right: 5px;"></i>All Lifti</a>
+                        <a class="dashboard-nav-dropdown-item" asp-controller="Lifti" asp-action="AddLifti"><i class="fas fa-square-plus" style="margin-right: 5px;"></i>Create Lifti</a>
+                    </div>
+                </div>
+
                     <div class="nav-item-divider"></div>
                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
                         <button type="submit" class="nav-link btn btn-link text-dark"><a class="dashboard-nav-item"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i> Logout</a></button>

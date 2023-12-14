@@ -1,6 +1,8 @@
 ﻿@model Travista.Models.Domain.TravelAgency;
 @{
+    ViewData["Title"] = "Add User Travel Agency";
 }
+@using Travista.Models.Domain;
 
 <html lang="en">
 <head>
@@ -52,7 +54,9 @@
                             <label for="floatingInput">Country</label>
                         </div>
                         <div class="form-floating my-2">
-                            <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
+                            @{
+                                /*
+                                <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="19">Ferizaj</option>
                                 <option value="20">Gjakova</option>
@@ -61,7 +65,19 @@
                                 <option value="21">Peja</option>
                                 <option value="13">Prishtina</option>
                                 <option value="14">Prizren</option>
-                            </select>
+                                </select>
+                                */
+                               <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
+                                    <option value="" disabled selected>Select an option</option>
+                                    @{
+                                        List<City> cityList = ViewBag.Citys;
+                                        foreach(var city in cityList)
+                                        {
+                                            <option value="@city.ID_City">@city.name</option>
+                                        }
+                                    }
+                                </select>
+                            }
                             <label for="floatingInput">City</label>
                         </div>
                         <div class="form-floating my-2">

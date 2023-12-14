@@ -1,8 +1,9 @@
-﻿@model Travista.Models.Domain.Images
+﻿@model Travista.Models.Domain.Ndertesa
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-    ViewData["Title"] = "Add Travel Agency Images";
+    ViewData["Title"] = "Add Ndertesa";
 }
+
 <head>
     <link rel="stylesheet" href="~/css/travelagency_addform.css" asp-append-version="true">
 </head>
@@ -11,33 +12,34 @@
 <body>
     <main class="form-signin w-100 siform border border-info shadow rounded-3">
 
-        <form method="post" action="AddTravelAgencyImagesPost" enctype="multipart/form-data">
+        <form method="post" action="AddNdertesaPost" enctype="multipart/form-data">
             <div class="text-center">
                 <img class="mb-4" src="~/images/travista-dark.png" alt="" width="200" height="80">
             </div>
-            <h1 class="h3 mb-3 fw-normal text-center">Add Images for a Travel Agency</h1>
+            <h1 class="h3 mb-3 fw-normal text-center">Add a City</h1>
 
             <div class="row">
 
                 <div class="col-md-12">
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="ID_TravelAgency" placeholder="Prishtina" readonly>
-                        <label for="">Travel Agency ID</label>
+                        <input type="text" class="form-control rounded-bottom mt-2" asp-for="Emertimi" required placeholder="Prishtina">
+                        <label for="">Name of the Ndertesa</label>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="input-group align-items-center mb-2">
-                        <label class="input-group-text mt-2" style="height: 48px;">Upload</label>
-                        <input type="file" class="form-control form-control-lg mt-2" name="img" asp-for="ImagePath" multiple>
+                    <div class="form-floating my-2">
+                        <input type="date" class="form-control rounded-bottom mt-2" pattern="\d{2}-\d{2}-\d{4}" asp-for="DataPT" required placeholder="Prishtina">
+                        <label for="">Date (DD-MM-YYYY)</label>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button class="w-100 btn btn-lg btn-primary mt-3" style="margin: 10px 0;" type="submit">Create City</button>
+                    <button class="w-100 btn btn-lg btn-primary mt-3" style="margin: 10px 0;" type="submit">Create Ndertesa</button>
                 </div>
             </div>
 
         </form>
     </main>
+
 
     <script src="~/lib/popperjs/core/dist/umd/popper.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

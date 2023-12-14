@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Configuration;
 using Travista.Areas.Identity.Data;
 using Travista.Models.Domain;
+using static Travista.Models.Domain.Ndertesa;
 
 namespace Travista.Data;
 
@@ -39,6 +40,10 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
     public DbSet<Promo> Promo { get; set; }
 
     public DbSet<ContactUs> ContactUs { get; set; }
+
+    public DbSet<Ndertesa> Ndertesa { get; set; }
+
+    public DbSet<Lifti> Lifti { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -79,6 +84,12 @@ public class TravistaContext : IdentityDbContext<TravistaUser>
 
         modelBuilder.Entity<ContactUs>()
             .HasKey(u => u.ID_ContactUs);
+
+        modelBuilder.Entity<Ndertesa>()
+            .HasKey(u => u.ID_Ndertesa);
+
+        modelBuilder.Entity<Lifti>()
+            .HasKey(u => u.ID_Lifti);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

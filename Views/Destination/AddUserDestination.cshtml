@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Add a place to Travista";
 }
+@using Travista.Models.Domain;
 
 <html lang="en">
 <head>
@@ -44,16 +45,16 @@
                                     <hr class="featurette-divider">
                                     <h1 class="h2 fw-normal sectext">Address & Contact Info</h1>
                                     <div class="form-floating my-2">
-                                        <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
-                                            <option value="" disabled selected>Select an option</option>
-                                            <option value="19">Ferizaj</option>
-                                            <option value="20">Gjakova</option>
-                                            <option value="12">Gjilan</option>
-                                            <option value="22">Mitrovica</option>
-                                            <option value="21">Peja</option>
-                                            <option value="13">Prishtina</option>
-                                            <option value="14">Prizren</option>
-                                        </select>
+                                            <select class="form-select rounded-bottom mt-3" required asp-for="ID_City">
+                                                <option value="" disabled selected>Select an option</option>
+                                                @{
+                                                    List<City> cityList = ViewBag.Citys;
+                                                    foreach (var city in cityList)
+                                                    {
+                                                        <option value="@city.ID_City">@city.name</option>
+                                                    }
+                                                }
+                                            </select>
                                         <label for="floatingInput">City</label>
                                     </div>
                                     <div class="form-floating my-2">
